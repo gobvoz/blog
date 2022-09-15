@@ -1,3 +1,3 @@
 import { testFunction } from './test';
 
-testFunction();
+testFunction('just for test');
