@@ -9,12 +9,13 @@ import { ProfilePageLazy } from './components/profile-async';
 import { useTheme } from './theme/use-theme';
 
 import './index.scss';
+import { classNames } from './helpers/class-names';
 
 export const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames(['app', theme], {})}>
       <Link to="/main">Main</Link>
       <Link to="/about">About</Link>
       <Link to="/contacts">Contacts</Link>
