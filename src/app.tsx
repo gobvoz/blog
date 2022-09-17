@@ -1,11 +1,30 @@
-import { Counter } from './components/counter';
+import { Suspense } from 'react';
+import { Link, Navigate, Route, Routes } from 'react-router-dom';
+
+import { MainPageLazy } from './components/main-async';
+import { AboutPageLazy } from './components/about-async';
+import { ContactsPageLazy } from './components/contacts-async';
+import { ProfilePageLazy } from './components/profile-async';
+
 import './index.scss';
 
 export const App = () => {
   return (
     <div className="app">
-      Test counter
-      <Counter />
+      <Link to="/main">Main</Link>
+      <Link to="/about">About</Link>
+      <Link to="/contacts">Contacts</Link>
+      <Link to="/profile">Profile</Link>
+
+      <Suspense fallback={<p>Loading...</p>}>
+        <Routes>
+          <Route path={'/main'} element={<MainPageLazy />} />
+          <Route path={'/about'} element={<AboutPageLazy />} />
+          <Route path={'/contacts'} element={<ContactsPageLazy />} />
+          <Route path={'/profile'} element={<ProfilePageLazy />} />
+          <Route path={'*'} element={<Navigate to={'/main'} replace={true} />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 };
