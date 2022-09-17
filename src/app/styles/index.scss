@@ -1,8 +1,8 @@
-@import './styles/reset.scss';
+@import './reset.scss';
 
-@import './styles/variables/global.scss';
-@import './styles/themes/light.scss';
-@import './styles/themes/dark.scss';
+@import './variables/global.scss';
+@import './themes/light.scss';
+@import './themes/dark.scss';
 
 .app {
   min-height: 100vh;

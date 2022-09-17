@@ -4,6 +4,6 @@ export const ProfilePageLazy = lazy(
   () =>
     new Promise(resolve => {
       // @ts-ignore
-      setTimeout(() => resolve(import('./profile')), 1500);
+      setTimeout(() => resolve(import('./profile-page')), 1500);
     }),
 );
