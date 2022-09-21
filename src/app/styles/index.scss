@@ -25,3 +25,12 @@ a {
     color: var(--link-hover-color);
   }
 }
+
+.page-content {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+}
