@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib/class-names';
 
 import cls from './theme-toggler.module.scss';
 
-interface IThemeTogglerProps extends React.HTMLProps<HTMLButtonElement> {
+interface IThemeTogglerProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 

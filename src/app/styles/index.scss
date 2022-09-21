@@ -25,18 +25,3 @@ a {
     color: var(--link-hover-color);
   }
 }
-
-button {
-  padding: 3px 10px;
-  color: var(--button-color);
-  background-color: var(--bg-button-color);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-
-  transition: all 0.3s;
-
-  &:hover {
-    color: var(--button-hover-color);
-    background-color: var(--bg-button-hover-color);
-  }
-}
