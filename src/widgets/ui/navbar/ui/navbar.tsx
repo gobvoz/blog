@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { AppLink } from 'widgets/ui/app-link';
-import { HorizontalMenu } from 'widgets/ui/horizontal-menu';
-import { classNames } from 'widgets/lib/class-names';
+import { AppLink } from 'shared/ui/app-link';
+import { HorizontalMenu } from 'shared/ui/horizontal-menu';
+import { classNames } from 'shared/lib/class-names';
 
 import cls from './navbar.module.scss';
 

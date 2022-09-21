@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { classNames } from 'widgets/lib/class-names';
+import { classNames } from 'shared/lib/class-names';
 
 import cls from './horizontal-menu.module.scss';
 
