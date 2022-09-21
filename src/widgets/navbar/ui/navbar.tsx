@@ -25,7 +25,7 @@ const Navbar: FC<INavbarProps> = props => {
           <AppLink to="/contacts">Contacts</AppLink>
           <AppLink to="/profile">Profile</AppLink>
         </HorizontalMenu>
-        <ThemeToggler className="left-margin-auto" onClick={toggleTheme} />
+        <ThemeToggler className={cls.marginLeftAuto} onClick={toggleTheme} />
       </div>
     </nav>
   );
