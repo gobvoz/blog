@@ -10,11 +10,13 @@ interface IHorizontalMenuProps {
 
 const HorizontalMenu: FC<IHorizontalMenuProps> = props => {
   const { className, children } = props;
-  console.log(cls);
+
   return (
     <ul className={classNames([cls.horizontalMenu, className])}>
-      {children.map(child => (
-        <li className={cls.element}>{child}</li>
+      {children.map((child, index) => (
+        <li key={index} className={cls.element}>
+          {child}
+        </li>
       ))}
     </ul>
   );
