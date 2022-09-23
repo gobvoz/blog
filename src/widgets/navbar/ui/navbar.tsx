@@ -1,13 +1,13 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
+import { ThemeToggler } from 'widgets/theme-toggler';
+import { LanguageToggler } from 'widgets/language-toggler';
 import { AppLink } from 'shared/ui/app-link';
 import { HorizontalMenu } from 'shared/ui/horizontal-menu';
-import { ThemeToggler } from 'shared/ui/theme-toggler';
-import { classNames } from 'shared/lib/class-names';
 
+import { classNames } from 'shared/lib/class-names';
 import cls from './navbar.module.scss';
-import { LanguageToggler } from 'shared/ui/language-toggler';
-import { useTranslation } from 'react-i18next';
 
 interface INavbarProps {
   className?: string;
