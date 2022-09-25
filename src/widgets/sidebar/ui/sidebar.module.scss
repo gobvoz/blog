@@ -2,7 +2,6 @@
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width);
   background-color: var(--inverted-bg-color);
-
   transition: width 0.3s cubic-bezier(0.67, 0.02, 0.39, 0.98), color 0.3s linear;
 }
 
@@ -19,10 +18,13 @@
 }
 
 .bar {
+  position: relative;
+  transition: all 0ms 300ms;
+
   &,
   &::before,
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 19px;
     height: 2px;
@@ -31,43 +33,43 @@
     border-radius: 1px;
   }
 
-  & {
-    position: relative;
-    transition: all 0ms 300ms;
-  }
   &.animate {
-    background: rgba(255, 255, 255, 0);
+    background: rgb(255 255 255 / 0%);
   }
 
-  &:before {
-    content: '';
+  &::before {
+    content: "";
     position: absolute;
     left: 0;
     bottom: 6px;
-    transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    transition:
+      bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
       transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  &:after {
-    content: '';
+  &::after {
+    content: "";
     position: absolute;
     left: 0;
     top: 6px;
-    transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    transition:
+      top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
       transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  &.animate:after {
+  &.animate::after {
     top: 0;
     transform: rotate(45deg);
-    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    transition:
+      top 300ms cubic-bezier(0.23, 1, 0.32, 1),
       transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  &.animate:before {
+  &.animate::before {
     bottom: 0;
     transform: rotate(-45deg);
-    transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    transition:
+      bottom 300ms cubic-bezier(0.23, 1, 0.32, 1),
       transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
