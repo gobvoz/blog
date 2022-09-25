@@ -9,7 +9,7 @@ import cls from './language-toggler.module.scss';
 
 interface ILanguageTogglerProps {}
 
-const LanguageToggler: FC<ILanguageTogglerProps> = props => {
+const LanguageToggler: FC<ILanguageTogglerProps> = () => {
   const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en');

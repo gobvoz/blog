@@ -1,7 +1,5 @@
 import { useTranslation } from 'react-i18next';
 
-const NAMESPACE_LOCALE = 'main-page';
-
 const MainPage = () => {
   const { t } = useTranslation('main-page');
 

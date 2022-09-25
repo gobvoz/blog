@@ -13,7 +13,13 @@ const ThemeToggler: FC<IThemeTogglerProps> = props => {
   const { className } = props;
   const { toggleTheme } = useTheme();
 
-  return <button className={classNames([cls.themeToggler, className])} onClick={toggleTheme} />;
+  return (
+    <button
+      type="button"
+      className={classNames([cls.themeToggler, className])}
+      onClick={toggleTheme}
+    />
+  );
 };
 
 export { ThemeToggler };

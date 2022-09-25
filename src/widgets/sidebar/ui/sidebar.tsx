@@ -17,9 +17,12 @@ const Sidebar: FC<ISidebarProps> = props => {
 
   return (
     <div className={classNames([cls.sidebar, className], { [cls.collapsed]: collapsed })}>
-      <button className={classNames([cls.collapseButton])} onClick={toggleHandler}>
-        <span className={classNames([cls.bar], { [cls.animate]: !collapsed })}></span>
-      </button>
+      <Button
+        className={classNames([cls.collapseButton])}
+        mod={ButtonMod.TRANSPARENT}
+        onClick={toggleHandler}>
+        <span className={classNames([cls.bar], { [cls.animate]: !collapsed })} />
+      </Button>
     </div>
   );
 };

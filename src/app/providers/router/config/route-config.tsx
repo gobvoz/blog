@@ -18,5 +18,5 @@ export const routerConfig: RouteProps[] = [
   { path: AppRoutes.ABOUT, element: <AboutPage /> },
   { path: AppRoutes.CONTACTS, element: <ContactsPage /> },
   { path: AppRoutes.PROFILE, element: <ProfilePage /> },
-  { path: AppRoutes.ERROR, element: <Navigate to={AppRoutes.MAIN} replace={true} /> },
+  { path: AppRoutes.ERROR, element: <Navigate to={AppRoutes.MAIN} replace /> },
 ];

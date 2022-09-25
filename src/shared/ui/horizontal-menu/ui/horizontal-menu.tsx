@@ -14,6 +14,7 @@ const HorizontalMenu: FC<IHorizontalMenuProps> = props => {
   return (
     <ul className={classNames([cls.horizontalMenu, className])}>
       {children.map((child, index) => (
+        // eslint-disable-next-line react/no-array-index-key
         <li key={index} className={cls.element}>
           {child}
         </li>

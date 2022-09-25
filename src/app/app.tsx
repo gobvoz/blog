@@ -3,10 +3,9 @@ import { Suspense } from 'react';
 import { Navbar } from 'widgets/navbar';
 import { Sidebar } from 'widgets/sidebar';
 
+import { classNames } from 'shared/lib/class-names';
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/theme-provider/lib/use-theme';
-
-import { classNames } from 'shared/lib/class-names';
 
 import './styles/index.scss';
 
