@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/class-names/class-names';
 import { Button } from 'shared/ui/button';
 import { ButtonMod } from 'shared/ui/button/ui/button';
 

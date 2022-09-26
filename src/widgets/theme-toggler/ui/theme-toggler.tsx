@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 
 import { useTheme } from 'app/providers/theme-provider';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/class-names/class-names';
 
 import cls from './theme-toggler.module.scss';
 

@@ -6,7 +6,7 @@ import { LanguageToggler } from 'widgets/language-toggler';
 import { AppLink } from 'shared/ui/app-link';
 import { HorizontalMenu } from 'shared/ui/horizontal-menu';
 
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/class-names/class-names';
 import cls from './navbar.module.scss';
 
 interface INavbarProps {

@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { Button, ButtonMod } from 'shared/ui/button';
 
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/class-names/class-names';
 
 import cls from './language-toggler.module.scss';
 
