@@ -4,6 +4,7 @@ import { MainPage } from 'pages/main-page';
 import { AboutPage } from 'pages/about-page';
 import { ContactsPage } from 'pages/contacts-page';
 import { ProfilePage } from 'pages/profile-page';
+import { NotFoundPage } from 'pages/not-found-page';
 
 export enum AppRoutes {
   MAIN = '/main',
@@ -18,5 +19,5 @@ export const routerConfig: RouteProps[] = [
   { path: AppRoutes.ABOUT, element: <AboutPage /> },
   { path: AppRoutes.CONTACTS, element: <ContactsPage /> },
   { path: AppRoutes.PROFILE, element: <ProfilePage /> },
-  { path: AppRoutes.ERROR, element: <Navigate to={AppRoutes.MAIN} replace /> },
+  { path: AppRoutes.ERROR, element: <NotFoundPage /> },
 ];
