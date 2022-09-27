@@ -6,7 +6,9 @@ import { LanguageToggler } from 'widgets/language-toggler';
 import { AppLink } from 'shared/ui/app-link';
 import { HorizontalMenu } from 'shared/ui/horizontal-menu';
 
+import { AppRoutes } from 'shared/constants/app-routes';
 import { classNames } from 'shared/lib/class-names/class-names';
+
 import cls from './navbar.module.scss';
 
 interface INavbarProps {
@@ -21,10 +23,10 @@ const Navbar: FC<INavbarProps> = props => {
     <nav className={classNames([cls.navbar, className])}>
       <div className={classNames([cls.wrapper])}>
         <HorizontalMenu>
-          <AppLink to="/main">{t('menu-main')}</AppLink>
-          <AppLink to="/about">{t('menu-about')}</AppLink>
-          <AppLink to="/contacts">{t('menu-contacts')}</AppLink>
-          <AppLink to="/profile">{t('menu-profile')}</AppLink>
+          <AppLink to={AppRoutes.MAIN}>{t('menu-main')}</AppLink>
+          <AppLink to={AppRoutes.ABOUT}>{t('menu-about')}</AppLink>
+          <AppLink to={AppRoutes.CONTACTS}>{t('menu-contacts')}</AppLink>
+          <AppLink to={AppRoutes.PROFILE}>{t('menu-profile')}</AppLink>
         </HorizontalMenu>
         <ThemeToggler className={cls.marginLeftAuto} />
         <LanguageToggler />

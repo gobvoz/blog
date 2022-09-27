@@ -23,9 +23,11 @@ a {
 
 .page-content {
   display: flex;
+  height: calc(100% - var(--navbar-height));
 }
 
 .page-wrapper {
+  width: 100%;
   flex-grow: 1;
   padding: 20px;
 }
