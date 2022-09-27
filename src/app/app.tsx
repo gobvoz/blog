@@ -8,6 +8,7 @@ import { classNames } from 'shared/lib/class-names/class-names';
 
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/theme-provider/lib/use-theme';
+import { ThrowErrorButton } from './providers/error-boundary';
 
 import './styles/index.scss';
 
@@ -22,6 +23,7 @@ export const App = () => {
           <Sidebar />
           <AppRouter />
         </section>
+        <ThrowErrorButton />
       </Suspense>
     </div>
   );
