@@ -5,29 +5,51 @@
 
 .app {
   min-height: 100vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--bg-main);
+  color: var(--color-text);
   font: var(--font-m);
   transition: all 0.3s;
 }
 
 a {
-  color: var(--link-color);
+  color: var(--color-link);
   text-decoration: none;
   transition: all 0.3s;
 
   &:hover {
-    color: var(--link-hover-color);
+    color: var(--color-link-hover);
   }
 }
 
-.page-content {
+section {
+  background: var(--bg-section);
+  padding: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-header);
+}
+
+p {
+  color: var(--color-text);
+}
+
+.page {
   display: flex;
   height: calc(100% - var(--navbar-height));
 }
 
+.page-content {
+  width: var(--max-content-width);
+  margin: var(--navbar-height) auto 0;
+}
+
 .page-wrapper {
   width: 100%;
-  flex-grow: 1;
   padding: 20px;
 }

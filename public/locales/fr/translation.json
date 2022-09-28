@@ -1,11 +1,12 @@
 {
   "app-error-button": "Recharger la page",
   "app-error-text": "Quelque chose a mal tourné",
-  "language": "fr",
+  "language": "FR",
   "loading": "Chargement...",
   "menu-about": "À propos",
   "menu-contacts": "Contacts",
   "menu-main": "Main",
   "menu-profile": "Profil",
+  "throw-error": "renvoyer une Erreur",
   "throw-error-button": "renvoyer une Erreur"
 }

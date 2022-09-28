@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/class-names/class-names';
 import { Button } from 'shared/ui/button';
 import { ButtonMod } from 'shared/ui/button/ui/button';
+import { LanguageToggler } from 'widgets/language-toggler';
 
 import cls from './sidebar.module.scss';
 
@@ -19,10 +20,11 @@ const Sidebar: FC<ISidebarProps> = props => {
     <div className={classNames([cls.sidebar, className], { [cls.collapsed]: collapsed })}>
       <Button
         className={classNames([cls.collapseButton])}
-        mod={ButtonMod.TRANSPARENT}
+        mod={ButtonMod.PRIMARY}
         onClick={toggleHandler}>
         <span className={classNames([cls.bar], { [cls.animate]: !collapsed })} />
       </Button>
+      <LanguageToggler />
     </div>
   );
 };

@@ -1,16 +1,14 @@
 .navbar {
+  position: fixed;
+  top: 0;
   width: 100%;
   height: var(--navbar-height);
-  background-color: var(--inverted-bg-color);
+  background-color: var(--bg-panel);
 
   .wrapper {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
+    padding: 0 10px;
   }
-}
-
-.margin-left-auto {
-  margin-left: auto;
 }

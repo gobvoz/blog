@@ -1,15 +1,14 @@
 .app.dark {
-  --text-color: lightgray;
-  --link-color: darkslateblue;
-  --link-hover-color: #281d6b;
-  --bg-color: gray;
-  --inverted-bg-color: lightgray;
-  --toggler-moon: #f5f5f5;
-  --toggler-sun: #909090;
-  --button-color: lightgray;
-  --button-hover-color: #f4f4f4;
-  --bg-button-color: transparent;
-  --bg-button-hover-color: lightgray;
-  --border-color: darkslategray;
-  --border-radius: 5px;
+  --color-link: #6b85e0;
+  --color-link-hover: #4559a3;
+  --color-header: white;
+  --color-text: #c0c0c0;
+  --color-button-default: #fff;
+  --color-button-primary: #fff;
+  --color-border: #2f4f4f;
+  --bg-main: #141a2a;
+  --bg-panel: #1e2638;
+  --bg-section: #1a2130;
+  --bg-button-default: #fff;
+  --bg-button-primary: linear-gradient(45deg, #ff1a6a 0%, #47cbff 100%);
 }

@@ -1,7 +1,12 @@
 .sidebar {
-  height: calc(100vh - var(--navbar-height));
+  height: calc(100vh - var(--navbar-height) - 10px);
+  position: fixed;
+  left: 5px;
+  top: calc(var(--navbar-height) + 5px);
   width: var(--sidebar-width);
-  background-color: var(--inverted-bg-color);
+  background-color: var(--bg-panel);
+  border-radius: var(--border-radius);
+  z-index: 9999;
   transition: width 0.3s cubic-bezier(0.67, 0.02, 0.39, 0.98), color 0.3s linear;
 }
 
@@ -10,25 +15,31 @@
 }
 
 .collapse-button {
-  width: 30px;
-  height: 30px;
-  padding: 4px;
+  width: 29px;
+  height: 29px;
+  position: absolute;
+  right: -15px;
+  padding: 5px;
   margin-left: 10px;
   margin-top: 10px;
+  border: 2px solid var(--bg-main);
+  border-radius: 50%;
 }
 
 .bar {
+  --animation-transition: 500ms;
+
   position: relative;
-  transition: all 0ms 300ms;
+  transition: all 0ms var(--animation-transition);
 
   &,
   &::before,
   &::after {
     content: "";
     display: block;
-    width: 19px;
-    height: 2px;
-    background: var(--border-color);
+    width: 15px;
+    height: 1px;
+    background: var(--color-button-primary);
     border: none;
     border-radius: 1px;
   }
@@ -41,35 +52,39 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: 6px;
+    bottom: 4px;
     transition:
-      bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
-      transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      bottom var(--animation-transition) var(--animation-transition)
+      cubic-bezier(0.23, 1, 0.32, 1),
+      transform var(--animation-transition) cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   &::after {
     content: "";
     position: absolute;
     left: 0;
-    top: 6px;
+    top: 4px;
     transition:
-      top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
-      transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      top var(--animation-transition) var(--animation-transition)
+      cubic-bezier(0.23, 1, 0.32, 1),
+      transform var(--animation-transition) cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   &.animate::after {
     top: 0;
     transform: rotate(45deg);
     transition:
-      top 300ms cubic-bezier(0.23, 1, 0.32, 1),
-      transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      top var(--animation-transition) cubic-bezier(0.23, 1, 0.32, 1),
+      transform var(--animation-transition) var(--animation-transition)
+      cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   &.animate::before {
     bottom: 0;
     transform: rotate(-45deg);
     transition:
-      bottom 300ms cubic-bezier(0.23, 1, 0.32, 1),
-      transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      bottom var(--animation-transition) cubic-bezier(0.23, 1, 0.32, 1),
+      transform var(--animation-transition) var(--animation-transition)
+      cubic-bezier(0.23, 1, 0.32, 1);
   }
 }

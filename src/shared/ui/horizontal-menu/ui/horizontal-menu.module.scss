@@ -12,6 +12,6 @@
 
   .element:not(:last-child)::after {
     content: "|";
-    color: var(--border-color);
+    color: var(--color-border);
   }
 }

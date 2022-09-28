@@ -1,11 +1,12 @@
 {
   "app-error-button": "Reload page",
   "app-error-text": "Something went wrong",
-  "language": "en",
+  "language": "EN",
   "loading": "Loading...",
   "menu-about": "About",
   "menu-contacts": "Contacts",
   "menu-main": "Main",
   "menu-profile": "Profile",
+  "throw-error": "throw an Error",
   "throw-error-button": "throw an Error"
 }
