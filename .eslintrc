@@ -4,16 +4,28 @@
     "es2021": true,
     "jest": true
   },
+  "parser": "@typescript-eslint/parser",
   "extends": ["airbnb", "airbnb-typescript", "plugin:i18next/recommended"],
-  "overrides": [],
+  "overrides": [
+    {
+      "files": ["**/src/**/*.test.{ts,tsx}"],
+      "rules": {
+        "i18next/no-literal-string": "off"
+      }
+    }
+  ],
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "ecmaVersion": "latest",
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "plugins": ["react", "i18next"],
+  "plugins": ["react", "@typescript-eslint", "i18next"],
   "rules": {
     "indent": [2, 2],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".tsx"] }],
     "react/react-in-jsx-scope": "off",
     "react/function-component-definition": "off",
     "import/prefer-default-export": "off",
@@ -46,7 +58,15 @@
     "@typescript-eslint/no-unused-vars": "off",
     "import/no-extraneous-dependencies": [
       "error",
-      { "devDependencies": ["**/*.test.ts", "**/*.spec.ts", "**/*.config.ts"] }
+      {
+        "devDependencies": [
+          "**/tests/**",
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "**/*.spec.ts",
+          "**/*.config.ts"
+        ]
+      }
     ],
     "react/jsx-closing-bracket-location": [
       1,

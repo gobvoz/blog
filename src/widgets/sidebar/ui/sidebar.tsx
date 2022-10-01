@@ -17,11 +17,14 @@ const Sidebar: FC<ISidebarProps> = props => {
   const toggleHandler = () => setCollapsed(!collapsed);
 
   return (
-    <div className={classNames([cls.sidebar, className], { [cls.collapsed]: collapsed })}>
+    <div
+      className={classNames([cls.sidebar, className], { [cls.collapsed]: collapsed })}
+      data-testid="sidebar">
       <Button
         className={classNames([cls.collapseButton])}
         mod={ButtonMod.PRIMARY}
-        onClick={toggleHandler}>
+        onClick={toggleHandler}
+        data-testid="sidebar-toggle">
         <span className={classNames([cls.bar], { [cls.animate]: !collapsed })} />
       </Button>
       <LanguageToggler />
