@@ -4,6 +4,7 @@ import path from 'path';
 import { BuildPath } from '../build/types/config';
 import { buildCssLoader } from '../build/loaders/build-css-loader';
 import { buildSvgLoader } from '../build/loaders/build-svg-loader';
+import { buildBabelLoader } from '../build/loaders/build-babel-loader';
 
 export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPath = {
