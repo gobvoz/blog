@@ -61,10 +61,12 @@
       {
         "devDependencies": [
           "**/tests/**",
+          "**/config/**",
           "**/*.test.ts",
           "**/*.test.tsx",
           "**/*.spec.ts",
-          "**/*.config.ts"
+          "**/*.config.ts",
+          "**/*.stories.tsx"
         ]
       }
     ],
