@@ -10,7 +10,7 @@ export default {
   component: ProfilePage,
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = args => <ProfilePage {...args} />;
+const Template: ComponentStory<typeof ProfilePage> = args => <ProfilePage {...(args as object)} />;
 
 export const Light = Template.bind({});
 
