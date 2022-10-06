@@ -6,7 +6,7 @@
   width: var(--sidebar-width);
   background-color: var(--bg-panel);
   border-radius: var(--border-radius);
-  z-index: 9999;
+  z-index: 100;
   transition: width 0.3s cubic-bezier(0.67, 0.02, 0.39, 0.98), color 0.3s linear;
 }
 

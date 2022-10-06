@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonMod } from 'shared/ui/button';
+import { Modal } from 'widgets/modal';
 
 const MainPage = () => {
   const { t } = useTranslation('main-page');
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const modalOpenHandler = () => setModalOpen(true);
+  const setOpen = (open: boolean) => setModalOpen(open);
 
   return (
     <section>
@@ -26,6 +33,9 @@ const MainPage = () => {
       <Button>Default</Button>
       <Button mod={ButtonMod.PRIMARY}>Primary</Button>
       <Button mod={ButtonMod.PRIMARY}>Loading</Button>
+      <Button mod={ButtonMod.PRIMARY} onClick={modalOpenHandler}>
+        Open modal
+      </Button>
       <h1>Next paragraph</h1>
       {/* eslint-disable i18next/no-literal-string */}
       <p>
@@ -66,6 +76,7 @@ const MainPage = () => {
       <Button>Default</Button>
       <Button mod={ButtonMod.PRIMARY}>Primary</Button>
       <Button mod={ButtonMod.PRIMARY}>Loading</Button>
+      {isModalOpen && <Modal setOpen={setOpen}>Modal window</Modal>}
     </section>
   );
 };

@@ -22,7 +22,7 @@
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "plugins": ["react", "@typescript-eslint", "i18next"],
+  "plugins": ["react", "@typescript-eslint", "i18next", "eslint-plugin-react-hooks"],
   "rules": {
     "indent": [2, 2],
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".tsx"] }],
@@ -40,7 +40,7 @@
       {
         "ObjectExpression": { "multiline": true, "minProperties": 5, "consistent": true },
         "ObjectPattern": { "multiline": true, "minProperties": 5, "consistent": true },
-        "ImportDeclaration": { "multiline": true, "minProperties": 5, "consistent": true },
+        "ImportDeclaration": { "multiline": true, "minProperties": 7, "consistent": true },
         "ExportDeclaration": { "multiline": true, "minProperties": 5, "consistent": true }
       }
     ],
@@ -75,6 +75,8 @@
       { "selfClosing": "tag-aligned", "nonEmpty": "after-props" }
     ],
     "implicit-arrow-linebreak": "off",
-    "i18next/no-literal-string": ["error", { "markupOnly": true }]
+    "i18next/no-literal-string": ["error", { "markupOnly": true }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
   }
 }
