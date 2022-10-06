@@ -10,7 +10,9 @@ export default {
   component: ContactsPage,
 } as ComponentMeta<typeof ContactsPage>;
 
-const Template: ComponentStory<typeof ContactsPage> = args => <ContactsPage {...args} />;
+const Template: ComponentStory<typeof ContactsPage> = args => (
+  <ContactsPage {...(args as object)} />
+);
 
 export const Light = Template.bind({});
 
