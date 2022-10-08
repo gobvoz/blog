@@ -39,7 +39,7 @@ const Navbar: FC<INavbarProps> = props => {
           </Button>
         </Menu>
       </div>
-      {isAuthModalOpen && <Modal onClose={authModalOpenToddle}>Authorisation form</Modal>}
+      {isAuthModalOpen && <Modal onClose={authModalOpenToddle}>{t('authentication')}</Modal>}
     </nav>
   );
 };

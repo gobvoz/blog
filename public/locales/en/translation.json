@@ -9,5 +9,6 @@
   "menu-main": "Main",
   "menu-profile": "Profile",
   "throw-error": "throw an Error",
-  "throw-error-button": "throw an Error"
+  "throw-error-button": "throw an Error",
+  "authentication": "Authentication"
 }
