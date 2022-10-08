@@ -22,6 +22,12 @@ Transparent.args = {
   children: 'Text',
 };
 
+export const Link = Template.bind({});
+Link.args = {
+  mod: ButtonMod.APP_LINK,
+  children: 'Text',
+};
+
 export const Primary = Template.bind({});
 Primary.args = {
   mod: ButtonMod.PRIMARY,
@@ -40,6 +46,13 @@ TransparentDark.args = {
   children: 'Text',
 };
 TransparentDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const LinkDark = Template.bind({});
+LinkDark.args = {
+  mod: ButtonMod.APP_LINK,
+  children: 'Text',
+};
+LinkDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {

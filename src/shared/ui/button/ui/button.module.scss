@@ -18,6 +18,17 @@ button {
   background: transparent;
 }
 
+.app-link {
+  color: var(--color-link);
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
 .primary {
   color: var(--color-button-primary);
   border-color: var(--bg-button-primary);

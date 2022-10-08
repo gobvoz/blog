@@ -9,7 +9,7 @@ const MainPage = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const modalOpenHandler = () => setModalOpen(true);
-  const setOpen = (open: boolean) => setModalOpen(open);
+  const modalCloseHandler = () => setModalOpen(false);
 
   return (
     <section>
@@ -76,7 +76,7 @@ const MainPage = () => {
       <Button>Default</Button>
       <Button mod={ButtonMod.PRIMARY}>Primary</Button>
       <Button mod={ButtonMod.PRIMARY}>Loading</Button>
-      {isModalOpen && <Modal setOpen={setOpen}>Modal window</Modal>}
+      {isModalOpen && <Modal onClose={modalCloseHandler}>Modal window</Modal>}
     </section>
   );
 };

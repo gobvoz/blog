@@ -1,14 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
-import { RouterDecorator } from 'shared/config/storybook/router-decorator';
 import { Theme } from 'shared/constants/theme';
 
 import { AppLink } from 'shared/ui/app-link';
 import { Menu } from './menu';
 
 export default {
-  title: 'shared/horizontal-menu',
+  title: 'shared/menu',
   component: Menu,
 } as ComponentMeta<typeof Menu>;
 
@@ -23,7 +22,6 @@ Light.args = {
     <AppLink to="#">Logout</AppLink>,
   ],
 };
-Light.decorators = [RouterDecorator];
 
 export const Dark = Template.bind({});
 Dark.args = {
@@ -34,10 +32,10 @@ Dark.args = {
     <AppLink to="#">Logout</AppLink>,
   ],
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), RouterDecorator];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const LightHorizontal = Template.bind({});
-Light.args = {
+LightHorizontal.args = {
   horizontal: true,
   children: [
     <AppLink to="#">Main</AppLink>,
@@ -46,7 +44,6 @@ Light.args = {
     <AppLink to="#">Logout</AppLink>,
   ],
 };
-LightHorizontal.decorators = [RouterDecorator];
 
 export const DarkHorizontal = Template.bind({});
 DarkHorizontal.args = {
@@ -58,10 +55,10 @@ DarkHorizontal.args = {
     <AppLink to="#">Logout</AppLink>,
   ],
 };
-DarkHorizontal.decorators = [ThemeDecorator(Theme.DARK), RouterDecorator];
+DarkHorizontal.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const LightVertical = Template.bind({});
-Light.args = {
+LightVertical.args = {
   vertical: true,
   children: [
     <AppLink to="#">Main</AppLink>,
@@ -70,10 +67,9 @@ Light.args = {
     <AppLink to="#">Logout</AppLink>,
   ],
 };
-LightVertical.decorators = [RouterDecorator];
 
 export const DarkVertical = Template.bind({});
-DarkHorizontal.args = {
+DarkVertical.args = {
   vertical: true,
   children: [
     <AppLink to="#">Main</AppLink>,
@@ -82,4 +78,4 @@ DarkHorizontal.args = {
     <AppLink to="#">Logout</AppLink>,
   ],
 };
-DarkVertical.decorators = [ThemeDecorator(Theme.DARK), RouterDecorator];
+DarkVertical.decorators = [ThemeDecorator(Theme.DARK)];

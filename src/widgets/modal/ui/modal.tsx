@@ -10,11 +10,11 @@ interface IModalProps {
   className?: string;
   children: React.ReactNode;
   keepOpen?: boolean;
-  setOpen: (open: boolean) => void;
+  onClose: () => void;
 }
 
 const Modal: FC<IModalProps> = props => {
-  const { className, children, keepOpen = true, setOpen } = props;
+  const { className, children, keepOpen = true, onClose } = props;
 
   const [isInAnimation, setInAnimation] = useState(false);
   const [isOutAnimation, setOutAnimation] = useState(false);
@@ -42,9 +42,9 @@ const Modal: FC<IModalProps> = props => {
 
     animationOutRef.current = setTimeout(() => {
       setOutAnimation(false);
-      setOpen(false);
+      onClose();
     }, MODAL_ANIMATION_DURATION);
-  }, [setOpen]);
+  }, [onClose]);
 
   const onOverlayClick = () => closeHandler();
   const onModalClick = (evt: React.MouseEvent) => evt.stopPropagation();

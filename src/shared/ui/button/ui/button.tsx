@@ -6,6 +6,7 @@ import cls from './button.module.scss';
 export enum ButtonMod {
   TRANSPARENT = 'transparent',
   PRIMARY = 'primary',
+  APP_LINK = 'app-link',
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
