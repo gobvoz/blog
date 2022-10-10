@@ -1,6 +1,9 @@
 {
   "app-error-button": "Reload page",
   "app-error-text": "Something went wrong",
+  "authentication": "Authentication",
+  "dec": "dec",
+  "inc": "inc",
   "language": "EN",
   "loading": "Loading...",
   "menu-about": "About",
@@ -9,6 +12,5 @@
   "menu-main": "Main",
   "menu-profile": "Profile",
   "throw-error": "throw an Error",
-  "throw-error-button": "throw an Error",
-  "authentication": "Authentication"
+  "throw-error-button": "throw an Error"
 }
