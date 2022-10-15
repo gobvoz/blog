@@ -6,11 +6,13 @@
   "inc": "inc",
   "language": "FR",
   "loading": "Chargement...",
+  "login": "login",
   "menu-about": "À propos",
   "menu-contacts": "Contacts",
   "menu-login": "Login",
   "menu-main": "Main",
   "menu-profile": "Profil",
+  "password": "password",
   "throw-error": "renvoyer une Erreur",
   "throw-error-button": "renvoyer une Erreur"
 }

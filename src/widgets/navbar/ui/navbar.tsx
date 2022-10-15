@@ -1,7 +1,7 @@
 import { FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Modal } from 'widgets/modal';
+import { LoginModal } from 'features/auth-by-user-name';
 
 import { AppLink } from 'shared/ui/app-link';
 import { Menu } from 'shared/ui/menu';
@@ -21,7 +21,8 @@ const Navbar: FC<INavbarProps> = props => {
 
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
 
-  const authModalOpenToddle = useCallback(() => setAuthModalOpen(prev => !prev), []);
+  const authModalOpenHandler = useCallback(() => setAuthModalOpen(true), []);
+  const authModalCloseHandler = useCallback(() => setAuthModalOpen(false), []);
 
   const { className } = props;
   return (
@@ -34,12 +35,14 @@ const Navbar: FC<INavbarProps> = props => {
         <Menu horizontal>
           <AppLink to={AppRoutes.CONTACTS}>{t('menu-contacts')}</AppLink>
           <AppLink to={AppRoutes.PROFILE}>{t('menu-profile')}</AppLink>
-          <Button mod={ButtonMod.APP_LINK} onClick={authModalOpenToddle}>
+          <Button mod={ButtonMod.APP_LINK} onClick={authModalOpenHandler}>
             {t('menu-login')}
           </Button>
         </Menu>
       </div>
-      {isAuthModalOpen && <Modal onClose={authModalOpenToddle}>{t('authentication')}</Modal>}
+      {isAuthModalOpen && (
+        <LoginModal onClose={authModalCloseHandler}>{t('authentication')}</LoginModal>
+      )}
     </nav>
   );
 };

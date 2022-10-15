@@ -15,10 +15,15 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: FC<IButtonProps> = props => {
-  const { className, children, mod, ...otherProps } = props;
+  const {
+    className, children, mod, type = 'button', ...otherProps
+  } = props;
 
   return (
-    <button className={classNames([cls.button, className, cls[mod]])} {...otherProps}>
+    <button
+      className={classNames([cls.button, className, cls[mod]])}
+      type={type}
+      {...otherProps}>
       {children}
     </button>
   );

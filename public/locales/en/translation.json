@@ -6,11 +6,13 @@
   "inc": "inc",
   "language": "EN",
   "loading": "Loading...",
+  "login": "login",
   "menu-about": "About",
   "menu-contacts": "Contacts",
   "menu-login": "Login",
   "menu-main": "Main",
   "menu-profile": "Profile",
+  "password": "password",
   "throw-error": "throw an Error",
   "throw-error-button": "throw an Error"
 }
