@@ -17,7 +17,8 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:update": "npx loki approve",
-    "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static"
+    "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -88,7 +89,8 @@
     "webpack": "^5.69.1",
     "webpack-bundle-analyzer": "^4.6.1",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",

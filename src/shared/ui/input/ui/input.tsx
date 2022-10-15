@@ -30,7 +30,7 @@ const Input = memo((props: IInputProps) => {
       value={value}
       onChange={onChangeHandler}
       type={type}
-      data-testId="input"
+      data-testid="input"
       {...otherProps}
     />
   );
