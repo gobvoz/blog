@@ -11,8 +11,8 @@ export default {
 
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Light = Template.bind({});
+Light.args = {
   children: 'Text',
 };
 
@@ -34,11 +34,24 @@ Primary.args = {
   children: 'Text',
 };
 
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {
+export const Loading = Template.bind({});
+Loading.args = {
+  children: 'Text',
+  loading: true,
+};
+
+export const PrimaryLoading = Template.bind({});
+PrimaryLoading.args = {
+  children: 'Text',
+  mod: ButtonMod.PRIMARY,
+  loading: true,
+};
+
+export const Dark = Template.bind({});
+Dark.args = {
   children: 'Text',
 };
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const TransparentDark = Template.bind({});
 TransparentDark.args = {
@@ -60,3 +73,18 @@ PrimaryDark.args = {
   children: 'Text',
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryLoadingDark = Template.bind({});
+PrimaryLoadingDark.args = {
+  children: 'Text',
+  mod: ButtonMod.PRIMARY,
+  loading: true,
+};
+PrimaryLoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const LoadingDark = Template.bind({});
+LoadingDark.args = {
+  children: 'Text',
+  loading: true,
+};
+LoadingDark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -14,6 +14,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
   };
 
   config.resolve.modules.push(paths.src);
+  config.resolve.modules.push('node_modules');
   config.resolve.extensions.push('.ts', '.tsx');
 
   // eslint-disable-next-line no-param-reassign
