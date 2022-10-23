@@ -32,7 +32,7 @@ const MainPage = () => {
       </p>
       <Button>Default</Button>
       <Button mod={ButtonMod.PRIMARY}>Primary</Button>
-      <Button mod={ButtonMod.PRIMARY}>Loading</Button>
+      <Button mod={ButtonMod.PRIMARY} loading>Loading</Button>
       <Button mod={ButtonMod.PRIMARY} onClick={modalOpenHandler}>
         Open modal
       </Button>
@@ -55,7 +55,7 @@ const MainPage = () => {
       </p>
       <Button>Default</Button>
       <Button mod={ButtonMod.PRIMARY}>Primary</Button>
-      <Button mod={ButtonMod.PRIMARY}>Loading</Button>
+      <Button mod={ButtonMod.PRIMARY} loading>Loading</Button>
       <h1>Another paragraph</h1>
       {/* eslint-disable i18next/no-literal-string */}
       <p>
@@ -75,7 +75,7 @@ const MainPage = () => {
       </p>
       <Button>Default</Button>
       <Button mod={ButtonMod.PRIMARY}>Primary</Button>
-      <Button mod={ButtonMod.PRIMARY}>Loading</Button>
+      <Button mod={ButtonMod.PRIMARY} loading>Loading</Button>
       {isModalOpen && <Modal onClose={modalCloseHandler}>Modal window</Modal>}
     </section>
   );

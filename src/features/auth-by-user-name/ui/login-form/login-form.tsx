@@ -4,7 +4,10 @@ import { useTranslation } from 'react-i18next';
 
 import { Input } from 'shared/ui/input';
 import { Button } from 'shared/ui/button';
+import { TextBlock } from 'shared/ui/text-block';
 
+import i18n from 'shared/config/i18n/i18n';
+import { TextBlockMod } from 'shared/ui/text-block/ui/text-block';
 import { classNames } from 'shared/lib/class-names/class-names';
 import cls from './login-form.module.scss';
 
@@ -49,6 +52,8 @@ const LoginForm = memo((props: ILoginFormProps) => {
 
   return (
     <form className={classNames([cls.loginForm, className])} onSubmit={submitHandler}>
+      <TextBlock mod={TextBlockMod.FORM} header="Login form" />
+
       <label className={cls.label} htmlFor="username">
         <span className={cls.fieldName}>{t('login')}</span>
         <Input id="username" value={username} onChange={usernameChangeHandler} autoFocus />
@@ -57,12 +62,10 @@ const LoginForm = memo((props: ILoginFormProps) => {
         <span className={cls.fieldName}>{t('password')}</span>
         <Input id="password" value={password} onChange={passwordChangeHandler} />
       </label>
-      {error && <p className={cls.errorMessage}>{error}</p>}
-      <Button
-        className={cls.button}
-        type="submit"
-        disabled={isLoading}
-        loading={isLoading}>
+      {error && (
+        <TextBlock mod={TextBlockMod.ERROR_MESSAGE}>{i18n.t('login-password-error')}</TextBlock>
+      )}
+      <Button className={cls.button} type="submit" disabled={isLoading} loading={isLoading}>
         {t('menu-login')}
       </Button>
     </form>

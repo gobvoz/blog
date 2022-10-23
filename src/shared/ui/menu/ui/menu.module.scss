@@ -12,7 +12,7 @@
     align-items: center;
   }
 
-  .element:not(:last-child)::after {
+  .element + .element::before {
     content: "|";
     color: var(--color-border);
   }

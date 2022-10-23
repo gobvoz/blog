@@ -10,7 +10,7 @@ export enum MenuDirection {
 
 interface IMenuProps {
   className?: string;
-  children: JSX.Element[];
+  children: JSX.Element[] | JSX.Element;
   vertical?: boolean;
   horizontal?: boolean;
 }
@@ -23,14 +23,18 @@ const Menu: FC<IMenuProps> = props => {
     [cls.horizontal]: horizontal,
   };
 
+  if (!Array.isArray(children)) return children;
+
   return (
     <ul className={classNames([cls.menu, className], mods)}>
-      {children.map((child, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <li key={index} className={cls.element}>
-          {child}
-        </li>
-      ))}
+      {children
+        .filter(child => child)
+        .map((child, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <li key={index} className={cls.element}>
+            {child}
+          </li>
+        ))}
     </ul>
   );
 };
