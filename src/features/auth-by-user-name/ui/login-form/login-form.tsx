@@ -56,11 +56,22 @@ const LoginForm = memo((props: ILoginFormProps) => {
 
       <label className={cls.label} htmlFor="username">
         <span className={cls.fieldName}>{t('login')}</span>
-        <Input id="username" value={username} onChange={usernameChangeHandler} autoFocus />
+        <Input
+          id="username"
+          value={username}
+          onChange={usernameChangeHandler}
+          autoFocus
+          disabled={isLoading}
+        />
       </label>
       <label className={cls.label} htmlFor="password">
         <span className={cls.fieldName}>{t('password')}</span>
-        <Input id="password" value={password} onChange={passwordChangeHandler} />
+        <Input
+          id="password"
+          value={password}
+          onChange={passwordChangeHandler}
+          disabled={isLoading}
+        />
       </label>
       {error && (
         <TextBlock mod={TextBlockMod.ERROR_MESSAGE}>{i18n.t('login-password-error')}</TextBlock>
