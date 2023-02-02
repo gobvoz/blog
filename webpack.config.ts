@@ -1,17 +1,20 @@
 import path from 'path';
 import webpack from 'webpack';
+import dotenv from 'dotenv';
 
 import { buildWebpackConfig } from './config/webpack/webpack-config';
-import { BuildMode, BuildOptions, Env } from './config/webpack/types/config';
+import { BuildMode, BuildOptions, BuildEnv } from './config/webpack/types/config';
 
-const buildConfig = (env: Env) => {
+const buildConfig = (env: BuildEnv) => {
   const MODE = env.MODE || BuildMode.DEVELOPMENT;
-  const PORT = env.PORT || 3000;
-
   const isDev = MODE === BuildMode.DEVELOPMENT;
+  dotenv.config({
+    path: path.resolve(__dirname, `.env.${isDev ? BuildMode.DEVELOPMENT : BuildMode.PRODUCTION}`),
+  });
+  const PORT = Number(process.env.PORT) || 3000;
 
   const buildOptions: BuildOptions = {
-    mode: MODE,
+    mode: MODE,                                                                                                 
     paths: {
       entry: path.resolve(__dirname, 'src', 'index.ts'),
       output: path.resolve(__dirname, 'build'),
