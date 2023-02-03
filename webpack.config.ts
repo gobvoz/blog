@@ -7,9 +7,12 @@ import { BuildMode, BuildOptions, BuildEnv } from './config/webpack/types/config
 
 const buildConfig = (env: BuildEnv) => {
   const MODE = env.MODE || BuildMode.DEVELOPMENT;
-  const isDev = MODE === BuildMode.DEVELOPMENT;
+  const isDevelopment = MODE === BuildMode.DEVELOPMENT;
   dotenv.config({
-    path: path.resolve(__dirname, `.env.${isDev ? BuildMode.DEVELOPMENT : BuildMode.PRODUCTION}`),
+    path: path.resolve(
+      __dirname,
+      `.env.${isDevelopment ? BuildMode.DEVELOPMENT : BuildMode.PRODUCTION}`,
+    ),
   });
   const PORT = Number(process.env.PORT) || 3000;
 
@@ -20,7 +23,7 @@ const buildConfig = (env: BuildEnv) => {
       output: path.resolve(__dirname, 'build'),
       html: path.resolve(__dirname, 'public', 'index.html'),
     },
-    isDev,
+    isDevelopment,
     port: PORT,
   };
 
