@@ -14,9 +14,9 @@ const buildConfig = (env: BuildEnv) => {
   const PORT = Number(process.env.PORT) || 3000;
 
   const buildOptions: BuildOptions = {
-    mode: MODE,                                                                                                 
+    mode: MODE,
     paths: {
-      entry: path.resolve(__dirname, 'src', 'index.ts'),
+      entry: path.resolve(__dirname, 'src', 'index.tsx'),
       output: path.resolve(__dirname, 'build'),
       html: path.resolve(__dirname, 'public', 'index.html'),
     },
