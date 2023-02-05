@@ -1,12 +1,14 @@
 import { createRoot } from 'react-dom/client';
-import { Counter } from './components/counter/counter';
+import { BrowserRouter } from 'react-router-dom';
+
+import { App } from './app';
 
 import './global.scss';
 
 const root = createRoot(document.getElementById('root'));
 
 root.render(
-  <div>
-    <Counter />
-  </div>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
 );
