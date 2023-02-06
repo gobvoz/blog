@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 
-import { Theme, ThemeContext } from './theme.context';
+import { Theme, ThemeContext } from '../lib/theme.context';
 
 export const LOCAL_STORAGE_THEME_KEY = 'theme';
 

@@ -11,15 +11,32 @@
   background-color: var(--bg-main);
 
   font: var(--font-m);
+
   transition: all 0.3s;
 }
 
 a {
   color: var(--color-link);
   text-decoration: none;
+
   transition: all 0.3s;
 
   &:hover {
     color: var(--color-link-hover);
+  }
+}
+
+button {
+  padding: 3px 10px;
+  color: var(--color-button-default);
+  background-color: var(--bg-button-default);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-button);
+
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--hover-color-button-default);
+    background-color: var(--hover-bg-button-default);
   }
 }
