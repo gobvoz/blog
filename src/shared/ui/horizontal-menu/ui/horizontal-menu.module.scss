@@ -1,0 +1,17 @@
+.horizontal-menu {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+
+  .element {
+    display: flex;
+    align-items: center;
+  }
+  .element:not(:last-child):after {
+    content: '|';
+    color: var(--border-color);
+  }
+}

@@ -1,29 +1,27 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
-import { useTheme } from './providers/theme-provider/lib/use-theme';
+import { Navbar } from 'widgets/navbar';
 
 import { classNames } from 'shared/libs/class-names';
 
-import './styles/index.scss';
+import { useTheme } from './providers/theme-provider/lib/use-theme';
 import { AppRouter } from './providers/router';
+import './styles/index.scss';
 
 interface Props {}
 
-export const App: FC<Props> = props => {
+const App: FC<Props> = props => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <div className={classNames(['app', theme])}>
-      <nav>
-        <Link to={'/main'}>Main</Link>
-        <Link to={'/about'}>About</Link>
-        <Link to={'/profile'}>Profile</Link>
-        <Link to={'/contacts'}>Contacts</Link>
-      </nav>
+      <Navbar />
+
       <button onClick={toggleTheme}>theme</button>
 
       <AppRouter />
     </div>
   );
 };
+
+export { App };
