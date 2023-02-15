@@ -6,8 +6,18 @@ import { BuildOptions } from './types/config';
 export const webpackLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
   const { isDevelopment } = options;
 
+  const svgLoader = {
+    test: /\.svg$/i,
+    use: ['@svgr-webpack'],
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: ['file-loader'],
+  };
+
   const cssLoader = {
-    test: /\.s[ac]ss$/i,
+    test: /\.s[ac]ss$/,
     use: [
       MiniCssExtractPlugin.loader,
       {
@@ -30,5 +40,5 @@ export const webpackLoaders = (options: BuildOptions): webpack.RuleSetRule[] => 
     exclude: '/node_modules/',
   };
 
-  return [webpackLoader, cssLoader];
+  return [fileLoader, svgLoader, webpackLoader, cssLoader];
 };
