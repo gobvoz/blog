@@ -2,4 +2,15 @@
   width: 100%;
   height: var(--navbar-height);
   background-color: var(--bg-menu-color);
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .left-margin-auto {
+    margin-left: auto;
+  }
 }

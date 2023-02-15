@@ -11,13 +11,11 @@ import './styles/index.scss';
 interface Props {}
 
 const App: FC<Props> = props => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames(['app', theme])}>
       <Navbar />
-
-      <button onClick={toggleTheme}>theme</button>
 
       <AppRouter />
     </div>
