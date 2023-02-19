@@ -9,6 +9,12 @@
     align-items: center;
     max-width: 900px;
     margin: 0 auto;
+    margin-left: max(var(--sidebar-width), calc(100vw - 900px) / 2);
+    transition: margin 0.3s cubic-bezier(0.67, 0.02, 0.39, 0.98);
+  }
+
+  .collapsed {
+    margin-left: max(var(--sidebar-width-collapsed), calc(100vw - 900px) / 2);
   }
 
   .left-margin-auto {

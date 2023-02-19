@@ -5,13 +5,16 @@ import { App } from 'app/app';
 import { ThemeProvider } from 'app/providers/theme-provider';
 
 import 'shared/config/i18n/i18n';
+import { CollapseProvider } from 'app/providers/collapse-provider';
 
 const root = createRoot(document.getElementById('root'));
 
 root.render(
   <BrowserRouter>
     <ThemeProvider>
-      <App />
+      <CollapseProvider>
+        <App />
+      </CollapseProvider>
     </ThemeProvider>
   </BrowserRouter>,
 );

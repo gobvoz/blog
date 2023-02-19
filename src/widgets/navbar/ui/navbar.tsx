@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { useCollapse } from 'app/providers/collapse-provider';
+
 import { ThemeToggler } from 'widgets/theme-toggler';
 import { LanguageToggler } from 'widgets/language-toggler';
 
@@ -15,12 +17,17 @@ interface Props {
 }
 
 const Navbar: FC<Props> = props => {
+  const { collapsed } = useCollapse();
   const { t } = useTranslation();
-
   const { className } = props;
+
+  const mods = {
+    [cls.collapsed]: collapsed,
+  };
+
   return (
     <nav className={classNames(cls.navbar, className)}>
-      <div className={cls.wrapper}>
+      <div className={classNames(cls.wrapper, mods)}>
         <HorizontalMenu>
           <AppLink to="/">{t('menu-main')}</AppLink>
           <AppLink to="/about">{t('menu-about')}</AppLink>

@@ -2,6 +2,7 @@ import { FC, Suspense } from 'react';
 
 import { Sidebar } from 'widgets/sidebar';
 import { Navbar } from 'widgets/navbar';
+import { PageWrapper } from 'widgets/page-wrapper';
 import { PageContent } from 'widgets/page-content';
 
 import { classNames } from 'shared/libs/class-names';
@@ -21,7 +22,9 @@ const App: FC<Props> = props => {
         <Navbar />
         <PageContent>
           <Sidebar />
-          <AppRouter />
+          <PageWrapper>
+            <AppRouter />
+          </PageWrapper>
         </PageContent>
       </Suspense>
     </div>
