@@ -1,9 +1,12 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Props {}
 
 const ProfilePage: FC<Props> = props => {
-  return <h1>Profile page</h1>;
+  const { t } = useTranslation('profile-page');
+
+  return <h1>{t('page-profile')}</h1>;
 };
 
 export { ProfilePage };

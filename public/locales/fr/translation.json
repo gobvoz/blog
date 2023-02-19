@@ -1,3 +1,10 @@
 {
-  "translation": "traduction"
+  "language": "fr",
+
+  "loading": "Chargement...",
+
+  "menu-main": "Main",
+  "menu-about": "À propos",
+  "menu-contacts": "Contacts",
+  "menu-profile": "Profil"
 }
