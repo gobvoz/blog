@@ -19,8 +19,8 @@ const Navbar: FC<Props> = props => {
 
   const { className } = props;
   return (
-    <nav className={classNames([cls.navbar, className])}>
-      <div className={classNames([cls.wrapper])}>
+    <nav className={classNames(cls.navbar, className)}>
+      <div className={cls.wrapper}>
         <HorizontalMenu>
           <AppLink to="/">Main</AppLink>
           <AppLink to="/about">About</AppLink>

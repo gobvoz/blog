@@ -17,7 +17,7 @@ const App: FC<Props> = props => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={classNames(['app', theme])}>
+    <div className={classNames('app', theme)}>
       <Navbar />
       <PageContent>
         <Sidebar />

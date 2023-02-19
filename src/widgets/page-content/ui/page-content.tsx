@@ -10,7 +10,7 @@ interface Props extends DOMAttributes<HTMLDivElement> {
 const PageContent: FC<Props> = props => {
   const { className, children } = props;
 
-  return <section className={classNames([cls.pageContent, className])}>{children}</section>;
+  return <section className={classNames(cls.pageContent, className)}>{children}</section>;
 };
 
 export { PageContent };

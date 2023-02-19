@@ -12,7 +12,7 @@ const AppLink: FC<Props> = props => {
   const { className, to, children, ...otherProps } = props;
 
   return (
-    <Link className={classNames([cls.appLink, className])} to={to} {...otherProps}>
+    <Link className={classNames(cls.appLink, className)} to={to} {...otherProps}>
       {children}
     </Link>
   );

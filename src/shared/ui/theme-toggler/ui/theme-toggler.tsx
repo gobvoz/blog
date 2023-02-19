@@ -10,7 +10,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 const ThemeToggler: FC<Props> = props => {
   const { onClick, className } = props;
 
-  return <button className={classNames([cls.themeToggler, className])} onClick={onClick} />;
+  return <button className={classNames(cls.themeToggler, className)} onClick={onClick} />;
 };
 
 export { ThemeToggler };

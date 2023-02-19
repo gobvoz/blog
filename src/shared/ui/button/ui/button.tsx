@@ -18,7 +18,7 @@ const Button: FC<Props> = props => {
   };
 
   return (
-    <button className={classNames([cls.button, className], mods)} {...otherProps}>
+    <button className={classNames(cls.button, className, mods)} {...otherProps}>
       {children}
     </button>
   );
