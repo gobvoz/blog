@@ -1,11 +1,12 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { ThemeToggler } from 'widgets/theme-toggler';
+import { LanguageToggler } from 'widgets/language-toggler';
+
 import { classNames } from 'shared/libs/class-names';
 import { HorizontalMenu } from 'shared/ui/horizontal-menu';
 import { AppLink } from 'shared/ui/app-link';
-import { ThemeToggler } from 'shared/ui/theme-toggler';
-import { LanguageToggler } from 'shared/ui/language-toggler';
 
 import cls from './navbar.module.scss';
 
