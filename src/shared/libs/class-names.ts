@@ -1,7 +1,7 @@
 type ClassType = string | string[] | Record<string, boolean>;
 
 export const classNames = (...classes: Array<ClassType>): string => {
-  let classArray: string[] = [];
+  const classArray: string[] = [];
 
   classes.forEach(item => {
     if (typeof item === 'string' && item !== '') classArray.push(item);

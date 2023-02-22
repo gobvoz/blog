@@ -1,4 +1,4 @@
-import { Children, DOMAttributes, FC } from 'react';
+import { DOMAttributes, FC } from 'react';
 
 import { classNames } from 'shared/libs/class-names';
 import cls from './page-content.module.scss';

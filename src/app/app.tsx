@@ -11,9 +11,7 @@ import { useTheme } from './providers/theme-provider/lib/use-theme';
 import { AppRouter } from './providers/router';
 import './styles/index.scss';
 
-interface Props {}
-
-const App: FC<Props> = props => {
+const App: FC = () => {
   const { theme } = useTheme();
 
   return (
