@@ -6,8 +6,8 @@
   border: 1px solid var(--border-color);
   border-radius: 15px;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     display: block;
     width: 20px;
@@ -17,11 +17,12 @@
     border-radius: 50%;
   }
 
-  &:before {
+  &::before {
     background-color: var(--bg-toggler-moon);
     left: 5px;
   }
-  &:after {
+
+  &::after {
     background-color: var(--bg-toggler-sun);
     left: 14px;
   }

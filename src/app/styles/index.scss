@@ -1,24 +1,19 @@
-@import './reset.scss';
-@import './variables/global.scss';
-
-@import './theme/light.scss';
-@import './theme/dark.scss';
+@import './reset';
+@import './variables/global';
+@import './theme/light';
+@import './theme/dark';
 
 .app {
   min-height: 100vh;
-
   color: var(--color-text);
   background-color: var(--bg-main);
-
   font: var(--font-m);
-
   transition: all 0.3s;
 }
 
 a {
   color: var(--color-link);
   text-decoration: none;
-
   transition: all 0.3s;
 
   &:hover {
@@ -32,7 +27,6 @@ button {
   background-color: var(--bg-button-default);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-button);
-
   transition: all 0.3s;
 
   &:hover {

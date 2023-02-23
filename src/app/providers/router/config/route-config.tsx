@@ -12,6 +12,7 @@ const routerConfig: RouteProps[] = [
   { path: AppRoutes.ABOUT, element: <AboutPage /> },
   { path: AppRoutes.CONTACTS, element: <ContactsPage /> },
   { path: AppRoutes.PROFILE, element: <ProfilePage /> },
+  // eslint-disable-next-line i18next/no-literal-string
   { path: AppRoutes.ERROR, element: <h1>404. Page not found</h1> },
 ];
 
