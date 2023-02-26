@@ -4,6 +4,7 @@ import { Sidebar } from 'widgets/sidebar';
 import { Navbar } from 'widgets/navbar';
 import { PageWrapper } from 'widgets/page-wrapper';
 import { PageContent } from 'widgets/page-content';
+import { PageLoader } from 'widgets/page-loader';
 
 import { classNames } from 'shared/libs/class-names';
 
@@ -16,7 +17,7 @@ const App: FC = () => {
 
   return (
     <div className={classNames('app', theme)}>
-      <Suspense fallback="Loading translation...">
+      <Suspense fallback={<PageLoader />}>
         <Navbar />
         <PageContent>
           <Sidebar />
