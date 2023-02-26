@@ -8,6 +8,7 @@ import { PageLoader } from 'widgets/page-loader';
 
 import { classNames } from 'shared/libs/class-names';
 
+import { ThrowErrorButton } from './providers/error-boundary';
 import { useTheme } from './providers/theme-provider/lib/use-theme';
 import { AppRouter } from './providers/router';
 import './styles/index.scss';
@@ -25,6 +26,7 @@ const App: FC = () => {
             <AppRouter />
           </PageWrapper>
         </PageContent>
+        <ThrowErrorButton />
       </Suspense>
     </div>
   );
