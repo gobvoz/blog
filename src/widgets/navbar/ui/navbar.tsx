@@ -9,6 +9,7 @@ import { LanguageToggler } from 'widgets/language-toggler';
 import { classNames } from 'shared/libs/class-names';
 import { HorizontalMenu } from 'shared/ui/horizontal-menu';
 import { AppLink } from 'shared/ui/app-link';
+import { AppRoutes } from 'shared/constants/app-routes';
 
 import cls from './navbar.module.scss';
 
@@ -29,10 +30,10 @@ const Navbar: FC<Props> = props => {
     <nav className={classNames(cls.navbar, className)}>
       <div className={classNames(cls.wrapper, mods)}>
         <HorizontalMenu>
-          <AppLink to="/">{t('menu-main')}</AppLink>
-          <AppLink to="/about">{t('menu-about')}</AppLink>
-          <AppLink to="/contacts">{t('menu-contacts')}</AppLink>
-          <AppLink to="/profile">{t('menu-profile')}</AppLink>
+          <AppLink to={AppRoutes.MAIN}>{t('menu-main')}</AppLink>
+          <AppLink to={AppRoutes.ABOUT}>{t('menu-about')}</AppLink>
+          <AppLink to={AppRoutes.CONTACTS}>{t('menu-contacts')}</AppLink>
+          <AppLink to={AppRoutes.PROFILE}>{t('menu-profile')}</AppLink>
         </HorizontalMenu>
         <ThemeToggler className={cls.leftMarginAuto} />
         <LanguageToggler />

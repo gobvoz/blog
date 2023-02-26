@@ -10,7 +10,7 @@ interface Props {
 
 const Spinner: FC<Props> = props => {
   const { className } = props;
-  console.log(123);
+
   return (
     <div className={classNames(cls.spinner, className)}>
       <div />
