@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react';
 
-import { CollapseContext } from '../lib/collapse.context';
+import { LOCAL_STORAGE_COLLAPSE_KEY } from 'shared/constants/local-storage-key';
 
-export const LOCAL_STORAGE_COLLAPSE_KEY = 'collapsed';
+import { CollapseContext } from '../lib/collapse.context';
 
 const savedCollapse = localStorage.getItem(LOCAL_STORAGE_COLLAPSE_KEY) === 'true';
 

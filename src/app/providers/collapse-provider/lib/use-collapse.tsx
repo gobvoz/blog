@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 
+import { LOCAL_STORAGE_COLLAPSE_KEY } from 'shared/constants/local-storage-key';
+
 import { CollapseContext } from './collapse.context';
-import { LOCAL_STORAGE_COLLAPSE_KEY } from '../ui/collapse.provider';
 
 interface UseCollapseResult {
   collapsed: boolean;

@@ -1,8 +1,9 @@
 import { useState, useMemo } from 'react';
 
-import { Theme, ThemeContext } from '../lib/theme.context';
+import { Theme } from 'shared/constants/theme';
+import { LOCAL_STORAGE_THEME_KEY } from 'shared/constants/local-storage-key';
 
-export const LOCAL_STORAGE_THEME_KEY = 'theme';
+import { ThemeContext } from '../lib/theme.context';
 
 const savedTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.DARK;
 
