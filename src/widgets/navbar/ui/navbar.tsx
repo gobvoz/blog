@@ -3,9 +3,6 @@ import { useTranslation } from 'react-i18next';
 
 import { useCollapse } from 'app/providers/collapse-provider';
 
-import { ThemeToggler } from 'widgets/theme-toggler';
-import { LanguageToggler } from 'widgets/language-toggler';
-
 import { classNames } from 'shared/libs/class-names';
 import { HorizontalMenu } from 'shared/ui/horizontal-menu';
 import { AppLink } from 'shared/ui/app-link';
@@ -35,8 +32,6 @@ const Navbar: FC<Props> = props => {
           <AppLink to={AppRoutes.CONTACTS}>{t('menu-contacts')}</AppLink>
           <AppLink to={AppRoutes.PROFILE}>{t('menu-profile')}</AppLink>
         </HorizontalMenu>
-        <ThemeToggler className={cls.leftMarginAuto} />
-        <LanguageToggler />
       </div>
     </nav>
   );

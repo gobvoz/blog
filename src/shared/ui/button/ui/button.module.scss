@@ -17,3 +17,9 @@ button {
   border: none;
   background: transparent;
 }
+
+.primary {
+  color: var(--color-button-primary);
+  border: none;
+  background: var(--bg-button-primary);
+}

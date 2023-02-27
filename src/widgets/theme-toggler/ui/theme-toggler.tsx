@@ -2,7 +2,9 @@ import { ButtonHTMLAttributes, FC } from 'react';
 
 import { useTheme } from 'app/providers/theme-provider';
 
+import { Button } from 'shared/ui/button';
 import { classNames } from 'shared/libs/class-names';
+import { Theme } from 'shared/constants/theme';
 
 import cls from './theme-toggler.module.scss';
 
@@ -12,9 +14,17 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const ThemeToggler: FC<Props> = props => {
   const { className } = props;
-  const { toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
-  return <button className={classNames(cls.themeToggler, className)} onClick={toggleTheme} />;
+  return (
+    <Button
+      type="button"
+      primary
+      className={classNames(cls.themeToggler, className)}
+      onClick={toggleTheme}>
+      {theme === Theme.DARK ? 'D' : 'L'}
+    </Button>
+  );
 };
 
 export { ThemeToggler };

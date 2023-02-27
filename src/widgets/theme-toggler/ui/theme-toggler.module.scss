@@ -1,29 +1,9 @@
 .theme-toggler {
-  width: 41px;
+  width: 30px;
   height: 30px;
   padding: 0;
-  position: relative;
-  border: 1px solid var(--border-color);
-  border-radius: 15px;
-
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 5px;
-    border-radius: 50%;
-  }
-
-  &::before {
-    background-color: var(--bg-toggler-moon);
-    left: 5px;
-  }
-
-  &::after {
-    background-color: var(--bg-toggler-sun);
-    left: 14px;
-  }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
 }

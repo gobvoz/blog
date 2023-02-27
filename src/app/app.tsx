@@ -6,9 +6,10 @@ import { PageWrapper } from 'widgets/page-wrapper';
 import { PageContent } from 'widgets/page-content';
 import { PageLoader } from 'widgets/page-loader';
 
+import { ThemeToggler } from 'widgets/theme-toggler';
+
 import { classNames } from 'shared/libs/class-names';
 
-import { ThrowErrorButton } from './providers/error-boundary';
 import { useTheme } from './providers/theme-provider/lib/use-theme';
 import { AppRouter } from './providers/router';
 import './styles/index.scss';
@@ -25,8 +26,8 @@ const App: FC = () => {
           <PageWrapper>
             <AppRouter />
           </PageWrapper>
+          <ThemeToggler />
         </PageContent>
-        <ThrowErrorButton />
       </Suspense>
     </div>
   );

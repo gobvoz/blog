@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import { useCollapse } from 'app/providers/collapse-provider';
 
+import { LanguageToggler } from 'widgets/language-toggler';
+
 import { classNames } from 'shared/libs/class-names';
 
 import cls from './sidebar.module.scss';
@@ -23,6 +25,7 @@ const Sidebar: FC<Props> = props => {
         <button className={cls.collapseButton} onClick={toggleCollapse}>
           <span className={classNames(cls.bar, buttonMods)}></span>
         </button>
+        <LanguageToggler />
       </div>
     </div>
   );

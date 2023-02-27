@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Spinner } from 'shared/spinner';
+import { Spinner } from 'shared/ui/spinner';
 import { classNames } from 'shared/libs/class-names';
 
 import cls from './page-loader.module.scss';
