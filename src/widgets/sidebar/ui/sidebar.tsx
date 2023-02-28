@@ -20,9 +20,12 @@ const Sidebar: FC<Props> = props => {
   const buttonMods = { [cls.animate]: !collapsed };
 
   return (
-    <div className={classNames(cls.sidebarWrapper, className, mods)}>
+    <div className={classNames(cls.sidebarWrapper, className, mods)} data-testid="sidebar">
       <div className={cls.sidebar}>
-        <button className={cls.collapseButton} onClick={toggleCollapse}>
+        <button
+          className={cls.collapseButton}
+          data-testid="sidebar-toggle"
+          onClick={toggleCollapse}>
           <span className={classNames(cls.bar, buttonMods)}></span>
         </button>
         <LanguageToggler />

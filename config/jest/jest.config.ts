@@ -2,6 +2,7 @@
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
+import path from 'path';
 
 export default {
   // All imported modules in your tests should be mocked automatically
@@ -17,7 +18,7 @@ export default {
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: false,
+  collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
@@ -26,7 +27,7 @@ export default {
   // coverageDirectory: undefined,
 
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+  coveragePathIgnorePatterns: ['/node_modules/'],
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -76,7 +77,10 @@ export default {
   moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jest-empty-svg.tsx'),
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -110,7 +114,7 @@ export default {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-  rootDir: '../../src',
+  rootDir: '../../',
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -124,7 +128,7 @@ export default {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
+  setupFilesAfterEnv: ['<rootDir>config/jest/setup-jest.config.ts'],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -142,8 +146,11 @@ export default {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ['<rootDir>/**/__tests__/**/*.[jt]s?(x)', '<rootDir>/**/?(*.)+(spec|test).[tj]s?(x)'],
-
+  testMatch: [
+    '<rootDir>src/**/__tests__/**/*.[jt]s?(x)',
+    '<rootDir>src/**/?(*.)+(spec|test).[tj]s?(x)',
+  ],
+  modulePaths: ['<rootDir>src'],
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
   //   "\\\\node_modules\\\\"

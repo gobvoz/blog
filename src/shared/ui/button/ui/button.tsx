@@ -15,7 +15,7 @@ const Button: FC<Props> = props => {
   const { className, children, primary, transparent, ...otherProps } = props;
 
   const mods = {
-    [cls.primary]: !primary,
+    [cls.primary]: primary,
     [cls.transparent]: transparent,
   };
 
