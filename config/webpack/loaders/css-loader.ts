@@ -4,7 +4,7 @@ export const webpackCssLoader = (isDevelopment: boolean) => {
   const sccLoader = {
     test: /\.s[ac]ss$/,
     use: [
-      MiniCssExtractPlugin.loader,
+      isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
         loader: 'css-loader',
         options: {
