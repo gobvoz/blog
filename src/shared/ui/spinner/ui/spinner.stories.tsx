@@ -10,7 +10,7 @@ export default {
   component: Spinner,
 } as ComponentMeta<typeof Spinner>;
 
-const Template: ComponentStory<typeof Spinner> = args => <Spinner {...args} />;
+const Template: ComponentStory<typeof Spinner> = (args: object) => <Spinner {...args} />;
 
 export const Light = Template.bind({});
 

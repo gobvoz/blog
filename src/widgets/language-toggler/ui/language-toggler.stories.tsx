@@ -10,7 +10,9 @@ export default {
   component: LanguageToggler,
 } as ComponentMeta<typeof LanguageToggler>;
 
-const Template: ComponentStory<typeof LanguageToggler> = args => <LanguageToggler {...args} />;
+const Template: ComponentStory<typeof LanguageToggler> = (args: object) => (
+  <LanguageToggler {...args} />
+);
 
 export const Light = Template.bind({});
 

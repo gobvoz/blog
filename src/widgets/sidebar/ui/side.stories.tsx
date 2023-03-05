@@ -11,7 +11,7 @@ export default {
   component: Sidebar,
 } as ComponentMeta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidebar> = args => (
+const Template: ComponentStory<typeof Sidebar> = (args: object) => (
   <CollapseProvider>
     <Sidebar {...args} />
   </CollapseProvider>

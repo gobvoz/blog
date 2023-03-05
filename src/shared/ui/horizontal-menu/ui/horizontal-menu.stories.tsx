@@ -12,7 +12,9 @@ export default {
   component: HorizontalMenu,
 } as ComponentMeta<typeof HorizontalMenu>;
 
-const Template: ComponentStory<typeof HorizontalMenu> = args => <HorizontalMenu {...args} />;
+const Template: ComponentStory<typeof HorizontalMenu> = (args: object) => (
+  <HorizontalMenu {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {

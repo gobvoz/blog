@@ -11,7 +11,7 @@ export default {
   component: Navbar,
 } as ComponentMeta<typeof Navbar>;
 
-const Template: ComponentStory<typeof Navbar> = args => <Navbar {...args} />;
+const Template: ComponentStory<typeof Navbar> = (args: object) => <Navbar {...args} />;
 
 export const Light = Template.bind({});
 Light.decorators = [RouterDecorator];
