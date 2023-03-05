@@ -14,12 +14,12 @@ button {
 }
 
 .transparent {
-  border: none;
+  border-color: transparent;
   background: transparent;
 }
 
 .primary {
   color: var(--color-button-primary);
-  border: none;
+  border-color: var(--bg-button-primary);
   background: var(--bg-button-primary);
 }

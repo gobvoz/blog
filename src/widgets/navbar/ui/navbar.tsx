@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useCollapse } from 'app/providers/collapse-provider';
 
 import { classNames } from 'shared/libs/class-names';
-import { HorizontalMenu } from 'shared/ui/horizontal-menu';
+import { Menu } from 'shared/ui/menu';
 import { AppLink } from 'shared/ui/app-link';
 import { AppRoutes } from 'shared/constants/app-routes';
 
@@ -26,12 +26,12 @@ const Navbar: FC<Props> = props => {
   return (
     <nav className={classNames(cls.navbar, className)}>
       <div className={classNames(cls.wrapper, mods)}>
-        <HorizontalMenu>
+        <Menu horizontal>
           <AppLink to={AppRoutes.MAIN}>{t('menu-main')}</AppLink>
           <AppLink to={AppRoutes.ABOUT}>{t('menu-about')}</AppLink>
           <AppLink to={AppRoutes.CONTACTS}>{t('menu-contacts')}</AppLink>
           <AppLink to={AppRoutes.PROFILE}>{t('menu-profile')}</AppLink>
-        </HorizontalMenu>
+        </Menu>
       </div>
     </nav>
   );

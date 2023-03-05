@@ -78,3 +78,13 @@
       transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
+
+.sidebar-menu {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.sidebar-menu-link {
+  display: block;
+  width: 100%;
+}

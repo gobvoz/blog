@@ -1,7 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
-import { RouterDecorator } from 'shared/config/storybook/router-decorator';
 import { Theme } from 'shared/constants/theme';
 
 import { Navbar } from './navbar';
@@ -14,7 +13,6 @@ export default {
 const Template: ComponentStory<typeof Navbar> = (args: object) => <Navbar {...args} />;
 
 export const Light = Template.bind({});
-Light.decorators = [RouterDecorator];
 
 export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK), RouterDecorator];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

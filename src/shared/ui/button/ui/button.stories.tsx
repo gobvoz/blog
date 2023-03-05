@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 
-import { Button, ButtonMod } from './button';
+import { Button } from './button';
 
 export default {
   title: 'shared/button',
@@ -18,13 +18,13 @@ Default.args = {
 
 export const Transparent = Template.bind({});
 Transparent.args = {
-  mod: ButtonMod.TRANSPARENT,
+  transparent: true,
   children: 'Text',
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
-  mod: ButtonMod.PRIMARY,
+  primary: true,
   children: 'Text',
 };
 
@@ -36,14 +36,14 @@ DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const TransparentDark = Template.bind({});
 TransparentDark.args = {
-  mod: ButtonMod.TRANSPARENT,
+  transparent: true,
   children: 'Text',
 };
 TransparentDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-  mod: ButtonMod.PRIMARY,
+  primary: true,
   children: 'Text',
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,10 +1,12 @@
-.horizontal-menu {
+.menu {
   display: flex;
   height: 100%;
   align-items: center;
   margin: 0;
   padding: 0;
+}
 
+.horizontal {
   .element {
     display: flex;
     align-items: center;
@@ -12,6 +14,17 @@
 
   .element:not(:last-child)::after {
     content: '|';
-    color: var(--border-color);
+    color: var(--color-border);
+  }
+}
+
+.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+
+  .element {
+    width: 100%;
+    display: flex;
+    align-items: center;
   }
 }
