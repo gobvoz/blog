@@ -1,7 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { CollapseProvider } from 'app/providers/collapse-provider';
-
 import { Sidebar } from 'widgets/sidebar';
 
 import { renderWithCollapse } from 'shared/libs/tests/render-with-collapse';

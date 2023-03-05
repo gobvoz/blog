@@ -1,7 +1,7 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export const webpackCssLoader = (isDevelopment: boolean) => {
-  const sccLoader = {
+  const cssLoader = {
     test: /\.s[ac]ss$/,
     use: [
       isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -19,5 +19,5 @@ export const webpackCssLoader = (isDevelopment: boolean) => {
     ],
   };
 
-  return sccLoader;
+  return cssLoader;
 };
