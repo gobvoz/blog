@@ -19,6 +19,7 @@
   // radiuses
   --border-radius-button: 5px;
   --border-radius-section: 7px;
+  --border-radius-modal: 7px;
 
   // heights
   --navbar-height: 40px;
@@ -26,4 +27,7 @@
   // widths
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 60px;
+
+  // layers
+  --z-index-modal: 1000;
 }
