@@ -78,33 +78,31 @@ const Modal: FC<Props> = props => {
   }, [keepOpen, closeModal]);
 
   return (
-    <>
+    <div
+      className={classNames([cls.overlay, cls.center], {
+        [cls.overlayAnimationIn]: isInAnimation,
+        [cls.overlayAnimationOut]: isOutAnimation,
+        [cls.overlayNoAnimation]: isNoAnimation,
+      })}
+      onClick={handleOverlayClick}>
       <div
-        className={classNames([cls.overlay, cls.center], {
-          [cls.overlayAnimationIn]: isInAnimation,
-          [cls.overlayAnimationOut]: isOutAnimation,
-          [cls.overlayNoAnimation]: isNoAnimation,
+        className={classNames([cls.modal, className], {
+          [cls.modalAnimationIn]: isInAnimation,
+          [cls.modalAnimationOut]: isOutAnimation,
+          [cls.modalNoAnimation]: isNoAnimation,
         })}
-        onClick={handleOverlayClick}>
-        <div
-          className={classNames([cls.modal, className], {
-            [cls.modalAnimationIn]: isInAnimation,
-            [cls.modalAnimationOut]: isOutAnimation,
-            [cls.modalNoAnimation]: isNoAnimation,
-          })}
-          onClick={handleModalBodyClick}>
-          <div className={cls.closeButtonWrapper}>
-            <Button
-              className={classNames([cls.closeButton])}
-              type="button"
-              primary
-              onClick={handleCloseButtonClick}
-            />
-          </div>
-          {children}
+        onClick={handleModalBodyClick}>
+        <div className={cls.closeButtonWrapper}>
+          <Button
+            className={classNames([cls.closeButton])}
+            type="button"
+            primary
+            onClick={handleCloseButtonClick}
+          />
         </div>
+        {children}
       </div>
-    </>
+    </div>
   );
 };
 

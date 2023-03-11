@@ -26,7 +26,7 @@ const Navbar: FC<Props> = props => {
   return (
     <nav className={classNames(cls.navbar, className)}>
       <div className={classNames(cls.wrapper, mods)}>
-        <Menu horizontal>
+        <Menu>
           <AppLink to={AppRoutes.MAIN}>{t('menu-main')}</AppLink>
           <AppLink to={AppRoutes.ABOUT}>{t('menu-about')}</AppLink>
           <AppLink to={AppRoutes.CONTACTS}>{t('menu-contacts')}</AppLink>

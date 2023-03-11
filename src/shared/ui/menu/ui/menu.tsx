@@ -3,14 +3,14 @@ import { classNames } from 'shared/libs/class-names';
 
 import cls from './menu.module.scss';
 
-interface IMenuProps {
+interface Props {
   className?: string;
   children: JSX.Element[];
 
   vertical?: boolean;
 }
 
-const Menu: FC<IMenuProps> = props => {
+const Menu: FC<Props> = props => {
   const { className, children, vertical } = props;
 
   const mods: Record<string, boolean> = {
