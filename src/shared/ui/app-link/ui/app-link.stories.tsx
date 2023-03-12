@@ -3,22 +3,22 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 
-import { Input } from './input';
+import { AppLink } from './app-link';
 
 export default {
-  title: 'shared/input',
-  component: Input,
-} as ComponentMeta<typeof Input>;
+  title: 'shared/app-link',
+  component: AppLink,
+} as ComponentMeta<typeof AppLink>;
 
-const Template: ComponentStory<typeof Input> = args => <Input {...args} />;
+const Template: ComponentStory<typeof AppLink> = (args: object) => <AppLink to="#" {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {
-  value: 'Text',
+  children: 'Link',
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
-  value: 'Text',
+  children: 'Link',
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

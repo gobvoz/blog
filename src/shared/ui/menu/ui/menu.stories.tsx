@@ -23,6 +23,27 @@ Light.args = {
   ],
 };
 
+export const HorizontalLight = Template.bind({});
+HorizontalLight.args = {
+  children: [
+    <AppLink to="#">Main</AppLink>,
+    <AppLink to="#">About</AppLink>,
+    <AppLink to="#">Contacts</AppLink>,
+    <AppLink to="#">Logout</AppLink>,
+  ],
+};
+
+export const VerticalLight = Template.bind({});
+VerticalLight.args = {
+  vertical: true,
+  children: [
+    <AppLink to="#">Main</AppLink>,
+    <AppLink to="#">About</AppLink>,
+    <AppLink to="#">Contacts</AppLink>,
+    <AppLink to="#">Logout</AppLink>,
+  ],
+};
+
 export const Dark = Template.bind({});
 Dark.args = {
   children: [
@@ -34,8 +55,8 @@ Dark.args = {
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const LightHorizontal = Template.bind({});
-LightHorizontal.args = {
+export const HorizontalDark = Template.bind({});
+HorizontalDark.args = {
   children: [
     <AppLink to="#">Main</AppLink>,
     <AppLink to="#">About</AppLink>,
@@ -43,20 +64,10 @@ LightHorizontal.args = {
     <AppLink to="#">Logout</AppLink>,
   ],
 };
+HorizontalDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const DarkHorizontal = Template.bind({});
-DarkHorizontal.args = {
-  children: [
-    <AppLink to="#">Main</AppLink>,
-    <AppLink to="#">About</AppLink>,
-    <AppLink to="#">Contacts</AppLink>,
-    <AppLink to="#">Logout</AppLink>,
-  ],
-};
-DarkHorizontal.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const LightVertical = Template.bind({});
-LightVertical.args = {
+export const VerticalDark = Template.bind({});
+VerticalDark.args = {
   vertical: true,
   children: [
     <AppLink to="#">Main</AppLink>,
@@ -65,15 +76,4 @@ LightVertical.args = {
     <AppLink to="#">Logout</AppLink>,
   ],
 };
-
-export const DarkVertical = Template.bind({});
-DarkVertical.args = {
-  vertical: true,
-  children: [
-    <AppLink to="#">Main</AppLink>,
-    <AppLink to="#">About</AppLink>,
-    <AppLink to="#">Contacts</AppLink>,
-    <AppLink to="#">Logout</AppLink>,
-  ],
-};
-DarkVertical.decorators = [ThemeDecorator(Theme.DARK)];
+VerticalDark.decorators = [ThemeDecorator(Theme.DARK)];

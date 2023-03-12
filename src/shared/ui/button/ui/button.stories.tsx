@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 
@@ -11,34 +12,34 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args: object) => <Button {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Light = Template.bind({});
+Light.args = {
   children: 'Text',
 };
 
-export const Transparent = Template.bind({});
-Transparent.args = {
+export const TransparentLight = Template.bind({});
+TransparentLight.args = {
   transparent: true,
   children: 'Text',
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const PrimaryLight = Template.bind({});
+PrimaryLight.args = {
   primary: true,
   children: 'Text',
 };
 
-export const AppLink = Template.bind({});
-AppLink.args = {
+export const AppLinkLight = Template.bind({});
+AppLinkLight.args = {
   appLink: true,
   children: 'Text',
 };
 
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {
+export const Dark = Template.bind({});
+Dark.args = {
   children: 'Text',
 };
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const TransparentDark = Template.bind({});
 TransparentDark.args = {
@@ -59,4 +60,4 @@ AppLinkDark.args = {
   appLink: true,
   children: 'Text',
 };
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+AppLinkDark.decorators = [ThemeDecorator(Theme.DARK)];

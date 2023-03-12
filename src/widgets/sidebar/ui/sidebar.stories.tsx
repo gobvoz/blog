@@ -1,24 +1,24 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { CollapseProvider } from 'app/providers/collapse-provider';
+
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 
-import { Input } from './input';
+import { Sidebar } from './sidebar';
 
 export default {
-  title: 'shared/input',
-  component: Input,
-} as ComponentMeta<typeof Input>;
+  title: 'widget/sidebar',
+  component: Sidebar,
+} as ComponentMeta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Input> = args => <Input {...args} />;
+const Template: ComponentStory<typeof Sidebar> = (args: object) => (
+  <CollapseProvider>
+    <Sidebar {...args} />
+  </CollapseProvider>
+);
 
 export const Light = Template.bind({});
-Light.args = {
-  value: 'Text',
-};
 
 export const Dark = Template.bind({});
-Dark.args = {
-  value: 'Text',
-};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,21 +1,16 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { CollapseProvider } from 'app/providers/collapse-provider';
-
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 
-import { Sidebar } from './sidebar';
-export default {
-  title: 'widget/sidebar',
-  component: Sidebar,
-} as ComponentMeta<typeof Sidebar>;
+import { LoginForm } from './login-form';
 
-const Template: ComponentStory<typeof Sidebar> = (args: object) => (
-  <CollapseProvider>
-    <Sidebar {...args} />
-  </CollapseProvider>
-);
+export default {
+  title: 'features/login-form',
+  component: LoginForm,
+} as ComponentMeta<typeof LoginForm>;
+
+const Template: ComponentStory<typeof LoginForm> = args => <LoginForm {...args} />;
 
 export const Light = Template.bind({});
 
