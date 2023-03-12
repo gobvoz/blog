@@ -2,16 +2,16 @@ import { fireEvent, screen } from '@testing-library/react';
 
 import { Sidebar } from 'widgets/sidebar';
 
-import { renderWithCollapse } from 'shared/libs/tests/render-with-collapse';
+import { componentRender } from 'shared/libs/tests/component-render';
 
 describe('sidebar', () => {
   test('render', () => {
-    renderWithCollapse(<Sidebar />);
+    componentRender(<Sidebar />);
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
 
   test('click to toggle', () => {
-    renderWithCollapse(<Sidebar />);
+    componentRender(<Sidebar />);
 
     const sidebarElement = screen.getByTestId('sidebar');
     const toggleButton = screen.getByTestId('sidebar-toggle');
