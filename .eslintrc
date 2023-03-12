@@ -42,7 +42,8 @@
         "ignoreRestSiblings": true
       }
     ],
-    "i18next/no-literal-string": ["error", { "markupOnly": true }]
+    "i18next/no-literal-string": ["error", { "markupOnly": true }],
+    "linebreak-style": ["error", "unix"]
   },
   "settings": { "react": { "version": "detect" } }
 }
