@@ -13,7 +13,15 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: FC<Props> = props => {
-  const { className, children, primary, transparent, appLink, ...otherProps } = props;
+  const {
+    className,
+    children,
+    primary,
+    transparent,
+    appLink,
+    type = 'button',
+    ...otherProps
+  } = props;
 
   const mods = {
     [cls.primary]: primary,
@@ -22,7 +30,7 @@ const Button: FC<Props> = props => {
   };
 
   return (
-    <button className={classNames(cls.button, className, mods)} {...otherProps}>
+    <button className={classNames(cls.button, className, mods)} type={type} {...otherProps}>
       {children}
     </button>
   );

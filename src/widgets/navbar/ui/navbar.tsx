@@ -3,14 +3,15 @@ import { useTranslation } from 'react-i18next';
 
 import { useCollapse } from 'app/providers/collapse-provider';
 
+import { LoginModal } from 'features/auth-by-user-name';
+
 import { classNames } from 'shared/libs/class-names';
 import { Menu } from 'shared/ui/menu';
 import { AppLink } from 'shared/ui/app-link';
 import { AppRoutes } from 'shared/constants/app-routes';
+import { Button } from 'shared/ui/button';
 
 import cls from './navbar.module.scss';
-import { Button } from 'shared/ui/button';
-import { Modal } from 'widgets/modal';
 
 interface Props {
   className?: string;
@@ -45,8 +46,8 @@ const Navbar: FC<Props> = props => {
           </Button>
         </Menu>
       </div>
-      {/* eslint-disable-next-line i18next/no-literal-string */}
-      {isAuthModalOpen && <Modal setOpen={handleCloseModalClick}>Authentication form</Modal>}
+      {/* eslint-disable i18next/no-literal-string */}
+      {isAuthModalOpen && <LoginModal setOpen={handleCloseModalClick} />}
     </nav>
   );
 };

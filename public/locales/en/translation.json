@@ -3,10 +3,12 @@
   "app-error-text": "Something went wrong",
   "language": "EN",
   "loading": "Loading...",
+  "login": "User name",
   "menu-about": "About",
   "menu-contacts": "Contacts",
   "menu-login": "Login",
   "menu-main": "Main",
   "menu-profile": "Profile",
+  "password": "Password",
   "throw-error-button": "throw an Error"
 }
