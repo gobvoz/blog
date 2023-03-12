@@ -5,6 +5,7 @@
   "loading": "Loading...",
   "menu-about": "About",
   "menu-contacts": "Contacts",
+  "menu-login": "Login",
   "menu-main": "Main",
   "menu-profile": "Profile",
   "throw-error-button": "throw an Error"

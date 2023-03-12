@@ -28,6 +28,12 @@ Primary.args = {
   children: 'Text',
 };
 
+export const AppLink = Template.bind({});
+AppLink.args = {
+  appLink: true,
+  children: 'Text',
+};
+
 export const DefaultDark = Template.bind({});
 DefaultDark.args = {
   children: 'Text',
@@ -44,6 +50,13 @@ TransparentDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
   primary: true,
+  children: 'Text',
+};
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const AppLinkDark = Template.bind({});
+AppLinkDark.args = {
+  appLink: true,
   children: 'Text',
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

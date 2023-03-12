@@ -5,6 +5,7 @@
   "loading": "Chargement...",
   "menu-about": "À propos",
   "menu-contacts": "Contacts",
+  "menu-login": "Me connecter",
   "menu-main": "Main",
   "menu-profile": "Profil",
   "throw-error-button": "renvoyer une Erreur"

@@ -23,3 +23,15 @@ button {
   border-color: var(--bg-button-primary);
   background: var(--bg-button-primary);
 }
+
+.app-link {
+  color: var(--color-link);
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--color-link-hover);
+    background: transparent;
+  }
+}

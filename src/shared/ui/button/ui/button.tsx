@@ -9,14 +9,16 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
   primary?: boolean;
   transparent?: boolean;
+  appLink?: boolean;
 }
 
 const Button: FC<Props> = props => {
-  const { className, children, primary, transparent, ...otherProps } = props;
+  const { className, children, primary, transparent, appLink, ...otherProps } = props;
 
   const mods = {
     [cls.primary]: primary,
     [cls.transparent]: transparent,
+    [cls.appLink]: appLink,
   };
 
   return (
