@@ -10,15 +10,19 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   primary?: boolean;
   transparent?: boolean;
   appLink?: boolean;
+  loading?: boolean;
 }
 
 const Button: FC<Props> = props => {
   const {
     className,
     children,
+
     primary,
     transparent,
     appLink,
+    loading,
+
     type = 'button',
     ...otherProps
   } = props;
@@ -27,6 +31,7 @@ const Button: FC<Props> = props => {
     [cls.primary]: primary,
     [cls.transparent]: transparent,
     [cls.appLink]: appLink,
+    [cls.loading]: loading,
   };
 
   return (

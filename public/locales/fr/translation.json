@@ -3,12 +3,12 @@
   "app-error-text": "Quelque chose a mal tourné",
   "language": "FR",
   "loading": "Chargement...",
-  "login": "Nom d'utilisateur",
+  "login": "",
   "menu-about": "À propos",
   "menu-contacts": "Contacts",
   "menu-login": "Me connecter",
   "menu-main": "Main",
   "menu-profile": "Profil",
-  "password": "Mot de passe",
+  "password": "",
   "throw-error-button": "renvoyer une Erreur"
 }

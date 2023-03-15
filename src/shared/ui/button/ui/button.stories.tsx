@@ -35,6 +35,19 @@ AppLinkLight.args = {
   children: 'Text',
 };
 
+export const LoadingLight = Template.bind({});
+LoadingLight.args = {
+  loading: true,
+  children: 'Text',
+};
+
+export const PrimaryLoadingLight = Template.bind({});
+PrimaryLoadingLight.args = {
+  children: 'Text',
+  primary: true,
+  loading: true,
+};
+
 export const Dark = Template.bind({});
 Dark.args = {
   children: 'Text',
@@ -61,3 +74,18 @@ AppLinkDark.args = {
   children: 'Text',
 };
 AppLinkDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const LoadingDark = Template.bind({});
+LoadingDark.args = {
+  loading: true,
+  children: 'Text',
+};
+LoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryLoadingDark = Template.bind({});
+PrimaryLoadingDark.args = {
+  children: 'Text',
+  primary: true,
+  loading: true,
+};
+PrimaryLoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
