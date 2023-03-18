@@ -32,7 +32,9 @@ const MainPage: FC = () => {
       </p>
       <Button>Default</Button>
       <Button primary>Primary</Button>
-      <Button primary>Loading</Button>
+      <Button primary loading>
+        Loading
+      </Button>
       <Button primary onClick={handleOpenModalClick}>
         Open modal
       </Button>
@@ -55,7 +57,9 @@ const MainPage: FC = () => {
       </p>
       <Button>Default</Button>
       <Button primary>Primary</Button>
-      <Button primary>Loading</Button>
+      <Button primary loading>
+        Loading
+      </Button>
       <h1>Another paragraph</h1>
       {/* eslint-disable i18next/no-literal-string */}
       <p>
@@ -75,7 +79,10 @@ const MainPage: FC = () => {
       </p>
       <Button>Default</Button>
       <Button primary>Primary</Button>
-      <Button primary>Loading</Button>
+      <Button loading>Default loading</Button>
+      <Button primary loading>
+        Primary loading
+      </Button>
       {isModalOpen && <Modal setOpen={handleCloseModalClick}>Modal window</Modal>}
     </section>
   );

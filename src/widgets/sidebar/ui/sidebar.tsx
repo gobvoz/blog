@@ -9,6 +9,7 @@ import { Menu } from 'shared/ui/menu';
 import { AppLink } from 'shared/ui/app-link';
 import { AppRoutes } from 'shared/constants/app-routes';
 import { classNames } from 'shared/libs/class-names';
+import { Button } from 'shared/ui/button';
 
 import cls from './sidebar.module.scss';
 
@@ -28,12 +29,13 @@ const Sidebar: FC<Props> = props => {
   return (
     <div className={classNames(cls.sidebarWrapper, className, mods)} data-testid="sidebar">
       <div className={cls.sidebar}>
-        <button
-          className={cls.collapseButton}
+        <Button
+          className={classNames(cls.collapseButton)}
+          primary
           data-testid="sidebar-toggle"
           onClick={toggleCollapse}>
-          <span className={classNames(cls.bar, buttonMods)}></span>
-        </button>
+          <span className={classNames([cls.bar], buttonMods)} />
+        </Button>
         <Menu className={cls.sidebarMenu} vertical>
           <AppLink className={cls.sidebarMenuLink} to={AppRoutes.MAIN}>
             {t('menu-main')}

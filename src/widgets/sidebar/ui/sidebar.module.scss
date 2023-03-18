@@ -10,6 +10,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  padding-top: 20px;
   background-color: var(--bg-sidebar);
   border-radius: var(--border-radius-section);
 }
@@ -21,9 +22,12 @@
 .collapse-button {
   width: 30px;
   height: 30px;
+  position: absolute;
+  right: -15px;
+  top: 10px;
   padding: 5px;
-  margin-left: 10px;
-  margin-top: 10px;
+  border: 2px solid var(--bg-main);
+  border-radius: 50%;
 }
 
 .bar {
@@ -35,9 +39,9 @@
   &::after {
     content: '';
     display: block;
-    width: 19px;
-    height: 2px;
-    background: var(--color-button-default);
+    width: 17px;
+    height: 1px;
+    background: var(--color-button-primary);
     border: none;
     border-radius: 1px;
   }
@@ -50,7 +54,7 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: 6px;
+    bottom: 4px;
     transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
       transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -59,7 +63,7 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 6px;
+    top: 4px;
     transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
       transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -81,7 +85,6 @@
 
 .sidebar-menu {
   overflow: hidden;
-  margin-top: 20px;
 }
 
 .sidebar-menu-link {
