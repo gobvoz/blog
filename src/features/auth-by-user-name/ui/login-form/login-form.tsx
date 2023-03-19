@@ -2,9 +2,11 @@ import { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
+import i18n from 'shared/config/i18n/i18n';
 import { Input } from 'shared/ui/input';
 import { Button } from 'shared/ui/button';
 import { classNames } from 'shared/libs/class-names/class-names';
+import { TextBlock } from 'shared/ui/text-block';
 
 import cls from './login-form.module.scss';
 import { loginByUsername } from '../../model/services/login-by-user-name';
@@ -49,6 +51,8 @@ const LoginForm = memo((props: Props) => {
 
   return (
     <form className={classNames(cls.loginForm, className)} onSubmit={handleSubmit}>
+      <TextBlock form header="Login form" />
+
       <label className={cls.label}>
         <span className={cls.fieldName}>{t('login')}</span>
         <Input id="username" value={username} onChange={handleUsernameChange} autoFocus />
@@ -57,7 +61,7 @@ const LoginForm = memo((props: Props) => {
         <span className={cls.fieldName}>{t('password')}</span>
         <Input id="password" value={password} onChange={handlePasswordChange} />
       </label>
-      {error && <p className={cls.errorMessage}>{error}</p>}
+      {error && <TextBlock errorMessage>{i18n.t('login-password-error')}</TextBlock>}
       <Button className={cls.button} type="submit" disabled={isLoading} loading={isLoading}>
         {t('menu-login')}
       </Button>

@@ -3,12 +3,14 @@
   "app-error-text": "Quelque chose a mal tourné",
   "language": "FR",
   "loading": "Chargement...",
-  "login": "",
+  "login": "login",
+  "login-password-error": "Erreur d’ouverture de session ou de mot de passe",
   "menu-about": "À propos",
   "menu-contacts": "Contacts",
   "menu-login": "Me connecter",
+  "menu-logout": "Déconnexion",
   "menu-main": "Main",
   "menu-profile": "Profil",
-  "password": "",
+  "password": "mot de passe",
   "throw-error-button": "renvoyer une Erreur"
 }
