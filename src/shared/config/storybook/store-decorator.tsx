@@ -3,7 +3,7 @@ import { StoreProvider } from 'app/providers/store-provider';
 
 export const StoreDecorator = (StoryComponent: Story) => {
   return (
-    <StoreProvider isDev>
+    <StoreProvider>
       <StoryComponent />
     </StoreProvider>
   );
