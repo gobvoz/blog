@@ -55,11 +55,22 @@ const LoginForm = memo((props: Props) => {
 
       <label className={cls.label}>
         <span className={cls.fieldName}>{t('login')}</span>
-        <Input id="username" value={username} onChange={handleUsernameChange} autoFocus />
+        <Input
+          id="username"
+          value={username}
+          onChange={handleUsernameChange}
+          autoFocus
+          disabled={isLoading}
+        />
       </label>
       <label className={cls.label}>
         <span className={cls.fieldName}>{t('password')}</span>
-        <Input id="password" value={password} onChange={handlePasswordChange} />
+        <Input
+          id="password"
+          value={password}
+          onChange={handlePasswordChange}
+          disabled={isLoading}
+        />
       </label>
       {error && <TextBlock errorMessage>{i18n.t('login-password-error')}</TextBlock>}
       <Button className={cls.button} type="submit" disabled={isLoading} loading={isLoading}>
