@@ -1,6 +1,8 @@
-import { memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { memo, useCallback, useEffect } from 'react';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+
+import { ReduxStoreWithManager } from 'app/providers/store-provider/config/state-schema';
 
 import i18n from 'shared/config/i18n/i18n';
 import { Input } from 'shared/ui/input';
@@ -10,7 +12,7 @@ import { TextBlock } from 'shared/ui/text-block';
 
 import cls from './login-form.module.scss';
 import { loginByUsername } from '../../model/services/login-by-user-name';
-import { loginActions } from '../../model/slice/login-slice';
+import { loginActions, loginReducer } from '../../model/slice/login-slice';
 import { selectLoading } from '../../model/selectors/select-loading';
 import { selectUsername } from '../../model/selectors/select-username';
 import { selectPassword } from '../../model/selectors/select-password';
@@ -25,12 +27,21 @@ const LoginForm = memo((props: Props) => {
 
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const store = useStore() as ReduxStoreWithManager;
   const isLoading = useSelector(selectLoading);
   const username = useSelector(selectUsername);
   const password = useSelector(selectPassword);
   const error = useSelector(selectError);
 
   const { setUsername, setPassword } = loginActions;
+
+  useEffect(() => {
+    store.reducerManager.add('loginForm', loginReducer);
+
+    return () => {
+      store.reducerManager.remove('loginForm');
+    };
+  }, []);
 
   const handleUsernameChange = useCallback(
     (value: string) => {

@@ -1,19 +1,26 @@
 import { ReducersMapObject, configureStore } from '@reduxjs/toolkit';
 
 import { userReducer } from 'entities/user';
-import { loginReducer } from 'features/auth-by-user-name';
 
 import { StateSchema } from './state-schema';
+import { createReducerManager } from './reducer-manager';
 
 export const createReduxStore = (initialState?: StateSchema) => {
   const rootReducer: ReducersMapObject = {
     user: userReducer,
-    loginForm: loginReducer,
   };
 
-  return configureStore<StateSchema>({
-    reducer: rootReducer,
+  const reducerManager = createReducerManager(rootReducer);
+
+  const store = configureStore<StateSchema>({
+    reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState,
   });
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  store.reducerManager = reducerManager;
+
+  return store;
 };
