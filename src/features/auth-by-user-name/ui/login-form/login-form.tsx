@@ -7,7 +7,10 @@ import { Input } from 'shared/ui/input';
 import { Button } from 'shared/ui/button';
 import { TextBlock } from 'shared/ui/text-block';
 import { classNames } from 'shared/libs/class-names/class-names';
-import { DynamicModuleLoader } from 'shared/libs/components/dynamic-module-loader/dynamic-module-loader';
+import {
+  DynamicModuleLoader,
+  ReducerList,
+} from 'shared/libs/components/dynamic-module-loader/dynamic-module-loader';
 
 import cls from './login-form.module.scss';
 import { loginByUsername } from '../../model/services/login-by-user-name';
@@ -20,6 +23,10 @@ import { selectError } from '../../model/selectors/select-error';
 interface Props {
   className?: string;
 }
+
+const initialReducerList: ReducerList = {
+  loginForm: loginReducer,
+};
 
 const LoginForm = memo((props: Props) => {
   const { className } = props;
@@ -51,7 +58,7 @@ const LoginForm = memo((props: Props) => {
   };
 
   return (
-    <DynamicModuleLoader reducerKey="loginForm" reducer={loginReducer}>
+    <DynamicModuleLoader reducerList={initialReducerList}>
       <form className={classNames(cls.loginForm, className)} onSubmit={handleSubmit}>
         <TextBlock form header="Login form" />
 
