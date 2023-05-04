@@ -1,7 +1,11 @@
 import { FC, useCallback, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { useCollapse } from 'app/providers/collapse-provider';
+
+import { selectUserAuthData } from 'entities/user/model/selectors/select-user-auth-data';
+import { userActions } from 'entities/user';
 
 import { LoginModal } from 'features/auth-by-user-name';
 
@@ -10,18 +14,16 @@ import { Menu } from 'shared/ui/menu';
 import { AppLink } from 'shared/ui/app-link';
 import { AppRoutes } from 'shared/constants/app-routes';
 import { Button } from 'shared/ui/button';
+import { useAppDispatch } from 'shared/libs/hooks/use-app-dispatch';
 
 import cls from './navbar.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectUserAuthData } from 'entities/user/model/selectors/select-user-auth-data';
-import { userActions } from 'entities/user';
 
 interface Props {
   className?: string;
 }
 
 const Navbar: FC<Props> = props => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
   const userAuthData = useSelector(selectUserAuthData);

@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import i18n from 'shared/config/i18n/i18n';
@@ -11,6 +11,7 @@ import {
   DynamicModuleLoader,
   ReducerList,
 } from 'shared/libs/components/dynamic-module-loader/dynamic-module-loader';
+import { useAppDispatch } from 'shared/libs/hooks/use-app-dispatch';
 
 import cls from './login-form.module.scss';
 import { loginByUsername } from '../../model/services/login-by-user-name';
@@ -32,7 +33,7 @@ const LoginForm = memo((props: Props) => {
   const { className } = props;
 
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const isLoading = useSelector(selectLoading);
   const username = useSelector(selectUsername);
   const password = useSelector(selectPassword);
