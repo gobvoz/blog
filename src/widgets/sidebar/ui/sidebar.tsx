@@ -12,6 +12,8 @@ import { classNames } from 'shared/libs/class-names';
 import { Button } from 'shared/ui/button';
 
 import cls from './sidebar.module.scss';
+import { sidebarItemList } from '../model/item';
+import { SidebarItem } from './sidebar-item';
 
 interface Props {
   className?: string;
@@ -37,18 +39,9 @@ const Sidebar: FC<Props> = props => {
           <span className={classNames([cls.bar], buttonMods)} />
         </Button>
         <Menu className={cls.sidebarMenu} vertical>
-          <AppLink className={cls.sidebarMenuLink} to={AppRoutes.MAIN}>
-            {t('menu-main')}
-          </AppLink>
-          <AppLink className={cls.sidebarMenuLink} to={AppRoutes.ABOUT}>
-            {t('menu-about')}
-          </AppLink>
-          <AppLink className={cls.sidebarMenuLink} to={AppRoutes.CONTACTS}>
-            {t('menu-contacts')}
-          </AppLink>
-          <AppLink className={cls.sidebarMenuLink} to={AppRoutes.PROFILE}>
-            {t('menu-profile')}
-          </AppLink>
+          {sidebarItemList.map((item, index) => (
+            <SidebarItem key={index} item={item} collapsed={collapsed} />
+          ))}
         </Menu>
         <LanguageToggler />
       </div>

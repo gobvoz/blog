@@ -1,7 +1,7 @@
 export const webpackSvgLoader = () => {
   const svgLoader = {
     test: /\.svg$/i,
-    use: ['@svgr-webpack'],
+    use: ['@svgr/webpack'],
   };
 
   return svgLoader;
