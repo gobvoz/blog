@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, FC, memo } from 'react';
 
 import { useTheme } from 'app/providers/theme-provider';
 
@@ -12,7 +12,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-const ThemeToggler: FC<Props> = props => {
+const ThemeToggler: FC<Props> = memo((props: Props) => {
   const { className } = props;
   const { theme, toggleTheme } = useTheme();
 
@@ -25,6 +25,6 @@ const ThemeToggler: FC<Props> = props => {
       {theme === Theme.DARK ? 'D' : 'L'}
     </Button>
   );
-};
+});
 
 export { ThemeToggler };

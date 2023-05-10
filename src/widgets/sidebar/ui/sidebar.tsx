@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useCollapse } from 'app/providers/collapse-provider';
@@ -6,8 +6,6 @@ import { useCollapse } from 'app/providers/collapse-provider';
 import { LanguageToggler } from 'widgets/language-toggler';
 
 import { Menu } from 'shared/ui/menu';
-import { AppLink } from 'shared/ui/app-link';
-import { AppRoutes } from 'shared/constants/app-routes';
 import { classNames } from 'shared/libs/class-names';
 import { Button } from 'shared/ui/button';
 
@@ -19,7 +17,7 @@ interface Props {
   className?: string;
 }
 
-const Sidebar: FC<Props> = props => {
+const Sidebar: FC<Props> = memo((props: Props) => {
   const { className } = props;
   const { collapsed, toggleCollapse } = useCollapse();
 
@@ -27,6 +25,14 @@ const Sidebar: FC<Props> = props => {
 
   const mods = { [cls.collapsed]: collapsed };
   const buttonMods = { [cls.animate]: !collapsed };
+
+  const menuItemList = useMemo(
+    () =>
+      sidebarItemList.map((item, index) => (
+        <SidebarItem key={index} item={item} collapsed={collapsed} />
+      )),
+    [collapsed],
+  );
 
   return (
     <div className={classNames(cls.sidebarWrapper, className, mods)} data-testid="sidebar">
@@ -39,14 +45,12 @@ const Sidebar: FC<Props> = props => {
           <span className={classNames([cls.bar], buttonMods)} />
         </Button>
         <Menu className={cls.sidebarMenu} vertical>
-          {sidebarItemList.map((item, index) => (
-            <SidebarItem key={index} item={item} collapsed={collapsed} />
-          ))}
+          {menuItemList}
         </Menu>
         <LanguageToggler />
       </div>
     </div>
   );
-};
+});
 
 export { Sidebar };

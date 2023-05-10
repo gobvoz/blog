@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { classNames } from 'shared/libs/class-names';
 
@@ -8,7 +8,7 @@ interface Props {
   className?: string;
 }
 
-const Spinner: FC<Props> = props => {
+const Spinner: FC<Props> = memo((props: Props) => {
   const { className } = props;
 
   return (
@@ -19,6 +19,6 @@ const Spinner: FC<Props> = props => {
       <div />
     </div>
   );
-};
+});
 
 export { Spinner };

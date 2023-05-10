@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useRef, useState } from 'react';
+import { FC, memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import { classNames } from 'shared/libs/class-names/class-names';
 import { Key, MODAL_ANIMATION_DURATION } from 'shared/constants/ui';

@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from 'react';
+import { FC, memo, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
@@ -22,7 +22,7 @@ interface Props {
   className?: string;
 }
 
-const Navbar: FC<Props> = props => {
+const Navbar: FC<Props> = memo((props: Props) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
@@ -86,6 +86,6 @@ const Navbar: FC<Props> = props => {
       {isAuthModalOpen && <LoginModal setOpen={handleCloseModalClick} />}
     </nav>
   );
-};
+});
 
 export { Navbar };

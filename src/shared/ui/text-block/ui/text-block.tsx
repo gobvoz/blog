@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, memo } from 'react';
 
 import { classNames } from 'shared/libs/class-names/class-names';
 import cls from './text-block.module.scss';

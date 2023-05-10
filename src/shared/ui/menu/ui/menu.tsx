@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { classNames } from 'shared/libs/class-names';
 
 import cls from './menu.module.scss';

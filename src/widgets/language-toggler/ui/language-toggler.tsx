@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from 'shared/ui/button';
@@ -10,7 +10,7 @@ interface Props {
   className?: string;
 }
 
-const LanguageToggler: FC<Props> = props => {
+const LanguageToggler: FC<Props> = memo((props: Props) => {
   const { className } = props;
   const { t, i18n } = useTranslation();
 
@@ -26,6 +26,6 @@ const LanguageToggler: FC<Props> = props => {
       </Button>
     </div>
   );
-};
+});
 
 export { LanguageToggler };
