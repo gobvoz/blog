@@ -1,10 +1,10 @@
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from 'shared/ui/button';
 import { Modal } from 'widgets/modal';
 
-const MainPage: FC = () => {
+const MainPage: FC = memo(() => {
   const { t } = useTranslation('main-page');
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -86,6 +86,6 @@ const MainPage: FC = () => {
       {isModalOpen && <Modal setOpen={handleCloseModalClick}>Modal window</Modal>}
     </section>
   );
-};
+});
 
 export { MainPage };
