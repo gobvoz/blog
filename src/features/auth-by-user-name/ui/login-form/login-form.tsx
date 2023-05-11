@@ -7,10 +7,7 @@ import { Input } from 'shared/ui/input';
 import { Button } from 'shared/ui/button';
 import { TextBlock } from 'shared/ui/text-block';
 import { classNames } from 'shared/libs/class-names/class-names';
-import {
-  DynamicModuleLoader,
-  ReducerList,
-} from 'shared/libs/components/dynamic-module-loader/dynamic-module-loader';
+import { DynamicModuleLoader, ReducerList } from 'shared/libs/components/dynamic-module-loader';
 import { useAppDispatch } from 'shared/libs/hooks/use-app-dispatch';
 
 import cls from './login-form.module.scss';
