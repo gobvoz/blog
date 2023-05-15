@@ -12,8 +12,8 @@ import 'shared/config/i18n/i18n';
 const root = createRoot(document.getElementById('root'));
 
 root.render(
-  <BrowserRouter>
-    <ErrorBoundary>
+  <ErrorBoundary>
+    <BrowserRouter>
       <StoreProvider>
         <ThemeProvider>
           <CollapseProvider>
@@ -21,6 +21,6 @@ root.render(
           </CollapseProvider>
         </ThemeProvider>
       </StoreProvider>
-    </ErrorBoundary>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </ErrorBoundary>,
 );

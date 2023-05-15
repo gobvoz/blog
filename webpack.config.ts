@@ -15,6 +15,7 @@ const buildConfig = (env: BuildEnv) => {
     ),
   });
   const PORT = Number(process.env.PORT) || 3000;
+  const HOST = process.env.HOST || 'http://localhost:8000';
 
   const buildOptions: BuildOptions = {
     mode: MODE,
@@ -26,6 +27,7 @@ const buildConfig = (env: BuildEnv) => {
     },
     isDevelopment,
     port: PORT,
+    host: HOST,
   };
 
   const config: webpack.Configuration = buildWebpackConfig(buildOptions);
