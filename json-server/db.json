@@ -5,30 +5,15 @@
   ],
   "posts": [{ "id": 1, "title": "That is really how this blog started.", "author": 1 }],
   "comments": [{ "id": 1, "body": "Awesome", "postId": 1, "userId": 2 }],
-  "profiles": [
-    {
-      "id": 1,
-      "userId": 1,
-      "first": "John",
-      "last": "Doe",
-      "age": 30,
-      "currency": "USD",
-      "country": "USA",
-      "city": "New York",
-      "username": "admin",
-      "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "first": "Jane",
-      "last": "Doe",
-      "age": 25,
-      "currency": "EUR",
-      "country": "UK",
-      "city": "London",
-      "username": "user",
-      "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=461&q=80"
-    }
-  ]
+  "profile": {
+    "userId": 1,
+    "first": "John",
+    "last": "Doe",
+    "age": 30,
+    "currency": "USD",
+    "country": "USA",
+    "city": "New York",
+    "username": "admin",
+    "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+  }
 }
