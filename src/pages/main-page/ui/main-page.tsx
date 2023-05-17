@@ -1,11 +1,11 @@
 import { FC, memo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useAppTranslation } from 'shared/libs/hooks';
 
 import { Button } from 'shared/ui/button';
 import { Modal } from 'widgets/modal';
 
 const MainPage: FC = memo(() => {
-  const { t } = useTranslation('main-page');
+  const { t } = useAppTranslation('main-page');
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModalClick = () => setModalOpen(true);

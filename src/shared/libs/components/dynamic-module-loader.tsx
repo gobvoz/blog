@@ -7,7 +7,7 @@ import {
   StateSchemaKeys,
 } from 'app/providers/store-provider/config/state-schema';
 
-import { useAppDispatch } from 'shared/libs/hooks/use-app-dispatch';
+import { useAppDispatch } from 'shared/libs/hooks';
 
 export type ReducerList = { [reducerKey in StateSchemaKeys]?: Reducer };
 

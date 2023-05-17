@@ -1,5 +1,4 @@
 import { FC, memo, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { useCollapse } from 'app/providers/collapse-provider';
 
@@ -20,8 +19,6 @@ interface Props {
 const Sidebar: FC<Props> = memo((props: Props) => {
   const { className } = props;
   const { collapsed, toggleCollapse } = useCollapse();
-
-  const { t } = useTranslation();
 
   const mods = { [cls.collapsed]: collapsed };
   const buttonMods = { [cls.animate]: !collapsed };

@@ -1,8 +1,8 @@
 import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Button } from 'shared/ui/button';
 import { classNames } from 'shared/libs/class-names';
+import { useAppTranslation } from 'shared/libs/hooks';
 
 import cls from './language-toggler.module.scss';
 
@@ -12,7 +12,7 @@ interface Props {
 
 const LanguageToggler: FC<Props> = memo((props: Props) => {
   const { className } = props;
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useAppTranslation();
 
   const toggleLanguage = () => i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en');
 

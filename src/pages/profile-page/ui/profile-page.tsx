@@ -1,17 +1,16 @@
 import { FC, memo, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { ThrowErrorButton } from 'app/providers/error-boundary';
 import { DynamicModuleLoader, ReducerList } from 'shared/libs/components/dynamic-module-loader';
 import { ProfileCard, fetchProfileData, profileReducer } from 'entities/profile';
-import { useAppDispatch } from 'shared/libs/hooks/use-app-dispatch';
+import { useAppDispatch, useAppTranslation } from 'shared/libs/hooks';
 
 const reducerList: ReducerList = {
   profile: profileReducer,
 };
 
 const ProfilePage: FC = memo(() => {
-  const { t } = useTranslation('profile-page');
+  const { t } = useAppTranslation('profile-page');
 
   const dispatch = useAppDispatch();
 

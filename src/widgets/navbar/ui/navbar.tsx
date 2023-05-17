@@ -1,6 +1,5 @@
 import { FC, memo, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 
 import { useCollapse } from 'app/providers/collapse-provider';
 
@@ -14,7 +13,7 @@ import { Menu } from 'shared/ui/menu';
 import { AppLink } from 'shared/ui/app-link';
 import { AppRoutes } from 'shared/constants/app-routes';
 import { Button } from 'shared/ui/button';
-import { useAppDispatch } from 'shared/libs/hooks/use-app-dispatch';
+import { useAppDispatch, useAppTranslation } from 'shared/libs/hooks';
 
 import cls from './navbar.module.scss';
 
@@ -24,7 +23,7 @@ interface Props {
 
 const Navbar: FC<Props> = memo((props: Props) => {
   const dispatch = useAppDispatch();
-  const { t } = useTranslation();
+  const { t } = useAppTranslation();
 
   const userAuthData = useSelector(selectUserAuthData);
 
@@ -51,8 +50,8 @@ const Navbar: FC<Props> = memo((props: Props) => {
 
   if (userAuthData) {
     return (
-      <nav className={classNames([cls.navbar, className])}>
-        <div className={classNames([cls.wrapper])}>
+      <nav className={classNames(cls.navbar, className)}>
+        <div className={cls.wrapper}>
           <Menu>
             <AppLink to={AppRoutes.MAIN}>{t('menu-main')}</AppLink>
             <AppLink to={AppRoutes.ABOUT}>{t('menu-about')}</AppLink>

@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { AppLink } from 'shared/ui/app-link';
 import { classNames } from 'shared/libs/class-names';
+import { useAppTranslation } from 'shared/libs/hooks';
 
 import cls from './sidebar-item.module.scss';
 
@@ -15,7 +15,7 @@ interface Props {
 
 const SidebarItem: FC<Props> = props => {
   const { item, collapsed } = props;
-  const { t } = useTranslation();
+  const { t } = useAppTranslation();
 
   const mods = { [cls.collapsed]: collapsed };
 

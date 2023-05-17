@@ -1,6 +1,5 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 
 import i18n from 'shared/config/i18n/i18n';
 import { Input } from 'shared/ui/input';
@@ -8,7 +7,7 @@ import { Button } from 'shared/ui/button';
 import { TextBlock } from 'shared/ui/text-block';
 import { classNames } from 'shared/libs/class-names/class-names';
 import { DynamicModuleLoader, ReducerList } from 'shared/libs/components/dynamic-module-loader';
-import { useAppDispatch } from 'shared/libs/hooks/use-app-dispatch';
+import { useAppDispatch, useAppTranslation } from 'shared/libs/hooks';
 
 import cls from './login-form.module.scss';
 import { loginByUsername } from '../../model/services/login-by-user-name';
@@ -29,7 +28,7 @@ const initialReducerList: ReducerList = {
 const LoginForm = memo((props: Props) => {
   const { className } = props;
 
-  const { t } = useTranslation();
+  const { t } = useAppTranslation();
   const dispatch = useAppDispatch();
   const isLoading = useSelector(selectLoading);
   const username = useSelector(selectUsername);
