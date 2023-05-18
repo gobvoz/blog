@@ -17,12 +17,12 @@ export const componentRender = (component: ReactNode, options: ComponentRenderOp
   const { route = '/', initialState } = options;
 
   return render(
-    <StoreProvider initialState={initialState as StateSchema}>
-      <CollapseProvider initialValue={false}>
-        <MemoryRouter initialEntries={[route]}>
+    <MemoryRouter initialEntries={[route]}>
+      <StoreProvider initialState={initialState as StateSchema}>
+        <CollapseProvider initialValue={false}>
           <I18nextProvider i18n={i18n}>{component}</I18nextProvider>
-        </MemoryRouter>
-      </CollapseProvider>
-    </StoreProvider>,
+        </CollapseProvider>
+      </StoreProvider>
+    </MemoryRouter>,
   );
 };
