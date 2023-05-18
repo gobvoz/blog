@@ -20,7 +20,7 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkApiConfig<s
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log(e);
-      return rejectWithValue(e.response.data.message);
+      return rejectWithValue(e);
     }
   },
 );

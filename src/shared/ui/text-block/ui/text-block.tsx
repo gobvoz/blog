@@ -1,12 +1,12 @@
-import { FC, ReactNode, memo } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { classNames } from 'shared/libs/class-names/class-names';
 import cls from './text-block.module.scss';
 
 interface Props {
   className?: string;
-  header?: string;
-  paragraph?: string;
+  header?: string | null;
+  paragraph?: string | null;
   children?: ReactNode;
 
   form?: boolean;

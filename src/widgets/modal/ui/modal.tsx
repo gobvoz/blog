@@ -79,14 +79,14 @@ const Modal: FC<Props> = props => {
 
   return (
     <div
-      className={classNames([cls.overlay, cls.center], {
+      className={classNames(cls.overlay, cls.center, {
         [cls.overlayAnimationIn]: isInAnimation,
         [cls.overlayAnimationOut]: isOutAnimation,
         [cls.overlayNoAnimation]: isNoAnimation,
       })}
       onClick={handleOverlayClick}>
       <div
-        className={classNames([cls.modal, className], {
+        className={classNames(cls.modal, className, {
           [cls.modalAnimationIn]: isInAnimation,
           [cls.modalAnimationOut]: isOutAnimation,
           [cls.modalNoAnimation]: isNoAnimation,
@@ -94,7 +94,7 @@ const Modal: FC<Props> = props => {
         onClick={handleModalBodyClick}>
         <div className={cls.closeButtonWrapper}>
           <Button
-            className={classNames([cls.closeButton])}
+            className={cls.closeButton}
             type="button"
             primary
             onClick={handleCloseButtonClick}

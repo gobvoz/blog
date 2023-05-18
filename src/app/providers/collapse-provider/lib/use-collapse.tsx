@@ -10,10 +10,10 @@ interface UseCollapseResult {
 }
 
 export const useCollapse = (): UseCollapseResult => {
-  const { collapsed, setCollapse } = useContext(CollapseContext);
+  const { collapsed = false, setCollapse } = useContext(CollapseContext);
 
   const toggleCollapse = () => {
-    setCollapse(!collapsed);
+    setCollapse?.(!collapsed);
     localStorage.setItem(LOCAL_STORAGE_COLLAPSE_KEY, collapsed ? 'false' : 'true');
   };
 

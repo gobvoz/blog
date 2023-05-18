@@ -11,7 +11,7 @@ import { useAppDispatch } from 'shared/libs/hooks';
 
 export type ReducerList = { [reducerKey in StateSchemaKeys]?: Reducer };
 
-type reducerListEntry = [StateSchemaKeys, Reducer];
+type reducerListEntry = [string, Reducer];
 
 interface Props {
   children: React.ReactNode;
@@ -26,13 +26,13 @@ export const DynamicModuleLoader: FC<Props> = props => {
 
   useEffect(() => {
     Object.entries(reducerList).forEach(([reducerKey, reducer]: reducerListEntry) => {
-      store.reducerManager.add(reducerKey, reducer);
+      store.reducerManager.add(reducerKey as StateSchemaKeys, reducer);
       dispatch({ type: `@@INIT ${reducerKey}` });
     });
 
     return () => {
       Object.entries(reducerList).forEach(([reducerKey, _]: reducerListEntry) => {
-        store.reducerManager.remove(reducerKey);
+        store.reducerManager.remove(reducerKey as StateSchemaKeys);
         dispatch({ type: `@@DESTROY ${reducerKey}` });
       });
     };
