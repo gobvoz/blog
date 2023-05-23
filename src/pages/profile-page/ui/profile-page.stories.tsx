@@ -2,9 +2,10 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
+import { StoreDecorator } from 'shared/config/storybook/store-decorator';
+import { Country, Currency } from 'shared/constants/common';
 
 import { ProfilePage } from './profile-page';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 
 export default {
   title: 'page/profile-page',
@@ -21,6 +22,9 @@ Light.decorators = [
         first: 'John',
         last: 'Doe',
         age: 30,
+        country: Country.USA,
+        city: 'New York',
+        currency: Currency.USD,
       },
     },
   }),
@@ -35,6 +39,9 @@ Dark.decorators = [
         first: 'John',
         last: 'Doe',
         age: 30,
+        country: Country.USA,
+        city: 'New York',
+        currency: Currency.USD,
       },
     },
   }),

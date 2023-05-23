@@ -9,16 +9,24 @@ interface Props {
   paragraph?: string | null;
   children?: ReactNode;
 
+  small?: boolean;
+  medium?: boolean;
+  large?: boolean;
+
   form?: boolean;
   errorMessage?: boolean;
 }
 
 const TextBlock: FC<Props> = props => {
-  const { className, header, paragraph, children, form, errorMessage } = props;
+  const { className, header, paragraph, children, form, errorMessage, small, medium, large } =
+    props;
 
   const mod = {
     [cls.form]: form,
     [cls.errorMessage]: errorMessage,
+    [cls.small]: small,
+    [cls.medium]: medium,
+    [cls.large]: large,
   };
 
   return (

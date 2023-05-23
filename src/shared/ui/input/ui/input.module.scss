@@ -5,4 +5,9 @@
   background-color: transparent;
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-field);
+
+  &:read-only {
+    outline: none;
+    cursor: default;
+  }
 }

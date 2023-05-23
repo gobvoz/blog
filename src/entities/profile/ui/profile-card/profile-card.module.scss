@@ -1,3 +1,27 @@
 .profile-card {
-  display: block;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-section);
+  padding: 20px;
+  background-color: var(--bg-section);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.label {
+  position: relative;
+}
+
+.field-name {
+  position: absolute;
+  top: -7px;
+  left: 10px;
+  padding: 0 5px;
+  font-size: 12px;
+  line-height: 1;
+  background-color: var(--bg-section);
 }

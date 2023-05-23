@@ -1,6 +1,18 @@
 {
+  "age": "âge",
+  "city": "ville",
+  "country": "un pays",
+  "currency": "devise",
   "edit": "Modifier",
+  "first-name": "Nom",
   "header": "Profil",
+  "header-error": "Erreur lors de la mise à jour des informations de profil",
+  "last-name": "Nom de famille",
+  "login": "",
+  "your-age": "Votre âge",
+  "your-city": "Ta ville",
+  "your-country": "Votre pays",
   "your-first-name": "Ton prénom",
-  "your-last-name": "Votre nom de famille"
+  "your-last-name": "Votre nom de famille",
+  "your-preferred-currency": "Votre devise préférée"
 }
