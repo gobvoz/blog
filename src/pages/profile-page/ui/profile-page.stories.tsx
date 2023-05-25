@@ -21,7 +21,7 @@ Light.decorators = [
       data: {
         first: 'John',
         last: 'Doe',
-        age: 30,
+        age: '30',
         country: Country.USA,
         city: 'New York',
         currency: Currency.USD,
@@ -38,7 +38,7 @@ Dark.decorators = [
       data: {
         first: 'John',
         last: 'Doe',
-        age: 30,
+        age: '30',
         country: Country.USA,
         city: 'New York',
         currency: Currency.USD,

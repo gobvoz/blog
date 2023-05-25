@@ -1,6 +1,8 @@
 {
   "app-error-button": "Reload page",
   "app-error-text": "Something went wrong",
+  "cancel": "Cancel",
+  "edit": "Edit",
   "language": "EN",
   "loading": "Loading...",
   "login": "login",
@@ -12,5 +14,6 @@
   "menu-main": "Main",
   "menu-profile": "Profile",
   "password": "password",
-  "throw-error-button": "throw an Error"
+  "throw-error-button": "throw an Error",
+  "update": "Update"
 }

@@ -48,6 +48,12 @@ PrimaryLoadingLight.args = {
   loading: true,
 };
 
+export const OutlineRedLight = Template.bind({});
+OutlineRedLight.args = {
+  children: 'Text',
+  outlineRed: true,
+};
+
 export const Dark = Template.bind({});
 Dark.args = {
   children: 'Text',
@@ -89,3 +95,10 @@ PrimaryLoadingDark.args = {
   loading: true,
 };
 PrimaryLoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OutlineRedDark = Template.bind({});
+OutlineRedDark.args = {
+  children: 'Text',
+  outlineRed: true,
+};
+OutlineRedDark.decorators = [ThemeDecorator(Theme.DARK)];

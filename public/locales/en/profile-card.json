@@ -1,18 +1,23 @@
 {
-  "age": "age",
-  "city": "city",
-  "country": "country",
-  "currency": "currency",
+  "age": "Age",
+  "avatar": "Avatar",
+  "avatar-alt": "",
+  "city": "City",
+  "country": "Country",
+  "currency": "Currency",
   "edit": "Edit",
   "first-name": "First name",
   "header": "Profile",
   "header-error": "Error updating profile information",
   "last-name": "Last name",
   "login": "",
+  "username": "Username",
   "your-age": "Your age",
+  "your-avatar-link": "Your avatar link",
   "your-city": "Your city",
   "your-country": "Your country",
   "your-first-name": "Your first name",
   "your-last-name": "Your first name",
-  "your-preferred-currency": "Your preferred currency"
+  "your-preferred-currency": "Your preferred currency",
+  "your-user-name": "Your user name"
 }

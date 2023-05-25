@@ -1,6 +1,8 @@
 {
   "app-error-button": "Recharger la page",
   "app-error-text": "Quelque chose a mal tourné",
+  "cancel": "Annuler",
+  "edit": "Modifier",
   "language": "FR",
   "loading": "Chargement...",
   "login": "login",
@@ -12,5 +14,6 @@
   "menu-main": "Main",
   "menu-profile": "Profil",
   "password": "mot de passe",
-  "throw-error-button": "renvoyer une Erreur"
+  "throw-error-button": "renvoyer une Erreur",
+  "update": "Rafraîchir"
 }

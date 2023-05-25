@@ -1,15 +1,36 @@
 {
   "users": [
-    { "id": 1, "username": "admin", "password": "123456789" },
-    { "id": 2, "username": "user", "password": "123456789" }
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123456789"
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "password": "123456789"
+    }
   ],
-  "posts": [{ "id": 1, "title": "That is really how this blog started.", "author": 1 }],
-  "comments": [{ "id": 1, "body": "Awesome", "postId": 1, "userId": 2 }],
+  "posts": [
+    {
+      "id": 1,
+      "title": "That is really how this blog started.",
+      "author": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "Awesome",
+      "postId": 1,
+      "userId": 2
+    }
+  ],
   "profile": {
     "userId": 1,
     "first": "John",
     "last": "Doe",
-    "age": 30,
+    "age": "30",
     "currency": "USD",
     "country": "USA",
     "city": "New York",

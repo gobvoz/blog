@@ -14,4 +14,16 @@ describe('button', () => {
     render(<Button primary>TEST</Button>);
     expect(screen.getByText('TEST')).toHaveClass('primary');
   });
+  test('render with `loading` class', () => {
+    render(<Button loading>TEST</Button>);
+    expect(screen.getByText('TEST')).toHaveClass('loading');
+  });
+  test('render with `outline red` class', () => {
+    render(<Button outlineRed>TEST</Button>);
+    expect(screen.getByText('TEST')).toHaveClass('outlineRed');
+  });
+  test('render with `submit` type', () => {
+    render(<Button type="submit">TEST</Button>);
+    expect(screen.getByText('TEST')).toHaveAttribute('type', 'submit');
+  });
 });

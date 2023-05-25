@@ -11,6 +11,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   transparent?: boolean;
   appLink?: boolean;
   loading?: boolean;
+  outlineRed?: boolean;
 }
 
 const Button: FC<Props> = memo((props: Props) => {
@@ -22,6 +23,7 @@ const Button: FC<Props> = memo((props: Props) => {
     transparent,
     appLink,
     loading,
+    outlineRed,
 
     type = 'button',
     ...otherProps
@@ -32,6 +34,7 @@ const Button: FC<Props> = memo((props: Props) => {
     [cls.transparent]: transparent,
     [cls.appLink]: appLink,
     [cls.loading]: loading,
+    [cls.outlineRed]: outlineRed,
   };
 
   return (

@@ -9,9 +9,9 @@ interface Props {
 }
 
 const Hr = memo((props: Props) => {
-  const { className } = props;
+  const { className, ...otherProps } = props;
 
-  return <hr className={classNames(cls.hr, className)}></hr>;
+  return <hr className={classNames(cls.hr, className)} {...otherProps}></hr>;
 });
 
 export { Hr };

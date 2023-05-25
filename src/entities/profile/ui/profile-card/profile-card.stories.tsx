@@ -19,11 +19,24 @@ Light.args = {
   data: {
     first: 'John',
     last: 'Doe',
-    age: 30,
+    age: '30',
     country: Country.USA,
     city: 'New York',
     currency: Currency.USD,
   } as Profile,
+};
+
+export const LightWithEdit = Template.bind({});
+LightWithEdit.args = {
+  data: {
+    first: 'John',
+    last: 'Doe',
+    age: '30',
+    country: Country.USA,
+    city: 'New York',
+    currency: Currency.USD,
+  } as Profile,
+  readonly: false,
 };
 
 export const LightWithError = Template.bind({});
@@ -42,11 +55,25 @@ Dark.args = {
   data: {
     first: 'John',
     last: 'Doe',
-    age: 30,
+    age: '30',
     country: Country.USA,
     city: 'New York',
     currency: Currency.USD,
   } as Profile,
+};
+
+export const DarkWithEdit = Template.bind({});
+DarkWithEdit.decorators = [ThemeDecorator(Theme.DARK)];
+DarkWithEdit.args = {
+  data: {
+    first: 'John',
+    last: 'Doe',
+    age: '30',
+    country: Country.USA,
+    city: 'New York',
+    currency: Currency.USD,
+  } as Profile,
+  readonly: false,
 };
 
 export const DarkWithError = Template.bind({});
