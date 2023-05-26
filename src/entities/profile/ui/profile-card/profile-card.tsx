@@ -11,6 +11,7 @@ import { PageLoader } from 'widgets/page-loader';
 import cls from './profile-card.module.scss';
 
 import { Profile } from '../../model/types/profile-schema';
+import { Avatar } from 'shared/ui/avatar';
 
 interface Props {
   data?: Profile;
@@ -72,15 +73,7 @@ const ProfileCard: FC<Props> = props => {
         />
       </div>
       <div className={cls.content}>
-        {data?.avatar && (
-          <img
-            className={cls.avatar}
-            src={data.avatar}
-            width="100"
-            height="100"
-            alt={t('avatar-alt', { ns: 'profile-card' })}
-          />
-        )}
+        {data?.avatar && <Avatar src={data.avatar} large />}
         <label className={cls.label}>
           <span className={cls.fieldName}>{t('username', { ns: 'profile-card' })}</span>
           <Input
