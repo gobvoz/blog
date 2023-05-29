@@ -1,11 +1,11 @@
 .page-wrapper {
   max-width: 900px;
   width: 100%;
-  margin-left: max(0px, calc(100vw - 900px) / 2 - var(--sidebar-width));
+  margin-left: max(0px, calc(100vw - 900px) / 2 - var(--width-sidebar));
   transition: margin 0.3s cubic-bezier(0.67, 0.02, 0.39, 0.98);
   overflow-y: auto;
 }
 
 .sidebar-collapsed {
-  margin-left: max(0px, calc(100vw - 900px) / 2 - var(--sidebar-width-collapsed));
+  margin-left: max(0px, calc(100vw - 900px) / 2 - var(--width-sidebar-collapsed));
 }

@@ -1,6 +1,6 @@
 .input {
   width: 100%;
-  padding: 3px 7px;
+  padding: var(--padding-field);
   color: var(--color-main);
   background-color: transparent;
   border: 1px solid var(--color-border);

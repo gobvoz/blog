@@ -1,5 +1,5 @@
 button {
-  padding: 3px 10px;
+  padding: var(--padding-button);
   color: var(--color-button-default);
   background-color: var(--bg-button-default);
   border: 1px solid var(--color-border);
@@ -47,7 +47,6 @@ button {
 
 .loading {
   position: relative;
-  padding-left: 20px;
 
   &::after,
   &::before {

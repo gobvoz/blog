@@ -11,6 +11,14 @@
   --font-line-m: 1.2;
   --font-line-l: 1.2;
 
+  // paddings
+  --padding-button: 7px 20px; // 3px 10px;
+  --padding-field: 7px 20px; // 3px 7px
+  --padding-section: 20px;
+  --padding-modal: 20px;
+  --padding-navbar: 5px 0;
+  --padding-sidebar: 20px 0;
+
   // fonts
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family);
   --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family);
@@ -23,11 +31,11 @@
   --border-radius-modal: 7px;
 
   // heights
-  --navbar-height: 40px;
+  --navbar-height: 52px; // should depends on font size and line height and padding
 
   // widths
-  --sidebar-width: 300px;
-  --sidebar-width-collapsed: 60px;
+  --width-sidebar: 300px;
+  --width-sidebar-collapsed: 80px;
 
   // layers
   --z-index-modal: 1000;

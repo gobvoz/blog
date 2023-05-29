@@ -29,7 +29,8 @@
 }
 
 .modal {
-  padding: 10px;
+  padding: var(--padding-modal);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius-modal);
   background-color: var(--bg-panel);
 }
@@ -43,6 +44,7 @@
   position: relative;
   width: 28px;
   height: 28px;
+  padding: 0;
   margin-left: auto;
 
   &::before,
