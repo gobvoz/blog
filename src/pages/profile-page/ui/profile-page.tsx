@@ -107,7 +107,7 @@ const ProfilePage: FC = memo(() => {
           onCurrencyChange={handleCurrencyChange}
         />
 
-        {!isLoading && <ProfileButtons className={cls.buttonSection} />}
+        {!isLoading && formData && <ProfileButtons className={cls.buttonSection} />}
       </DynamicModuleLoader>
       <ThrowErrorButton />
     </>

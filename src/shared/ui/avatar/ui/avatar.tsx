@@ -34,7 +34,7 @@ const Avatar = memo((props: Props) => {
     );
 
   return (
-    <div className={cls.avatarWrapper}>
+    <div className={cls.wrapper}>
       <img
         className={classNames(cls.avatar, className, mods)}
         src={src}

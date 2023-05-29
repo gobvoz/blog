@@ -65,6 +65,8 @@ const ProfileCard: FC<Props> = props => {
       </section>
     );
 
+  if (!data) return null;
+
   return (
     <section className={classNames(cls.profileCard, className)}>
       <div className={cls.header}>
