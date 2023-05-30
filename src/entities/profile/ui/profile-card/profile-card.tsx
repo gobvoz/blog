@@ -1,17 +1,20 @@
 import { FC } from 'react';
 
+import { Country, CountrySelect } from 'entities/country';
+import { Currency, CurrencySelect } from 'entities/currency';
+
+import { PageLoader } from 'widgets/page-loader';
+
 import { TextBlock } from 'shared/ui/text-block';
 import { Input } from 'shared/ui/input';
 import { Hr } from 'shared/ui/hr';
 import { classNames } from 'shared/libs/class-names';
 import { useAppTranslation } from 'shared/libs/hooks';
-
-import { PageLoader } from 'widgets/page-loader';
+import { Avatar } from 'shared/ui/avatar';
 
 import cls from './profile-card.module.scss';
 
 import { Profile } from '../../model/types/profile-schema';
-import { Avatar } from 'shared/ui/avatar';
 
 interface Props {
   data?: Profile;
@@ -24,9 +27,9 @@ interface Props {
   onFirstNameChange?: (value: string) => void;
   onLastNameChange?: (value: string) => void;
   onAgeChange?: (value: string) => void;
-  onCountryChange?: (value: string) => void;
+  onCountryChange?: (value: Country) => void;
   onCityChange?: (value: string) => void;
-  onCurrencyChange?: (value: string) => void;
+  onCurrencyChange?: (value: Currency) => void;
 }
 
 const getFullName = (first?: string, last?: string) => {
@@ -75,81 +78,53 @@ const ProfileCard: FC<Props> = props => {
         />
       </div>
       <div className={cls.content}>
-        {data?.avatar && <Avatar src={data.avatar} large />}
-        <label className={cls.label}>
-          <span className={cls.fieldName}>{t('username', { ns: 'profile-card' })}</span>
-          <Input
-            value={data?.username}
-            placeholder={t('your-user-name', { ns: 'profile-card' })}
-            readOnly={readonly}
-            onChange={onUsernameChange}
-          />
-        </label>
-        <label className={cls.label}>
-          <span className={cls.fieldName}>{t('avatar', { ns: 'profile-card' })}</span>
-          <Input
-            value={data?.avatar}
-            placeholder={t('your-avatar-link', { ns: 'profile-card' })}
-            readOnly={readonly}
-            onChange={onAvatarChange}
-          />
-        </label>
+        <Avatar src={data?.avatar} large />
+        <Input
+          label={t('username', { ns: 'profile-card' })}
+          value={data?.username}
+          placeholder={t('your-user-name', { ns: 'profile-card' })}
+          readOnly={readonly}
+          onChange={onUsernameChange}
+        />
+        <Input
+          label={t('avatar', { ns: 'profile-card' })}
+          value={data?.avatar}
+          placeholder={t('your-avatar-link', { ns: 'profile-card' })}
+          readOnly={readonly}
+          onChange={onAvatarChange}
+        />
         <Hr />
-        <label className={cls.label}>
-          <span className={cls.fieldName}>{t('first-name', { ns: 'profile-card' })}</span>
-          <Input
-            value={data?.first}
-            placeholder={t('your-first-name', { ns: 'profile-card' })}
-            readOnly={readonly}
-            onChange={onFirstNameChange}
-          />
-        </label>
-        <label className={cls.label}>
-          <span className={cls.fieldName}>{t('last-name', { ns: 'profile-card' })}</span>
-          <Input
-            value={data?.last}
-            placeholder={t('your-last-name', { ns: 'profile-card' })}
-            readOnly={readonly}
-            onChange={onLastNameChange}
-          />
-        </label>
-        <label className={cls.label}>
-          <span className={cls.fieldName}>{t('age', { ns: 'profile-card' })}</span>
-          <Input
-            value={data?.age}
-            placeholder={t('your-age', { ns: 'profile-card' })}
-            readOnly={readonly}
-            onChange={onAgeChange}
-          />
-        </label>
+        <Input
+          label={t('first-name', { ns: 'profile-card' })}
+          value={data?.first}
+          placeholder={t('your-first-name', { ns: 'profile-card' })}
+          readOnly={readonly}
+          onChange={onFirstNameChange}
+        />
+        <Input
+          label={t('last-name', { ns: 'profile-card' })}
+          value={data?.last}
+          placeholder={t('your-last-name', { ns: 'profile-card' })}
+          readOnly={readonly}
+          onChange={onLastNameChange}
+        />
+        <Input
+          label={t('age', { ns: 'profile-card' })}
+          value={data?.age}
+          placeholder={t('your-age', { ns: 'profile-card' })}
+          readOnly={readonly}
+          onChange={onAgeChange}
+        />
         <Hr />
-        <label className={cls.label}>
-          <span className={cls.fieldName}>{t('country', { ns: 'profile-card' })}</span>
-          <Input
-            value={data?.country}
-            placeholder={t('your-country', { ns: 'profile-card' })}
-            readOnly={readonly}
-            onChange={onCountryChange}
-          />
-        </label>
-        <label className={cls.label}>
-          <span className={cls.fieldName}>{t('city', { ns: 'profile-card' })}</span>
-          <Input
-            value={data?.city}
-            placeholder={t('your-city', { ns: 'profile-card' })}
-            readOnly={readonly}
-            onChange={onCityChange}
-          />
-        </label>
-        <label className={cls.label}>
-          <span className={cls.fieldName}>{t('currency', { ns: 'profile-card' })}</span>
-          <Input
-            value={data?.currency}
-            placeholder={t('your-preferred-currency', { ns: 'profile-card' })}
-            readOnly={readonly}
-            onChange={onCurrencyChange}
-          />
-        </label>
+        <CountrySelect value={data?.country} readOnly={readonly} onChange={onCountryChange} />
+        <Input
+          label={t('city', { ns: 'profile-card' })}
+          value={data?.city}
+          placeholder={t('your-city', { ns: 'profile-card' })}
+          readOnly={readonly}
+          onChange={onCityChange}
+        />
+        <CurrencySelect value={data?.currency} readOnly={readonly} onChange={onCurrencyChange} />
       </div>
     </section>
   );

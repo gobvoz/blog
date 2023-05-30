@@ -58,26 +58,22 @@ const LoginForm = memo((props: Props) => {
     <DynamicModuleLoader reducerList={initialReducerList}>
       <form className={classNames(cls.loginForm, className)} onSubmit={handleSubmit}>
         <TextBlock form header="Login form" />
-
-        <label className={cls.label}>
-          <span className={cls.fieldName}>{t('login')}</span>
-          <Input
-            id="username"
-            value={username}
-            onChange={handleUsernameChange}
-            autoFocus
-            disabled={isLoading}
-          />
-        </label>
-        <label className={cls.label}>
-          <span className={cls.fieldName}>{t('password')}</span>
-          <Input
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-            disabled={isLoading}
-          />
-        </label>
+        <Input
+          label={t('login')}
+          id="username"
+          value={username}
+          onChange={handleUsernameChange}
+          autoFocus
+          disabled={isLoading}
+        />
+        <Input
+          label={t('password')}
+          id="password"
+          type="password"
+          value={password}
+          onChange={handlePasswordChange}
+          disabled={isLoading}
+        />
         {error && <TextBlock errorMessage>{i18n.t('login-password-error')}</TextBlock>}
         <Button className={cls.button} type="submit" disabled={isLoading} loading={isLoading}>
           {t('menu-login')}

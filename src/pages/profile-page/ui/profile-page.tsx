@@ -13,6 +13,8 @@ import {
   selectProfileLoading,
   selectProfileReadonly,
 } from 'entities/profile';
+import { Country } from 'entities/country';
+import { Currency } from 'entities/currency';
 
 import { DynamicModuleLoader, ReducerList } from 'shared/libs/components/dynamic-module-loader';
 import { useAppDispatch, useAppTranslation } from 'shared/libs/hooks';
@@ -69,8 +71,8 @@ const ProfilePage: FC = memo(() => {
     [dispatch],
   );
   const handleCountryChange = useCallback(
-    (value: string) => {
-      //dispatch(profileActions.updateProfile({ country: value }));
+    (value: Country) => {
+      dispatch(profileActions.updateProfile({ country: value }));
     },
     [dispatch],
   );
@@ -81,8 +83,8 @@ const ProfilePage: FC = memo(() => {
     [dispatch],
   );
   const handleCurrencyChange = useCallback(
-    (value: string) => {
-      //dispatch(profileActions.updateProfile({ currency: value }));
+    (value: Currency) => {
+      dispatch(profileActions.updateProfile({ currency: value }));
     },
     [dispatch],
   );

@@ -1,0 +1,37 @@
+.wrapper {
+  position: relative;
+
+  &:has(> [data-readonly='false'])::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% - 2px)) rotate(-45deg);
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid transparent;
+    border-bottom-color: var(--color-main);
+    border-left-color: var(--color-main);
+  }
+}
+
+.select {
+  width: 100%;
+  padding: var(--padding-field);
+  padding-right: 30px;
+  color: var(--color-main);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-field);
+  appearance: none;
+  cursor: pointer;
+
+  &[data-readonly='true'] {
+    outline: transparent;
+    cursor: default;
+  }
+}
+
+.placeholder-option {
+  display: none;
+}

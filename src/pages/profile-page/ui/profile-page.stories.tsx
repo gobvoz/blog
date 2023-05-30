@@ -1,9 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { Country } from 'entities/country';
+import { Currency } from 'entities/currency';
+
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
-import { Country, Currency } from 'shared/constants/common';
 
 import { ProfilePage } from './profile-page';
 

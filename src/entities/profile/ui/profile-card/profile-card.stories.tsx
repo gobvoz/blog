@@ -1,11 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { Profile } from 'entities/profile';
+import { Country } from 'entities/country';
+import { Currency } from 'entities/currency';
+
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
-import { Country, Currency } from 'shared/constants/common';
 
 import { ProfileCard } from './profile-card';
-import { Profile } from 'entities/profile/model/types/profile-schema';
 
 export default {
   title: 'entities/profile-card',
@@ -17,6 +19,7 @@ const Template: ComponentStory<typeof ProfileCard> = (args: object) => <ProfileC
 export const Light = Template.bind({});
 Light.args = {
   data: {
+    username: 'johndoe',
     first: 'John',
     last: 'Doe',
     age: '30',
@@ -29,6 +32,7 @@ Light.args = {
 export const LightWithEdit = Template.bind({});
 LightWithEdit.args = {
   data: {
+    username: 'johndoe',
     first: 'John',
     last: 'Doe',
     age: '30',
@@ -53,6 +57,7 @@ export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 Dark.args = {
   data: {
+    username: 'johndoe',
     first: 'John',
     last: 'Doe',
     age: '30',
@@ -66,6 +71,7 @@ export const DarkWithEdit = Template.bind({});
 DarkWithEdit.decorators = [ThemeDecorator(Theme.DARK)];
 DarkWithEdit.args = {
   data: {
+    username: 'johndoe',
     first: 'John',
     last: 'Doe',
     age: '30',

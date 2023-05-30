@@ -1,4 +1,5 @@
-import { Country, Currency } from 'shared/constants/common';
+import { Country } from 'entities/country';
+import { Currency } from 'entities/currency';
 
 export interface Profile {
   id?: number;
