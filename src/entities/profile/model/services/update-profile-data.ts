@@ -20,7 +20,7 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkApiConfig<
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log(e);
-      return rejectWithValue(e.response?.data?.message || e.message || 'unknown error');
+      return rejectWithValue(e.response?.data?.message || e.message || e);
     }
   },
 );
