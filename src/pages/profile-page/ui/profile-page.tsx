@@ -90,8 +90,8 @@ const ProfilePage: FC = memo(() => {
   );
 
   return (
-    <>
-      <h1>{t('page-profile', { ns: 'profile-page' })}</h1>
+    <section>
+      <h1>{t('profile-info', { ns: 'profile-page' })}</h1>
       <DynamicModuleLoader reducerList={reducerList}>
         <ProfileCard
           className={cls.profileCard}
@@ -112,7 +112,7 @@ const ProfilePage: FC = memo(() => {
         {!isLoading && formData && <ProfileButtons className={cls.buttonSection} />}
       </DynamicModuleLoader>
       <ThrowErrorButton />
-    </>
+    </section>
   );
 });
 

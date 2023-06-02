@@ -35,15 +35,6 @@ server.post('/login', (req, res) => {
   return res.status(403).json({ message: 'AUTH ERROR' });
 });
 
-server.get('/profile', (req, res) => {
-  const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'utf-8'));
-  const { profile } = db;
-
-  if (profile) return res.json(profile);
-
-  return res.status(404).json({ message: 'NOT FOUND' });
-});
-
 // authentication check
 server.use((req, res, next) => {
   if (!req.headers.authorization) {
@@ -52,6 +43,15 @@ server.use((req, res, next) => {
 
   next();
 });
+
+// server.get('/profile', (req, res) => {
+//   const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'utf-8'));
+//   const { profile } = db;
+
+//   if (profile) return res.json(profile);
+
+//   return res.status(404).json({ message: 'NOT FOUND' });
+// });
 
 server.use(router);
 
