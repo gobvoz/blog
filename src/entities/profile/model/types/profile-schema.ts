@@ -1,6 +1,12 @@
 import { Country } from 'entities/country';
 import { Currency } from 'entities/currency';
 
+export interface ValidateErrors extends Omit<Partial<Profile>, 'userId' | 'currency' | 'country'> {
+  userId?: string;
+  currency?: string;
+  country?: string;
+}
+
 export interface Profile {
   id?: number;
   userId?: number;
@@ -20,4 +26,5 @@ export interface ProfileSchema {
   isLoading: boolean;
   error?: string;
   readonly: boolean;
+  validateErrors?: ValidateErrors;
 }

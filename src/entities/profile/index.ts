@@ -8,3 +8,4 @@ export { selectProfileForm } from './model/selectors/select-profile-form';
 export { selectProfileLoading } from './model/selectors/select-profile-loading';
 export { selectProfileReadonly } from './model/selectors/select-profile-readonly';
 export { selectProfileError } from './model/selectors/select-profile-error';
+export { selectProfileValidateErrors } from './model/selectors/select-profile-validate-errors';

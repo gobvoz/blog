@@ -13,6 +13,7 @@ interface Props extends SelectHTMLProps {
   onChange?: (value: Country) => void;
 
   readOnly?: boolean;
+  error?: any;
 }
 
 const options = Object.values(Country).map(value => ({ value, label: value }));

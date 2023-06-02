@@ -20,12 +20,22 @@ interface Props extends SelectHTMLProps {
   options?: SelectOption[];
 
   readOnly?: boolean;
+  error?: any;
   onChange?: (value: string) => void;
 }
 
 const Select = memo((props: Props) => {
-  const { className, value, options, readOnly, label, placeholder, onChange, ...otherProps } =
-    props;
+  const {
+    className,
+    value,
+    options,
+    readOnly,
+    label,
+    placeholder,
+    onChange,
+    error,
+    ...otherProps
+  } = props;
 
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     onChange?.(event.target.value);
@@ -45,7 +55,7 @@ const Select = memo((props: Props) => {
     <Label value={label} className={className}>
       <div className={cls.wrapper}>
         <select
-          className={cls.select}
+          className={classNames(cls.select, { [cls.error]: error })}
           onChange={handleChange}
           value={value}
           data-readonly={readOnly}

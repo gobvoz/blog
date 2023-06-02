@@ -24,6 +24,7 @@ const profileSlice = createSlice({
     cancelEdit: state => {
       state.readonly = true;
       state.form = { ...state.data };
+      state.validateErrors = undefined;
     },
     setReadOnly: (state, action: PayloadAction<boolean>) => {
       state.readonly = action.payload;
@@ -56,7 +57,12 @@ const profileSlice = createSlice({
       })
       .addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload;
+
+        if (action.payload && typeof action.payload === 'object') {
+          state.validateErrors = action.payload;
+        } else {
+          state.error = action.payload;
+        }
       });
   },
 });

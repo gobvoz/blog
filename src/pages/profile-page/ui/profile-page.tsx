@@ -12,6 +12,7 @@ import {
   selectProfileError,
   selectProfileLoading,
   selectProfileReadonly,
+  selectProfileValidateErrors,
 } from 'entities/profile';
 import { Country } from 'entities/country';
 import { Currency } from 'entities/currency';
@@ -32,6 +33,7 @@ const ProfilePage: FC = memo(() => {
   const formData = useSelector(selectProfileForm);
   const isLoading = useSelector(selectProfileLoading);
   const error = useSelector(selectProfileError);
+  const validateErrors = useSelector(selectProfileValidateErrors);
   const readOnly = useSelector(selectProfileReadonly);
 
   const dispatch = useAppDispatch();
@@ -98,6 +100,7 @@ const ProfilePage: FC = memo(() => {
           data={formData}
           isLoading={isLoading}
           error={error}
+          validateErrors={validateErrors}
           readonly={readOnly}
           onUsernameChange={handleUsernameChange}
           onAvatarChange={handleAvatarChange}

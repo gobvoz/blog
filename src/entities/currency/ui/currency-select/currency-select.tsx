@@ -13,6 +13,7 @@ interface Props extends SelectHTMLProps {
   onChange?: (value: Currency) => void;
 
   readOnly?: boolean;
+  error?: any;
 }
 
 const options = Object.values(Currency).map(value => ({ value, label: value }));

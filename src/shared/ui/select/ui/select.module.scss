@@ -32,6 +32,10 @@
   }
 }
 
+.error {
+  border-color: var(--color-error);
+}
+
 .placeholder-option {
   display: none;
 }

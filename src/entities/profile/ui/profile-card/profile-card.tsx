@@ -14,13 +14,14 @@ import { Avatar } from 'shared/ui/avatar';
 
 import cls from './profile-card.module.scss';
 
-import { Profile } from '../../model/types/profile-schema';
+import { Profile, ValidateErrors } from '../../model/types/profile-schema';
 
 interface Props {
   data?: Profile;
   className?: string;
   isLoading?: boolean;
   error?: string;
+  validateErrors?: ValidateErrors;
   readonly?: boolean;
   onUsernameChange?: (value: string) => void;
   onAvatarChange?: (value: string) => void;
@@ -44,6 +45,7 @@ const ProfileCard: FC<Props> = props => {
     className,
     isLoading,
     error,
+    validateErrors,
     readonly = true,
     onUsernameChange,
     onAvatarChange,
@@ -85,7 +87,9 @@ const ProfileCard: FC<Props> = props => {
           placeholder={t('your-user-name', { ns: 'profile-card' })}
           readOnly={readonly}
           onChange={onUsernameChange}
+          error={validateErrors?.username}
         />
+        {validateErrors?.username && <TextBlock errorMessage>{validateErrors.username}</TextBlock>}
         <Input
           label={t('avatar', { ns: 'profile-card' })}
           value={data?.avatar}
@@ -100,31 +104,51 @@ const ProfileCard: FC<Props> = props => {
           placeholder={t('your-first-name', { ns: 'profile-card' })}
           readOnly={readonly}
           onChange={onFirstNameChange}
+          error={validateErrors?.first}
         />
+        {validateErrors?.first && <TextBlock errorMessage>{validateErrors.first}</TextBlock>}
         <Input
           label={t('last-name', { ns: 'profile-card' })}
           value={data?.last}
           placeholder={t('your-last-name', { ns: 'profile-card' })}
           readOnly={readonly}
           onChange={onLastNameChange}
+          error={validateErrors?.last}
         />
+        {validateErrors?.last && <TextBlock errorMessage>{validateErrors.last}</TextBlock>}
         <Input
           label={t('age', { ns: 'profile-card' })}
           value={data?.age}
           placeholder={t('your-age', { ns: 'profile-card' })}
           readOnly={readonly}
           onChange={onAgeChange}
+          error={validateErrors?.age}
         />
+        {validateErrors?.age && <TextBlock errorMessage>{validateErrors.age}</TextBlock>}
         <Hr />
-        <CountrySelect value={data?.country} readOnly={readonly} onChange={onCountryChange} />
+        <CountrySelect
+          value={data?.country}
+          readOnly={readonly}
+          onChange={onCountryChange}
+          error={validateErrors?.country}
+        />
+        {validateErrors?.country && <TextBlock errorMessage>{validateErrors.country}</TextBlock>}
         <Input
           label={t('city', { ns: 'profile-card' })}
           value={data?.city}
           placeholder={t('your-city', { ns: 'profile-card' })}
           readOnly={readonly}
           onChange={onCityChange}
+          error={validateErrors?.city}
         />
-        <CurrencySelect value={data?.currency} readOnly={readonly} onChange={onCurrencyChange} />
+        {validateErrors?.city && <TextBlock errorMessage>{validateErrors.city}</TextBlock>}
+        <CurrencySelect
+          value={data?.currency}
+          readOnly={readonly}
+          onChange={onCurrencyChange}
+          error={validateErrors?.currency}
+        />
+        {validateErrors?.currency && <TextBlock errorMessage>{validateErrors.currency}</TextBlock>}
       </div>
     </section>
   );
