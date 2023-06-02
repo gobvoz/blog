@@ -8,11 +8,15 @@ import { NotFoundPage } from 'pages/not-found-page';
 
 import { AppRoutes } from 'shared/constants/app-routes';
 
-const routerConfig: RouteProps[] = [
+type AppRouteProps = RouteProps & {
+  authOnly?: boolean;
+};
+
+const routerConfig: AppRouteProps[] = [
   { path: AppRoutes.MAIN, element: <MainPage /> },
   { path: AppRoutes.ABOUT, element: <AboutPage /> },
   { path: AppRoutes.CONTACTS, element: <ContactsPage /> },
-  { path: AppRoutes.PROFILE, element: <ProfilePage /> },
+  { path: AppRoutes.PROFILE, element: <ProfilePage />, authOnly: true },
   { path: AppRoutes.ERROR, element: <NotFoundPage /> },
 ];
 

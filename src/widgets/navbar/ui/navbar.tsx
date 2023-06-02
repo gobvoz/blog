@@ -1,4 +1,5 @@
 import { FC, memo, useCallback, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { useCollapse } from 'app/providers/collapse-provider';
@@ -24,6 +25,7 @@ interface Props {
 const Navbar: FC<Props> = memo((props: Props) => {
   const dispatch = useAppDispatch();
   const { t } = useAppTranslation();
+  const navigate = useNavigate();
 
   const userAuthData = useSelector(selectUserAuthData);
 
@@ -42,6 +44,7 @@ const Navbar: FC<Props> = memo((props: Props) => {
   const handleCloseModalClick = useCallback(() => setAuthModalOpen(false), []);
   const handleLogout = useCallback(() => {
     dispatch(userActions.logout());
+    navigate(AppRoutes.MAIN);
   }, []);
 
   const mods = {
