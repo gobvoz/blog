@@ -28,6 +28,7 @@ const buildConfig = (env: BuildEnv) => {
     isDevelopment,
     port: PORT,
     host: HOST,
+    project: 'frontend',
   };
 
   const config: webpack.Configuration = buildWebpackConfig(buildOptions);

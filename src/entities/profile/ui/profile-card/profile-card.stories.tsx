@@ -43,6 +43,29 @@ LightWithEdit.args = {
   readonly: false,
 };
 
+export const LightWithValidationError = Template.bind({});
+LightWithValidationError.args = {
+  data: {
+    username: 'j',
+    first: 'J',
+    last: 'D',
+    age: '16',
+    country: undefined,
+    city: 'N',
+    currency: undefined,
+  } as Profile,
+  readonly: false,
+  validateErrors: {
+    username: true,
+    first: true,
+    last: true,
+    age: true,
+    country: true,
+    city: true,
+    currency: true,
+  },
+};
+
 export const LightWithError = Template.bind({});
 LightWithError.args = {
   error: 'Error message',
@@ -81,6 +104,30 @@ DarkWithEdit.args = {
   } as Profile,
   readonly: false,
 };
+
+export const DarkWithValidationError = Template.bind({});
+DarkWithValidationError.args = {
+  data: {
+    username: 'j',
+    first: 'J',
+    last: 'D',
+    age: '16',
+    country: undefined,
+    city: 'N',
+    currency: undefined,
+  } as Profile,
+  readonly: false,
+  validateErrors: {
+    username: true,
+    first: true,
+    last: true,
+    age: true,
+    country: true,
+    city: true,
+    currency: true,
+  },
+};
+DarkWithValidationError.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const DarkWithError = Template.bind({});
 DarkWithError.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,4 +1,6 @@
+import { useAppTranslation } from 'shared/libs/hooks';
 import { Profile, ValidateErrors } from '../types/profile-schema';
+import { useTranslation } from 'react-i18next';
 
 const isNameValid = (name: string | undefined, length = 2): boolean => {
   if (!name) return false;

@@ -20,7 +20,7 @@ export const Light = Template.bind({});
 Light.decorators = [
   StoreDecorator({
     profile: {
-      data: {
+      form: {
         first: 'John',
         last: 'Doe',
         age: '30',
@@ -37,7 +37,7 @@ Dark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({
     profile: {
-      data: {
+      form: {
         first: 'John',
         last: 'Doe',
         age: '30',

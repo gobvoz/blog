@@ -39,7 +39,7 @@ const ProfilePage: FC = memo(() => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') dispatch(fetchProfileData());
   }, [dispatch]);
 
   const handleUsernameChange = useCallback(
