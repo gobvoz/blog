@@ -1,4 +1,4 @@
-export const webpackBabelLoader = () => {
+export const webpackBabelLoader = (isDevelopment: boolean) => {
   const babelLoader = {
     test: /\.(js|jsx|ts|tsx)$/,
     exclude: /node_modules/,
@@ -16,7 +16,8 @@ export const webpackBabelLoader = () => {
               outputPath: 'public/locales/{{locale}}/{{ns}}.json',
             },
           ],
-        ],
+          isDevelopment && require.resolve('react-refresh/babel'),
+        ].filter(Boolean),
       },
     },
   };

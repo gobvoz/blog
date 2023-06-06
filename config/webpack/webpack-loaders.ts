@@ -24,7 +24,7 @@ export const webpackLoaders = (options: BuildOptions): webpack.RuleSetRule[] => 
     exclude: '/node_modules/',
   };
 
-  const babelLoader = webpackBabelLoader();
+  const babelLoader = webpackBabelLoader(isDevelopment);
 
   return [babelLoader, fileLoader, svgLoader, typescriptLoader, cssLoader];
 };
