@@ -16,5 +16,11 @@ const Template: ComponentStory<typeof Navbar> = (args: object) => <Navbar {...ar
 export const Light = Template.bind({});
 Light.decorators = [StoreDecorator({})];
 
+export const LightWithAuth = Template.bind({});
+LightWithAuth.decorators = [StoreDecorator({ user: { authData: {} } })];
+
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+
+export const DarkWithAuth = Template.bind({});
+DarkWithAuth.decorators = [StoreDecorator({ user: { authData: {} } })];
