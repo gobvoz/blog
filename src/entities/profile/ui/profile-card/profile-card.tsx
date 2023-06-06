@@ -89,7 +89,9 @@ const ProfileCard: FC<Props> = props => {
           onChange={onUsernameChange}
           error={validateErrors?.username}
         />
-        {validateErrors?.username && <TextBlock errorMessage>{validateErrors.username}</TextBlock>}
+        {validateErrors?.username && (
+          <TextBlock errorMessage>{t('error-username', { ns: 'profile-card' })}</TextBlock>
+        )}
         <Input
           label={t('avatar', { ns: 'profile-card' })}
           value={data?.avatar}
@@ -106,7 +108,9 @@ const ProfileCard: FC<Props> = props => {
           onChange={onFirstNameChange}
           error={validateErrors?.first}
         />
-        {validateErrors?.first && <TextBlock errorMessage>{validateErrors.first}</TextBlock>}
+        {validateErrors?.first && (
+          <TextBlock errorMessage>{t('error-first', { ns: 'profile-card' })}</TextBlock>
+        )}
         <Input
           label={t('last-name', { ns: 'profile-card' })}
           value={data?.last}
@@ -115,7 +119,9 @@ const ProfileCard: FC<Props> = props => {
           onChange={onLastNameChange}
           error={validateErrors?.last}
         />
-        {validateErrors?.last && <TextBlock errorMessage>{validateErrors.last}</TextBlock>}
+        {validateErrors?.last && (
+          <TextBlock errorMessage>{t('error-last', { ns: 'profile-card' })}</TextBlock>
+        )}
         <Input
           label={t('age', { ns: 'profile-card' })}
           value={data?.age}
@@ -124,7 +130,9 @@ const ProfileCard: FC<Props> = props => {
           onChange={onAgeChange}
           error={validateErrors?.age}
         />
-        {validateErrors?.age && <TextBlock errorMessage>{validateErrors.age}</TextBlock>}
+        {validateErrors?.age && (
+          <TextBlock errorMessage>{t('error-age', { ns: 'profile-card' })}</TextBlock>
+        )}
         <Hr />
         <CountrySelect
           value={data?.country}
@@ -132,7 +140,9 @@ const ProfileCard: FC<Props> = props => {
           onChange={onCountryChange}
           error={validateErrors?.country}
         />
-        {validateErrors?.country && <TextBlock errorMessage>{validateErrors.country}</TextBlock>}
+        {validateErrors?.country && (
+          <TextBlock errorMessage>{t('error-country', { ns: 'profile-card' })}</TextBlock>
+        )}
         <Input
           label={t('city', { ns: 'profile-card' })}
           value={data?.city}
@@ -141,14 +151,18 @@ const ProfileCard: FC<Props> = props => {
           onChange={onCityChange}
           error={validateErrors?.city}
         />
-        {validateErrors?.city && <TextBlock errorMessage>{validateErrors.city}</TextBlock>}
+        {validateErrors?.city && (
+          <TextBlock errorMessage>{t('error-city', { ns: 'profile-card' })}</TextBlock>
+        )}
         <CurrencySelect
           value={data?.currency}
           readOnly={readonly}
           onChange={onCurrencyChange}
           error={validateErrors?.currency}
         />
-        {validateErrors?.currency && <TextBlock errorMessage>{validateErrors.currency}</TextBlock>}
+        {validateErrors?.currency && (
+          <TextBlock errorMessage>{t('error-currency', { ns: 'profile-card' })}</TextBlock>
+        )}
       </div>
     </section>
   );

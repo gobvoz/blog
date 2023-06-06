@@ -1,11 +1,7 @@
 import { Country } from 'entities/country';
 import { Currency } from 'entities/currency';
 
-export interface ValidateErrors extends Omit<Partial<Profile>, 'userId' | 'currency' | 'country'> {
-  userId?: string;
-  currency?: string;
-  country?: string;
-}
+export type ValidateErrors = Partial<Record<keyof Profile, boolean>>;
 
 export interface Profile {
   id?: number;
