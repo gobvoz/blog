@@ -10,6 +10,7 @@ import { AppRoutes } from 'shared/constants/app-routes';
 
 type AppRouteProps = RouteProps & {
   authOnly?: boolean;
+  element: JSX.Element;
 };
 
 const routerConfig: AppRouteProps[] = [
@@ -20,4 +21,4 @@ const routerConfig: AppRouteProps[] = [
   { path: AppRoutes.ERROR, element: <NotFoundPage /> },
 ];
 
-export { routerConfig };
+export { routerConfig, AppRouteProps };
