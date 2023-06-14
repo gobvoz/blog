@@ -1,3 +1,7 @@
 {
-  "header": "Articles page"
+  "article-header": "Article",
+  "article-list-header": "all articles",
+  "error-not-found": "Article not found",
+  "error-not-found-long": "Perhaps the article has been moved to another location or deleted, try selecting a different article.",
+  "header": ""
 }
