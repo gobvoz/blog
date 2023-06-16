@@ -1,10 +1,13 @@
 .header {
   color: var(--color-header);
   margin-top: 0;
+  font-size: var(--font-size-m);
 }
 
 .paragraph {
   color: var(--color-text);
+  margin: 0;
+  font-size: var(--font-size-m);
 }
 
 .form {
@@ -22,41 +25,46 @@
 
 .error-message {
   margin: 0 20px;
-  font-size: var(--font-size-s);
   line-height: 1;
 
-  & .header {
+  & > .header {
     color: var(--color-error);
     font-size: var(--font-size-s);
-    margin: 0;
   }
 
-  & .paragraph {
+  & > .paragraph {
     color: var(--color-error);
     margin: 0;
-  }
-
-  &.small {
     font-size: var(--font-size-s);
+  }
+}
 
-    & > .header {
-      font-size: var(--font-size-s);
-    }
+.small {
+  & > .header {
+    font-size: var(--font-size-s);
   }
 
-  &.medium {
+  & > .paragraph {
+    font-size: var(--font-size-s);
+  }
+}
+
+.medium {
+  & > .header {
     font-size: var(--font-size-m);
-
-    & > .header {
-      font-size: var(--font-size-m);
-    }
   }
 
-  &.large {
-    font-size: var(--font-size-l);
+  & > .paragraph {
+    font-size: var(--font-size-m);
+  }
+}
 
-    & > .header {
-      font-size: var(--font-size-l);
-    }
+.large {
+  & > .header {
+    font-size: var(--font-size-l);
+  }
+
+  & > .paragraph {
+    font-size: var(--font-size-l);
   }
 }

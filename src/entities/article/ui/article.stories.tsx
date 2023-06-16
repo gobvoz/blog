@@ -1,17 +1,17 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ArticleBlockType, Article as ArticleType } from 'entities/article/model/types/article';
+import { Article } from './article';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
-import { ArticleDetailPage } from './article-detail-page';
+import { ArticleBlockType, Article as ArticleType } from '../model/types/article';
 
 export default {
-  title: 'page/article-detail-page',
-  component: ArticleDetailPage,
-} as ComponentMeta<typeof ArticleDetailPage>;
+  title: 'entities/article/article',
+  component: Article,
+} as ComponentMeta<typeof Article>;
 
-const Template: ComponentStory<typeof ArticleDetailPage> = () => <ArticleDetailPage />;
+const Template: ComponentStory<typeof Article> = args => <Article {...args} />;
 
 const article: ArticleType = {
   id: '1',
@@ -142,7 +142,31 @@ const article: ArticleType = {
 };
 
 export const Light = Template.bind({});
+Light.args = {};
 Light.decorators = [StoreDecorator({ article: { data: article } })];
 
+export const LightLoading = Template.bind({});
+LightLoading.args = {};
+LightLoading.decorators = [StoreDecorator({ article: { isLoading: true } })];
+
+export const LightError = Template.bind({});
+LightError.args = {};
+LightError.decorators = [StoreDecorator({ article: { error: 'Article not found' } })];
+
 export const Dark = Template.bind({});
+Dark.args = {};
 Dark.decorators = [StoreDecorator({ article: { data: article } }), ThemeDecorator(Theme.DARK)];
+
+export const DarkLoading = Template.bind({});
+DarkLoading.args = {};
+DarkLoading.decorators = [
+  StoreDecorator({ article: { isLoading: true } }),
+  ThemeDecorator(Theme.DARK),
+];
+
+export const DarkError = Template.bind({});
+DarkError.args = {};
+DarkError.decorators = [
+  StoreDecorator({ article: { error: 'Article not found' } }),
+  ThemeDecorator(Theme.DARK),
+];

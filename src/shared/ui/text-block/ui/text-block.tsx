@@ -31,9 +31,9 @@ const TextBlock: FC<Props> = props => {
 
   return (
     <div className={classNames(cls.textBlock, className, mod)}>
-      {header && <h2 className={classNames([cls.header])}>{header}</h2>}
-      {paragraph && <p className={classNames([cls.paragraph])}>{paragraph}</p>}
-      {children && <p className={classNames([cls.paragraph])}>{children}</p>}
+      {header && <h2 className={cls.header}>{header}</h2>}
+      {paragraph && <p className={cls.paragraph}>{paragraph}</p>}
+      {children && <p className={cls.paragraph}>{children}</p>}
     </div>
   );
 };

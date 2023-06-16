@@ -1,0 +1,15 @@
+.article-separator {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  padding: 10px;
+
+  .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-text);
+  }
+}

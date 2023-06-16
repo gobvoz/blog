@@ -20,6 +20,16 @@ const Template: ComponentStory<typeof TextBlock> = args => <TextBlock {...args} 
 
 export const Light = Template.bind({});
 
+export const LightSmall = Template.bind({});
+LightSmall.args = {
+  small: true,
+};
+
+export const LightLarge = Template.bind({});
+LightLarge.args = {
+  large: true,
+};
+
 export const LightWithoutHeader = Template.bind({});
 LightWithoutHeader.args = {
   header: undefined,
@@ -42,6 +52,18 @@ LightForm.args = {
 
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DarkSmall = Template.bind({});
+DarkSmall.args = {
+  small: true,
+};
+DarkSmall.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DarkLarge = Template.bind({});
+DarkLarge.args = {
+  large: true,
+};
+DarkLarge.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const DarkWithoutHeader = Template.bind({});
 DarkWithoutHeader.args = {

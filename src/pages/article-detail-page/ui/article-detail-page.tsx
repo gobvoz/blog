@@ -1,11 +1,16 @@
-import { FC, memo } from 'react';
+import { memo } from 'react';
+import { useParams } from 'react-router-dom';
 
-import { useAppTranslation } from 'shared/libs/hooks';
+import { Article } from 'entities/article';
 
-const ArticleDetailPage: FC = memo(() => {
-  const { t } = useAppTranslation('article-detail-page');
+const ArticleDetailPage = memo(() => {
+  const { id } = useParams();
 
-  return <h1>{t('header', { ns: 'article-detail-page' })}</h1>;
+  return (
+    <section>
+      <Article id={id || ''} />
+    </section>
+  );
 });
 
 export { ArticleDetailPage };
