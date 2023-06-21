@@ -12,19 +12,19 @@
 
   &.small {
     padding: 1px;
-    width: 29px;
-    height: 29px;
+    width: var(--avatar-size-small);
+    height: var(--avatar-size-small);
   }
 
   &.medium {
     padding: 2px;
-    width: 60px;
-    height: 60px;
+    width: var(--avatar-size-medium);
+    height: var(--avatar-size-medium);
   }
 
   &.large {
     padding: 2px;
-    width: 100px;
-    height: 100px;
+    width: var(--avatar-size-large);
+    height: var(--avatar-size-large);
   }
 }

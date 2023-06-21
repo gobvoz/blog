@@ -6,6 +6,11 @@ import { articleReducer } from '../article-slice';
 describe('articleSlice test', () => {
   const returnedData: Article = {
     id: '42',
+    user: {
+      id: '42',
+      username: 'Name',
+      avatar: 'https://www.example.com/images/googlelogo.png',
+    },
     title: 'Title',
     subtitle: 'Subtitle',
     image: 'https://www.example.com/images/googlelogo.png',

@@ -15,6 +15,11 @@ const Template: ComponentStory<typeof ArticleDetailPage> = () => <ArticleDetailP
 
 const article: ArticleType = {
   id: '1',
+  user: {
+    id: '1',
+    username: 'John Doe',
+    avatar: 'https://miro.medium.com/fit/c/262/262/1*JrHDbEShjWr9xJNn8eTgNQ.jpeg',
+  },
   title: '7 New JavaScript Features in ECMAScript 2022',
   subtitle: '',
   image: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg',

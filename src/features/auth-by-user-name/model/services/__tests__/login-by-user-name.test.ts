@@ -1,4 +1,4 @@
-import { userActions } from 'entities/user';
+import { User, userActions } from 'entities/user';
 
 import { TestAsyncThunk } from 'shared/libs/tests/test-async-thunk';
 
@@ -9,7 +9,7 @@ jest.mock('axios');
 describe('loginByUserName', () => {
   it('should to be a successful login', async () => {
     const userData = { username: 'username', password: 'password' };
-    const returnedData = { username: 'username', id: '123' };
+    const returnedData: User = { username: 'username', id: '123', avatar: 'http://' };
 
     const thunk = new TestAsyncThunk(loginByUsername);
     thunk.api.post.mockReturnValue(Promise.resolve({ data: returnedData }));

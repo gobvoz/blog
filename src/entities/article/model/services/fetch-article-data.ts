@@ -10,7 +10,11 @@ export const fetchArticleData = createAsyncThunk<Article, string, ThunkApiConfig
     const { extra, rejectWithValue } = thunkApi;
 
     try {
-      const response = await extra.api.get<Article>(`/articles/${articleId}`);
+      const response = await extra.api.get<Article>(`/articles/${articleId}`, {
+        params: {
+          _expand: 'user',
+        },
+      });
 
       if (!response.data) throw new Error('no data from server');
 

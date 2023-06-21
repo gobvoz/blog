@@ -25,6 +25,7 @@ import { ArticleCodeBlock } from './article-code-block';
 import { ArticleSeparatorBlock } from './article-separator-block';
 import { ArticleImageBlock } from './article-image-block';
 import { ArticleHintBlock } from './article-hint-block';
+import { useInitialEffect } from 'shared/libs/hooks';
 
 interface Props {
   className?: string;
@@ -41,15 +42,13 @@ const Article = memo((props: Props) => {
   const { t } = useAppTranslation('article-page');
   const dispatch = useAppDispatch();
 
+  useInitialEffect(() => dispatch(fetchArticleData(id)));
+
   const isLoading = useSelector(selectArticleLoading);
   const data = useSelector(selectArticleData);
   const error = useSelector(selectArticleError);
 
   let content = null;
-
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') dispatch(fetchArticleData(id));
-  }, [dispatch, id]);
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
@@ -97,10 +96,10 @@ const Article = memo((props: Props) => {
       <>
         <TextBlock header={data.title}>{data.subtitle}</TextBlock>
         <div className={cls.skeletonDescription}>
-          <Avatar className={cls.skeletonAvatar} src={data.image} />
+          <Avatar className={cls.skeletonAvatar} src={data.user.avatar} />
           <div className={cls.skeletonGroup}>
-            <TextBlock>123</TextBlock>
-            <TextBlock>123</TextBlock>
+            <TextBlock>{data.user.username}</TextBlock>
+            <TextBlock>{data.user.about}</TextBlock>
           </div>
         </div>
         <div className={cls.iconText}>

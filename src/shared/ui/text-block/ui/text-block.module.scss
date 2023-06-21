@@ -1,13 +1,16 @@
 .header {
   color: var(--color-header);
-  margin-top: 0;
+  margin: 0;
   font-size: var(--font-size-m);
 }
 
 .paragraph {
-  color: var(--color-text);
   margin: 0;
   font-size: var(--font-size-m);
+}
+
+.header + .paragraph {
+  margin-top: 10px;
 }
 
 .form {

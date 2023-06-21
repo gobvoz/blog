@@ -18,7 +18,7 @@ import { Country } from 'entities/country';
 import { Currency } from 'entities/currency';
 
 import { DynamicModuleLoader, ReducerList } from 'shared/libs/components/dynamic-module-loader';
-import { useAppDispatch, useAppTranslation } from 'shared/libs/hooks';
+import { useAppDispatch, useAppTranslation, useInitialEffect } from 'shared/libs/hooks';
 
 import { ProfileButtons } from './profile-buttons/profile-buttons';
 import cls from './profile-page.module.scss';
@@ -29,18 +29,15 @@ const reducerList: ReducerList = {
 
 const ProfilePage: FC = memo(() => {
   const { t } = useAppTranslation('profile-page');
+  const dispatch = useAppDispatch();
+
+  useInitialEffect(() => dispatch(fetchProfileData()));
 
   const formData = useSelector(selectProfileForm);
   const isLoading = useSelector(selectProfileLoading);
   const error = useSelector(selectProfileError);
   const validateErrors = useSelector(selectProfileValidateErrors);
   const readOnly = useSelector(selectProfileReadonly);
-
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') dispatch(fetchProfileData());
-  }, [dispatch]);
 
   const handleUsernameChange = useCallback(
     (value: string) => {

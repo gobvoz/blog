@@ -18,6 +18,7 @@
   --padding-modal: 20px;
   --padding-navbar: 5px 0;
   --padding-sidebar: 20px 0;
+  --padding-comment: 15px 20px;
 
   // fonts
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family);
@@ -36,6 +37,11 @@
   // widths
   --width-sidebar: 300px;
   --width-sidebar-collapsed: 80px;
+
+  // avatar
+  --avatar-size-small: 30px;
+  --avatar-size-medium: 60px;
+  --avatar-size-large: 100px;
 
   // layers
   --z-index-modal: 1000;
