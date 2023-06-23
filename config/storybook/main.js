@@ -10,4 +10,15 @@ module.exports = {
     builder: '@storybook/builder-webpack5',
   },
   staticDirs: ['../../public'],
+  previewBody: body => `
+    <style>
+      .app {
+        padding: 5px;
+      }
+      .app.light:has(> .dark) {
+        padding: 0;
+      }
+    </style>
+    ${body}
+  `,
 };

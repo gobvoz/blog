@@ -1,6 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ArticleHeaderBlock } from './article-header-block';
+import { ArticleBlockHeader, ArticleBlockType } from 'entities/article/model/types/article';
+import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
+import { Theme } from 'shared/constants/theme';
 
 export default {
   title: 'entities/article/article-header-block',
@@ -11,4 +14,19 @@ const Template: ComponentStory<typeof ArticleHeaderBlock> = args => (
   <ArticleHeaderBlock {...args} />
 );
 
-export const Default = Template.bind({});
+const block: ArticleBlockHeader = {
+  id: '8',
+  type: ArticleBlockType.HEADER,
+  content: ['2. Lorem ipsum dolor sit.'],
+};
+
+export const Light = Template.bind({});
+Light.args = {
+  block,
+};
+
+export const Dark = Template.bind({});
+Dark.args = {
+  block,
+};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
