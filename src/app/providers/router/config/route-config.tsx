@@ -22,6 +22,7 @@ const routerConfig: AppRouteProps[] = [
   { path: AppRoutes.ARTICLE_DETAIL, element: <ArticleDetailPage />, authOnly: true },
   { path: AppRoutes.CONTACTS, element: <ContactsPage /> },
   { path: AppRoutes.PROFILE, element: <ProfilePage />, authOnly: true },
+  { path: AppRoutes.PROFILE_WITH_ID, element: <ProfilePage />, authOnly: true },
   { path: AppRoutes.ERROR, element: <NotFoundPage /> },
 ];
 

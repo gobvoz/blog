@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof ArticleDetailPage> = () => <ArticleDetailP
 
 const article: ArticleType = {
   id: '1',
-  user: {
+  profile: {
     id: '1',
     username: 'John Doe',
     avatar: 'https://miro.medium.com/fit/c/262/262/1*JrHDbEShjWr9xJNn8eTgNQ.jpeg',

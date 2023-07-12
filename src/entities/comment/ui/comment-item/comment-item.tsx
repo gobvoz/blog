@@ -6,6 +6,8 @@ import { Comment } from 'entities/comment/model/types/comment';
 import { Avatar } from 'shared/ui/avatar';
 import { TextBlock } from 'shared/ui/text-block';
 import { Skeleton } from 'shared/ui/skeleton';
+import { AppLink } from 'shared/ui/app-link';
+import { AppRoutes } from 'shared/constants/app-routes';
 
 interface Props {
   className?: string;
@@ -28,12 +30,17 @@ const CommentItem = memo((props: Props) => {
       </div>
     );
   }
+  console.log(comment);
 
   return (
     <div className={classNames(cls.commentItem, className)}>
       <div className={cls.header}>
-        <Avatar src={comment.user.avatar} small />
-        <TextBlock header={comment.user.username} />
+        <AppLink to={AppRoutes.PROFILE + '/' + comment.profile.id} withoutPadding>
+          <Avatar src={comment.profile.avatar} small />
+        </AppLink>
+        <AppLink to={AppRoutes.PROFILE + '/' + comment.profile.id} withoutPadding>
+          <TextBlock header={comment.profile.first + ' ' + comment.profile.last} />
+        </AppLink>
       </div>
       <TextBlock>{comment.body}</TextBlock>
       <TextBlock className={cls.created} small>

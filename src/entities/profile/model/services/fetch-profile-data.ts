@@ -3,13 +3,13 @@ import { ThunkApiConfig } from 'app/providers/store-provider';
 
 import { Profile } from '../types/profile-schema';
 
-export const fetchProfileData = createAsyncThunk<Profile, void, ThunkApiConfig<string>>(
+export const fetchProfileData = createAsyncThunk<Profile, string, ThunkApiConfig<string>>(
   'profile/fetchProfileData',
-  async (_, thunkApi) => {
+  async (userId, thunkApi) => {
     const { extra, rejectWithValue } = thunkApi;
 
     try {
-      const response = await extra.api.get<Profile>('/profile');
+      const response = await extra.api.get<Profile>(`profiles/${userId}`);
 
       if (!response.data) throw new Error('no data from server');
 

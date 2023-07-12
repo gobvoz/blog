@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof Article> = args => <Article {...args} />;
 
 const article: ArticleType = {
   id: '1',
-  user: {
+  profile: {
     id: '1',
     username: 'John Doe',
     avatar: 'https://i.pravatar.cc/300?img=13',

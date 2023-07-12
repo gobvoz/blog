@@ -1,8 +1,8 @@
-import { User } from 'entities/user';
+import { Profile } from 'entities/profile';
 
 export interface Comment {
   id: string;
-  user: User;
+  profile: Profile;
   body: string;
   createdAt: string;
   updatedAt: string;

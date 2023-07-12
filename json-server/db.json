@@ -32,7 +32,7 @@
   "articles": [
     {
       "id": "1",
-      "userId": "1",
+      "profileId": "1",
       "title": "7 New JavaScript Features in ECMAScript 2022",
       "subtitle": "",
       "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
@@ -341,7 +341,7 @@
     },
     {
       "id": "2",
-      "userId": "2",
+      "profileId": "2",
       "title": "Top 10 Tricky Javascript Questions often asked by Interviewers",
       "subtitle": "Top 10 tricky Javascript questions often asked by interviewers. Make sure you know all of them!",
       "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
@@ -885,7 +885,7 @@
       "id": "1",
       "body": "Awesome",
       "articleId": "1",
-      "userId": "2",
+      "profileId": "2",
       "createdAt": "2023-03-05",
       "updatedAt": "2023-03-05"
     },
@@ -893,7 +893,7 @@
       "id": "2",
       "body": "Awesome",
       "articleId": "1",
-      "userId": "3",
+      "profileId": "3",
       "createdAt": "2023-03-06",
       "updatedAt": "2023-03-06"
     },
@@ -901,7 +901,7 @@
       "id": "3",
       "body": "Awesome",
       "articleId": "1",
-      "userId": "4",
+      "profileId": "4",
       "createdAt": "2023-03-07",
       "updatedAt": "2023-03-07"
     },
@@ -909,7 +909,7 @@
       "id": "4",
       "body": "Awesome",
       "articleId": "2",
-      "userId": "1",
+      "profileId": "1",
       "createdAt": "2023-03-05",
       "updatedAt": "2023-03-05"
     },
@@ -917,7 +917,7 @@
       "id": "5",
       "body": "Awesome",
       "articleId": "2",
-      "userId": "2",
+      "profileId": "2",
       "createdAt": "2023-03-06",
       "updatedAt": "2023-03-06"
     },
@@ -925,7 +925,7 @@
       "id": "6",
       "body": "Awesome",
       "articleId": "2",
-      "userId": "3",
+      "profileId": "3",
       "createdAt": "2023-03-07",
       "updatedAt": "2023-03-07"
     },
@@ -933,20 +933,59 @@
       "id": "7",
       "body": "Awesome",
       "articleId": "2",
-      "userId": "4",
+      "profileId": "4",
       "createdAt": "2023-03-08",
       "updatedAt": "2023-03-08"
     }
   ],
-  "profile": {
-    "userId": "1",
-    "first": "John",
-    "last": "Doe",
-    "age": "30",
-    "currency": "USD",
-    "country": "USA",
-    "city": "New York",
-    "username": "admin",
-    "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
-  }
+  "profiles": [
+    {
+      "id": "1",
+      "first": "Morgan",
+      "last": "Kane",
+      "age": "30",
+      "currency": "USD",
+      "country": "USA",
+      "city": "New York",
+      "username": "admin",
+      "avatar": "https://i.pravatar.cc/300?img=4",
+      "about": "admin of this blog"
+    },
+    {
+      "id": "2",
+      "first": "Jessica",
+      "last": "Voe",
+      "age": "25",
+      "currency": "USD",
+      "country": "USA",
+      "city": "New York",
+      "username": "admin",
+      "avatar": "https://i.pravatar.cc/300?img=5",
+      "about": "user of this blog"
+    },
+    {
+      "id": "3",
+      "first": "John",
+      "last": "Doe",
+      "age": "30",
+      "currency": "USD",
+      "country": "USA",
+      "city": "Miami",
+      "username": "admin",
+      "avatar": "https://i.pravatar.cc/300?img=3",
+      "about": "I am a designer currently living in South Florida. I am a fan of technology and design."
+    },
+    {
+      "id": "4",
+      "first": "Jane",
+      "last": "Doe",
+      "age": "31",
+      "currency": "USD",
+      "country": "USA",
+      "city": "Miami",
+      "username": "admin",
+      "avatar": "https://i.pravatar.cc/300?img=1",
+      "about": "I am a web developer currently living in South Florida. I am a fan of design, and programming. Also interested in writing, education, and entrepreneurship."
+    }
+  ]
 }

@@ -61,7 +61,7 @@ describe('profileSlice test', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        fetchProfileData.fulfilled({ first: 'John', last: 'Doe', age: '30' } as Profile, ''),
+        fetchProfileData.fulfilled({ first: 'John', last: 'Doe', age: '30' } as Profile, '', ''),
       ),
     ).toEqual({
       isLoading: false,

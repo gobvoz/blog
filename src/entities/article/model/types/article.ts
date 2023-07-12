@@ -1,4 +1,4 @@
-import { User } from 'entities/user';
+import { Profile } from 'entities/profile';
 
 export enum ArticleBlockType {
   PARAGRAPH = 'PARAGRAPH',
@@ -50,7 +50,7 @@ export type ArticleBlock =
 
 export interface Article {
   id: string;
-  user: User;
+  profile: Profile;
   title: string;
   subtitle: string;
   image: string;

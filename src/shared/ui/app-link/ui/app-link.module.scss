@@ -2,3 +2,7 @@
   display: inline-block;
   padding: var(--padding-button);
 }
+
+.without-padding {
+  padding: 0;
+}

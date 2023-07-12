@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useEffect } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { ThrowErrorButton } from 'app/providers/error-boundary';
@@ -22,6 +22,8 @@ import { useAppDispatch, useAppTranslation, useInitialEffect } from 'shared/libs
 
 import { ProfileButtons } from './profile-buttons/profile-buttons';
 import cls from './profile-page.module.scss';
+import { useParams } from 'react-router-dom';
+import { selectUserAuthData } from 'entities/user/model/selectors/select-user-auth-data';
 
 const reducerList: ReducerList = {
   profile: profileReducer,
@@ -31,13 +33,23 @@ const ProfilePage: FC = memo(() => {
   const { t } = useAppTranslation('profile-page');
   const dispatch = useAppDispatch();
 
-  useInitialEffect(() => dispatch(fetchProfileData()));
-
   const formData = useSelector(selectProfileForm);
   const isLoading = useSelector(selectProfileLoading);
   const error = useSelector(selectProfileError);
   const validateErrors = useSelector(selectProfileValidateErrors);
   const readOnly = useSelector(selectProfileReadonly);
+  const userData = useSelector(selectUserAuthData);
+
+  const currentUserId = userData?.id;
+  const { id } = useParams<{ id: string }>();
+
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
+    } else if (currentUserId) {
+      dispatch(fetchProfileData(currentUserId));
+    }
+  });
 
   const handleUsernameChange = useCallback(
     (value: string) => {

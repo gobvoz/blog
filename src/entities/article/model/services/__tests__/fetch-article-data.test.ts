@@ -9,7 +9,7 @@ describe('fetchArticleData', () => {
   it('should to be success', async () => {
     const returnedData: Article = {
       id: '42',
-      user: {
+      profile: {
         id: '42',
         username: 'Name',
         avatar: 'https://www.example.com/images/googlelogo.png',

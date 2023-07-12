@@ -26,6 +26,8 @@ import { ArticleSeparatorBlock } from './article-separator-block';
 import { ArticleImageBlock } from './article-image-block';
 import { ArticleHintBlock } from './article-hint-block';
 import { useInitialEffect } from 'shared/libs/hooks';
+import { AppRoutes } from 'shared/constants/app-routes';
+import { AppLink } from 'shared/ui/app-link';
 
 interface Props {
   className?: string;
@@ -96,10 +98,14 @@ const Article = memo((props: Props) => {
       <>
         <TextBlock header={data.title}>{data.subtitle}</TextBlock>
         <div className={cls.skeletonDescription}>
-          <Avatar className={cls.skeletonAvatar} src={data.user.avatar} />
+          <AppLink to={AppRoutes.PROFILE + '/' + data.profile.id} withoutPadding>
+            <Avatar className={cls.skeletonAvatar} src={data.profile.avatar} />
+          </AppLink>
           <div className={cls.skeletonGroup}>
-            <TextBlock>{data.user.username}</TextBlock>
-            <TextBlock>{data.user.about}</TextBlock>
+            <AppLink to={AppRoutes.PROFILE + '/' + data.profile.id} withoutPadding>
+              <TextBlock header={data.profile.first + ' ' + data.profile.last} />
+            </AppLink>
+            <TextBlock>{data.profile.about}</TextBlock>
           </div>
         </div>
         <div className={cls.iconText}>

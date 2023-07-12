@@ -4,8 +4,8 @@ import { Currency } from 'entities/currency';
 export type ValidateErrors = Partial<Record<keyof Profile, boolean>>;
 
 export interface Profile {
-  id?: number;
-  userId?: number;
+  id?: string;
+  userId?: string;
   first?: string;
   last?: string;
   age?: string;
@@ -14,6 +14,7 @@ export interface Profile {
   city?: string;
   username?: string;
   avatar?: string;
+  about?: string;
 }
 
 export interface ProfileSchema {
