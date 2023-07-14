@@ -6,6 +6,7 @@ import { TextBlock } from 'shared/ui/text-block';
 
 import { useAppTranslation } from 'shared/libs/hooks';
 import { ArticleCommentList } from 'features/comment-list';
+import { NewCommentForm } from 'features/new-comment-form';
 
 const ArticleDetailPage = memo(() => {
   const { id } = useParams();
@@ -15,6 +16,7 @@ const ArticleDetailPage = memo(() => {
     <section>
       <Article id={id || ''} />
       <TextBlock header={t('comments', { ns: 'article-detail-page' })} />
+      <NewCommentForm />
       <ArticleCommentList id={id || ''} />
     </section>
   );

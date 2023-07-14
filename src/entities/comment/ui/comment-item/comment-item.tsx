@@ -30,7 +30,6 @@ const CommentItem = memo((props: Props) => {
       </div>
     );
   }
-  console.log(comment);
 
   return (
     <div className={classNames(cls.commentItem, className)}>

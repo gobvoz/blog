@@ -6,6 +6,7 @@ import { ArticleSchema } from 'entities/article';
 import { LoginSchema } from 'features/auth-by-user-name';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleCommentListSchema } from 'features/comment-list';
+import { NewCommentFormSchema } from 'features/new-comment-form';
 
 export interface StateSchema {
   user: UserSchema;
@@ -15,6 +16,7 @@ export interface StateSchema {
   profile?: ProfileSchema;
   article?: ArticleSchema;
   commentList?: ArticleCommentListSchema;
+  newCommentForm?: NewCommentFormSchema;
 }
 
 export type StateSchemaKeys = keyof StateSchema;
