@@ -936,6 +936,13 @@
       "profileId": "4",
       "createdAt": "2023-03-08",
       "updatedAt": "2023-03-08"
+    },
+    {
+      "articleId": "1",
+      "profileId": "1",
+      "body": "My new comment",
+      "createdAt": "2023-07-18",
+      "id": "eEF9Tqf"
     }
   ],
   "profiles": [

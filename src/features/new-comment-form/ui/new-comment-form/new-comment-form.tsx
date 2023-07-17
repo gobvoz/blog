@@ -19,6 +19,7 @@ import { selectNewCommentFormLoading } from '../../model/selectors/select-new-co
 
 interface Props {
   className?: string;
+  onSendComment: (text: string) => void;
 }
 
 const reducerList: ReducerList = {
@@ -26,7 +27,7 @@ const reducerList: ReducerList = {
 };
 
 const NewCommentForm = memo((props: Props) => {
-  const { className } = props;
+  const { className, onSendComment } = props;
   const dispatch = useAppDispatch();
   const { setText } = newCommentFormActions;
 
@@ -43,16 +44,29 @@ const NewCommentForm = memo((props: Props) => {
     [dispatch],
   );
 
+  const handleSubmit = useCallback(
+    (evt: React.FormEvent) => {
+      evt.preventDefault();
+
+      if (newComment) {
+        onSendComment(newComment);
+        dispatch(setText(''));
+      }
+    },
+    [dispatch, onSendComment, newComment],
+  );
+
   return (
     <DynamicModuleLoader reducerList={reducerList}>
       <div className={classNames(cls.wrapper, className)}>
-        <form className={cls.commentForm}>
+        <form className={cls.commentForm} onSubmit={handleSubmit}>
           <Input
+            id="comment-text"
             placeholder={t('comment-placeholder', { ns: 'new-comment-form' })}
             value={newComment}
             onChange={handleTextChange}
           />
-          <Button className={cls.button} type="submit" onClick={() => {}} primary>
+          <Button className={cls.button} type="submit" primary>
             {t('add-comment', { ns: 'new-comment-form' })}
           </Button>
         </form>
