@@ -20,7 +20,7 @@ export const updateProfileData = createAsyncThunk<
   if (Object.keys(errors).length) return rejectWithValue(errors);
 
   try {
-    const response = await extra.api.put<Profile>('/profile', formData);
+    const response = await extra.api.put<Profile>(`/profiles/${formData?.id}`, formData);
 
     if (!response.data) throw new Error("Can't update profile data on the server");
 

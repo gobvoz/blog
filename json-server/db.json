@@ -39,7 +39,13 @@
       "createdAt": "31.01.2023",
       "link": "https://enlear.academy/7-new-javascript-features-in-ecmascript-2022-64a330f6eae2",
       "views": "",
-      "topics": ["Ecmascript", "JavaScript", "Features", "JS", "WebDevelopment"],
+      "topics": [
+        "Ecmascript",
+        "JavaScript",
+        "Features",
+        "JS",
+        "WebDevelopment"
+      ],
       "body": [
         {
           "id": "1",
@@ -60,7 +66,9 @@
         {
           "id": "3",
           "type": "HEADER",
-          "content": ["1. Top-level await"]
+          "content": [
+            "1. Top-level await"
+          ]
         },
         {
           "id": "4",
@@ -75,7 +83,9 @@
         {
           "id": "5",
           "type": "HEADER",
-          "content": ["2. Method .at()"]
+          "content": [
+            "2. Method .at()"
+          ]
         },
         {
           "id": "6",
@@ -88,7 +98,9 @@
         {
           "id": "7",
           "type": "CODE",
-          "content": ["myArray.at(2);"]
+          "content": [
+            "myArray.at(2);"
+          ]
         },
         {
           "id": "8",
@@ -101,7 +113,9 @@
         {
           "id": "9",
           "type": "CODE",
-          "content": ["myArray[2];"]
+          "content": [
+            "myArray[2];"
+          ]
         },
         {
           "id": "10",
@@ -114,7 +128,9 @@
         {
           "id": "11",
           "type": "HEADER",
-          "content": ["3. Class Field Declarations"]
+          "content": [
+            "3. Class Field Declarations"
+          ]
         },
         {
           "id": "12",
@@ -151,7 +167,9 @@
         {
           "id": "15",
           "type": "HEADER",
-          "content": ["4. RegExp Match Indices"]
+          "content": [
+            "4. RegExp Match Indices"
+          ]
         },
         {
           "id": "16",
@@ -195,7 +213,9 @@
         {
           "id": "19",
           "type": "HEADER",
-          "content": ["5. Object.hasOwn() Method"]
+          "content": [
+            "5. Object.hasOwn() Method"
+          ]
         },
         {
           "id": "20",
@@ -208,7 +228,9 @@
         {
           "id": "21",
           "type": "CODE",
-          "content": ["myObj.hasOwnProperty('myProp')"]
+          "content": [
+            "myObj.hasOwnProperty('myProp')"
+          ]
         },
         {
           "id": "22",
@@ -221,7 +243,9 @@
         {
           "id": "23",
           "type": "CODE",
-          "content": ["'myProp' in myObj"]
+          "content": [
+            "'myProp' in myObj"
+          ]
         },
         {
           "id": "24",
@@ -233,7 +257,9 @@
         {
           "id": "25",
           "type": "HEADER",
-          "content": ["6. Error: .cause"]
+          "content": [
+            "6. Error: .cause"
+          ]
         },
         {
           "id": "26",
@@ -275,7 +301,9 @@
         {
           "id": "30",
           "type": "HEADER",
-          "content": ["7. RegExp: match indices(‘d’ flag)"]
+          "content": [
+            "7. RegExp: match indices(‘d’ flag)"
+          ]
         },
         {
           "id": "31",
@@ -327,7 +355,9 @@
         {
           "id": "36",
           "type": "HEADER",
-          "content": ["Conclusion"]
+          "content": [
+            "Conclusion"
+          ]
         },
         {
           "id": "37",
@@ -366,7 +396,9 @@
         {
           "id": "2",
           "type": "HEADER",
-          "content": ["1. Mutability"]
+          "content": [
+            "1. Mutability"
+          ]
         },
         {
           "id": "3",
@@ -429,7 +461,9 @@
         {
           "id": "10",
           "type": "HEADER",
-          "content": ["2. Var and Hoisting"]
+          "content": [
+            "2. Var and Hoisting"
+          ]
         },
         {
           "id": "11",
@@ -488,7 +522,9 @@
         {
           "id": "15",
           "type": "HEADER",
-          "content": ["3. Accidental Global Variable"]
+          "content": [
+            "3. Accidental Global Variable"
+          ]
         },
         {
           "id": "16",
@@ -529,7 +565,9 @@
         {
           "id": "19",
           "type": "HEADER",
-          "content": ["4. Closure"]
+          "content": [
+            "4. Closure"
+          ]
         },
         {
           "id": "20",
@@ -560,7 +598,9 @@
         {
           "id": "22",
           "type": "HEADER",
-          "content": ["5. Object"]
+          "content": [
+            "5. Object"
+          ]
         },
         {
           "id": "23",
@@ -614,7 +654,10 @@
         {
           "id": "27",
           "type": "CODE",
-          "content": ["foo = {n: 2};", "bar.x = foo"]
+          "content": [
+            "foo = {n: 2};",
+            "bar.x = foo"
+          ]
         },
         {
           "id": "28",
@@ -626,7 +669,9 @@
         {
           "id": "29",
           "type": "HEADER",
-          "content": ["6. This"]
+          "content": [
+            "6. This"
+          ]
         },
         {
           "id": "30",
@@ -657,7 +702,9 @@
         {
           "id": "32",
           "type": "HEADER",
-          "content": ["7. Coercion"]
+          "content": [
+            "7. Coercion"
+          ]
         },
         {
           "id": "33",
@@ -685,12 +732,16 @@
         {
           "id": "35",
           "type": "NOTE",
-          "content": ["Noted that: == means that coercion is allowed to happen, while === is not."]
+          "content": [
+            "Noted that: == means that coercion is allowed to happen, while === is not."
+          ]
         },
         {
           "id": "36",
           "type": "HEADER",
-          "content": ["8. async"]
+          "content": [
+            "8. async"
+          ]
         },
         {
           "id": "37",
@@ -763,7 +814,9 @@
         {
           "id": "43",
           "type": "HEADER",
-          "content": ["9. Function"]
+          "content": [
+            "9. Function"
+          ]
         },
         {
           "id": "44",
@@ -827,12 +880,17 @@
         {
           "id": "50",
           "type": "CODE",
-          "content": ["let a = b;", "let b = 2"]
+          "content": [
+            "let a = b;",
+            "let b = 2"
+          ]
         },
         {
           "id": "51",
           "type": "HEADER",
-          "content": ["10. Prototype"]
+          "content": [
+            "10. Prototype"
+          ]
         },
         {
           "id": "52",
@@ -950,7 +1008,7 @@
       "id": "1",
       "first": "Morgan",
       "last": "Kane",
-      "age": "30",
+      "age": "33",
       "currency": "USD",
       "country": "USA",
       "city": "New York",
