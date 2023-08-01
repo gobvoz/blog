@@ -54,7 +54,7 @@ const Navbar: FC<Props> = memo((props: Props) => {
   if (userAuthData) {
     return (
       <nav className={classNames(cls.navbar, className)}>
-        <div className={cls.wrapper}>
+        <div className={classNames(cls.wrapper, mods)}>
           <Menu>
             <AppLink to={AppRoutes.MAIN}>{t('menu-main')}</AppLink>
             <AppLink to={AppRoutes.ABOUT}>{t('menu-about')}</AppLink>
