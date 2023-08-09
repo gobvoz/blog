@@ -2,12 +2,13 @@ import { memo } from 'react';
 
 import { classNames } from 'shared/libs/class-names';
 import cls from './comment-item.module.scss';
-import { Comment } from 'entities/comment/model/types/comment';
 import { Avatar } from 'shared/ui/avatar';
 import { TextBlock } from 'shared/ui/text-block';
 import { Skeleton } from 'shared/ui/skeleton';
 import { AppLink } from 'shared/ui/app-link';
 import { AppRoutes } from 'shared/constants/app-routes';
+
+import { Comment } from '../../model/types/comment';
 
 interface Props {
   className?: string;

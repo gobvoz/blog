@@ -1,9 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ArticleParagraphBlock } from './article-paragraph-block';
-import { ArticleBlockParagraph, ArticleBlockType } from 'entities/article/model/types/article';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
+
+import { ArticleBlockParagraph, ArticleBlockType } from '../../../model/types/article';
 
 export default {
   title: 'entities/article/article-paragraph-block',

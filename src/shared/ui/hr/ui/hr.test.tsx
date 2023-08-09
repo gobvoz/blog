@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { Hr } from 'shared/ui/hr';
+import { Hr } from '../ui/hr';
 
 describe('hr', () => {
   test('render', () => {

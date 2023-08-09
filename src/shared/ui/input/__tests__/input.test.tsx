@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { Input } from 'shared/ui/input';
+import { Input } from '../ui/input';
 
 describe('input', () => {
   test('render', () => {

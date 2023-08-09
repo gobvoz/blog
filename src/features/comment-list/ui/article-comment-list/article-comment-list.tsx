@@ -6,10 +6,11 @@ import { CommentList } from 'entities/comment';
 import { DynamicModuleLoader, ReducerList } from 'shared/libs/components/dynamic-module-loader';
 
 import { commentListReducer, getArticleCommentList } from '../../model/slice/comment-list-slice';
+import { fetchCommentListByArticleId } from '../../model/services/fetch-comment-by-article-id';
 import { selectCommentListLoading } from '../../model/selectors/select-comment-list-loading';
 import { selectCommentListError } from '../../model/selectors/select-comment-list-error';
+
 import { useAppDispatch } from 'shared/libs/hooks';
-import { fetchCommentListByArticleId } from 'features/comment-list/model/services/fetch-comment-by-article-id';
 import { useInitialEffect } from 'shared/libs/hooks';
 
 interface Props {

@@ -1,11 +1,12 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Profile } from 'entities/profile';
 import { Country } from 'entities/country';
 import { Currency } from 'entities/currency';
 
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
+
+import { Profile } from '../../model/types/profile-schema';
 
 import { ProfileCard } from './profile-card';
 

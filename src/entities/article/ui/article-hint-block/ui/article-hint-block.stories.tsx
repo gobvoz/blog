@@ -1,9 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ArticleHintBlock } from './article-hint-block';
-import { ArticleBlockHint, ArticleBlockType } from 'entities/article/model/types/article';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
+
+import { ArticleBlockHint, ArticleBlockType } from '../../../model/types/article';
 
 export default {
   title: 'entities/article/article-hint-block',

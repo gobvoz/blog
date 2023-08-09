@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Avatar } from 'shared/ui/avatar';
+import { Avatar } from '../ui/avatar';
 
 describe('avatar', () => {
   test('render', () => {
