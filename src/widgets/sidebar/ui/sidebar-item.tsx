@@ -6,9 +6,9 @@ import { useAppTranslation } from 'shared/libs/hooks';
 
 import cls from './sidebar-item.module.scss';
 
-import { SidebarItemType } from '../model/item';
 import { selectUserAuthData } from 'entities/user/model/selectors/select-user-auth-data';
 import { useSelector } from 'react-redux';
+import { SidebarItemType } from '../model/types/sidebar';
 
 interface Props {
   item: SidebarItemType;

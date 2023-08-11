@@ -1,4 +1,5 @@
 import { FC, memo, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { useCollapse } from 'app/providers/collapse-provider';
 
@@ -9,8 +10,8 @@ import { classNames } from 'shared/libs/class-names';
 import { Button } from 'shared/ui/button';
 
 import cls from './sidebar.module.scss';
-import { sidebarItemList } from '../model/item';
 import { SidebarItem } from './sidebar-item';
+import { selectSidebarItemList } from '../model/selectors/select-sidebar-item-list';
 
 interface Props {
   className?: string;
@@ -19,6 +20,7 @@ interface Props {
 const Sidebar: FC<Props> = memo((props: Props) => {
   const { className } = props;
   const { collapsed, toggleCollapse } = useCollapse();
+  const sidebarItemList = useSelector(selectSidebarItemList);
 
   const mods = { [cls.collapsed]: collapsed };
   const buttonMods = { [cls.animate]: !collapsed };

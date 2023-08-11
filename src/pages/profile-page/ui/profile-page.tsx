@@ -49,7 +49,7 @@ const ProfilePage: FC = memo(() => {
     } else if (currentUserId) {
       dispatch(fetchProfileData(currentUserId));
     }
-  });
+  }, [dispatch, id, currentUserId]);
 
   const handleUsernameChange = useCallback(
     (value: string) => {
