@@ -7,7 +7,7 @@ import { Theme } from 'shared/constants/theme';
 import { ArticleBlockParagraph, ArticleBlockType } from '../../../model/types/article';
 
 export default {
-  title: 'entities/article/article-paragraph-block',
+  title: 'entities/article/blocks/article-paragraph-block',
   component: ArticleParagraphBlock,
 } as ComponentMeta<typeof ArticleParagraphBlock>;
 

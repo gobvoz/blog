@@ -7,7 +7,7 @@ import { Theme } from 'shared/constants/theme';
 import { ArticleBlockHint, ArticleBlockType } from '../../../model/types/article';
 
 export default {
-  title: 'entities/article/article-hint-block',
+  title: 'entities/article/blocks/article-hint-block',
   component: ArticleHintBlock,
 } as ComponentMeta<typeof ArticleHintBlock>;
 

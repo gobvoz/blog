@@ -6,7 +6,7 @@ import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 
 export default {
-  title: 'entities/article/article-code-block',
+  title: 'entities/article/blocks/article-code-block',
   component: ArticleCodeBlock,
 } as ComponentMeta<typeof ArticleCodeBlock>;
 

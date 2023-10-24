@@ -7,7 +7,7 @@ import { Theme } from 'shared/constants/theme';
 import { ArticleBlockSeparator, ArticleBlockType } from '../../../model/types/article';
 
 export default {
-  title: 'entities/article/article-separator-block',
+  title: 'entities/article/blocks/article-separator-block',
   component: ArticleSeparatorBlock,
 } as ComponentMeta<typeof ArticleSeparatorBlock>;
 
