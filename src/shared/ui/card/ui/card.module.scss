@@ -17,3 +17,12 @@
     cursor: pointer;
   }
 }
+
+.list {
+  width: auto;
+
+  &:hover {
+    transform: scale(1.01);
+    cursor: auto;
+  }
+}

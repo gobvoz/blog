@@ -1,15 +1,27 @@
 // @ts-nocheck
 
-import { ArticleList } from 'entities/article';
+import { ArticleList, ArticleListType } from 'entities/article';
 import { FC, memo } from 'react';
 
 import { useAppTranslation } from 'shared/libs/hooks';
 
 const article = {
   id: '1',
-  profile: '1',
+  profile: {
+    id: '1',
+    first: 'Morgan',
+    last: 'Kane',
+    age: '33',
+    currency: 'USD',
+    country: 'USA',
+    city: 'New York',
+    username: 'admin',
+    avatar: 'https://i.pravatar.cc/300?img=4',
+    about: 'admin of this blog',
+  },
   title: '7 New JavaScript Features in ECMAScript 2022',
-  subtitle: '',
+  subtitle:
+    'ECMAScript (often abbreviated as ES) is a standardized programming language specification for JavaScript. It is developed and maintained by the ECMAScript Language Specification committee and is the standard on which JavaScript is based. The specification sets out the rules and guidelines for how the JavaScript language should behave, including syntax, data types, and built-in objects. ECMAScript versions are released periodically, with new versions bringing new features and capabilities to the language.',
   image: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg',
   createdAt: '31.01.2023',
   link: 'https://enlear.academy/7-new-javascript-features-in-ecmascript-2022-64a330f6eae2',
@@ -326,6 +338,7 @@ const ArticlePage: FC = memo(() => {
           id: index,
         }))}
         isLoading={false}
+        listType={ArticleListType.LIST}
       />
     </section>
   );

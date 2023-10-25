@@ -1,9 +1,8 @@
 import { memo } from 'react';
 
-import { classNames } from 'shared/libs/class-names';
 import cls from './article-list-element.module.scss';
 
-import { Article } from '../../../model/types/article';
+import { Article, ArticleBlockType } from '../../../model/types/article';
 import { ArticleListType } from '../../../model/types/article-list-type';
 
 import EyeIcon from 'shared/assets/icons/eye.svg';
@@ -12,6 +11,9 @@ import { TextBlock } from 'shared/ui/text-block';
 import { Icon } from 'shared/ui/icon';
 import { Card } from 'shared/ui/card';
 import { useHover } from 'shared/libs/hooks/useHover';
+import { Avatar } from 'shared/ui/avatar';
+import { Button } from 'shared/ui/button';
+import { classNames } from 'shared/libs/class-names';
 
 interface Props {
   className?: string;
@@ -25,14 +27,50 @@ const ArticleListElement = memo((props: Props) => {
 
   if (listType === ArticleListType.LIST) {
     return (
-      <div className={classNames(cls.articleListElement, className, cls[listType])} {...bindHover}>
-        {article.title}
-      </div>
+      <Card className={classNames(cls[listType], className)} type={listType} {...bindHover}>
+        <div className={cls.header}>
+          <div className={cls.flex}>
+            <Avatar src={article.profile.avatar} medium />
+            <TextBlock className={cls.author}>
+              {article.profile.first} {article.profile.last}
+            </TextBlock>
+          </div>
+          <div className={cls.flex}>
+            <div className={cls.date}>
+              <Icon className={cls.icon} Svg={DateIcon} small />
+              <TextBlock small>{article.createdAt} </TextBlock>
+            </div>
+          </div>
+        </div>
+        <TextBlock className={cls.title} header={article.title} />
+        <div className={cls.main}>
+          <img className={cls.image} src={article.image} alt={article.title} />
+          <div className={cls.description}>
+            {article.body
+              .filter(block => block.type === ArticleBlockType.PARAGRAPH)[0]
+              .content.map((paragraph, index) => (
+                <TextBlock key={index} className={cls.title} small>
+                  {paragraph}
+                </TextBlock>
+              ))}
+          </div>
+        </div>
+        <TextBlock className={cls.title} small>
+          {article.topics.join(', ')}
+        </TextBlock>
+        <div className={cls.footer}>
+          <Button>Read...</Button>
+          <div className={cls.views}>
+            <TextBlock small>{article.views}</TextBlock>
+            <Icon className={cls.icon} Svg={EyeIcon} small />
+          </div>
+        </div>
+      </Card>
     );
   }
 
   return (
-    <Card className={cls[listType]}>
+    <Card className={classNames(cls[listType], className)} type={listType} {...bindHover}>
       <img className={cls.image} src={article.image} alt={article.title} />
       <div className={cls.flex}>
         <div className={cls.date}>

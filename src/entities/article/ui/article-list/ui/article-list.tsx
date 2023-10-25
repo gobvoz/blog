@@ -18,7 +18,7 @@ const ArticleList = memo((props: Props) => {
   const { className, articleList, isLoading, listType = ArticleListType.GRID } = props;
 
   return (
-    <div className={classNames(cls.articleList, className)}>
+    <div className={classNames(cls.articleList, cls[listType], className)}>
       {articleList.map(article => (
         <ArticleListElement key={article.id} article={article} listType={listType} />
       ))}
