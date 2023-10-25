@@ -320,7 +320,13 @@ const ArticlePage: FC = memo(() => {
 
   return (
     <section>
-      <ArticleList articleList={[article, article, article, article, article]} isLoading={false} />
+      <ArticleList
+        articleList={new Array(16).fill(0).map((_, index) => ({
+          ...article,
+          id: index,
+        }))}
+        isLoading={false}
+      />
     </section>
   );
 });

@@ -11,6 +11,7 @@ import DateIcon from 'shared/assets/icons/date.svg';
 import { TextBlock } from 'shared/ui/text-block';
 import { Icon } from 'shared/ui/icon';
 import { Card } from 'shared/ui/card';
+import { useHover } from 'shared/libs/hooks/useHover';
 
 interface Props {
   className?: string;
@@ -20,10 +21,11 @@ interface Props {
 
 const ArticleListElement = memo((props: Props) => {
   const { className, article, listType } = props;
+  const [isHovered, bindHover] = useHover();
 
   if (listType === ArticleListType.LIST) {
     return (
-      <div className={classNames(cls.articleListElement, className, cls[listType])}>
+      <div className={classNames(cls.articleListElement, className, cls[listType])} {...bindHover}>
         {article.title}
       </div>
     );
@@ -34,12 +36,12 @@ const ArticleListElement = memo((props: Props) => {
       <img className={cls.image} src={article.image} alt={article.title} />
       <div className={cls.flex}>
         <div className={cls.date}>
-          <Icon className={cls.icon} Svg={DateIcon} small/>
+          <Icon className={cls.icon} Svg={DateIcon} small />
           <TextBlock small>{article.createdAt} </TextBlock>
         </div>
         <div className={cls.views}>
           <TextBlock small>{article.views}</TextBlock>
-          <Icon className={cls.icon} Svg={EyeIcon} small/>
+          <Icon className={cls.icon} Svg={EyeIcon} small />
         </div>
       </div>
       <TextBlock className={cls.title} small>
