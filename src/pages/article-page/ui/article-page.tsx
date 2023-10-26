@@ -1,9 +1,16 @@
-// @ts-nocheck
+import { FC, memo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { ArticleList, ArticleListType } from 'entities/article';
-import { FC, memo } from 'react';
 
-import { useAppTranslation } from 'shared/libs/hooks';
+import { DynamicModuleLoader, ReducerList } from 'shared/libs/components/dynamic-module-loader';
+import { useAppDispatch, useAppTranslation, useInitialEffect } from 'shared/libs/hooks';
+
+import { articleListReducer, getArticleList } from '../model/slice/article-list';
+import { fetchArticleList } from '../model/services/fetch-article-list';
+import { selectArticleListError } from '../model/selectors/select-article-list-error';
+import { selectArticleListLoading } from '../model/selectors/select-article-list-loading';
+import { selectArticleListType } from '../model/selectors/select-article-list-type';
 
 const article = {
   id: '1',
@@ -327,20 +334,28 @@ const article = {
   ],
 };
 
+const reducerList: ReducerList = {
+  articleList: articleListReducer,
+};
+
 const ArticlePage: FC = memo(() => {
   const { t } = useAppTranslation('article-page');
+  const dispatch = useAppDispatch();
+  const articleList = useSelector(getArticleList.selectAll);
+  const error = useSelector(selectArticleListError);
+  const isLoading = useSelector(selectArticleListLoading);
+  const listType = useSelector(selectArticleListType);
+
+  useInitialEffect(() => {
+    dispatch(fetchArticleList());
+  }, [dispatch]);
 
   return (
-    <section>
-      <ArticleList
-        articleList={new Array(16).fill(0).map((_, index) => ({
-          ...article,
-          id: index,
-        }))}
-        isLoading={true}
-        listType={ArticleListType.GRID}
-      />
-    </section>
+    <DynamicModuleLoader reducerList={reducerList}>
+      <section>
+        <ArticleList articleList={articleList} isLoading={isLoading} listType={listType} />
+      </section>
+    </DynamicModuleLoader>
   );
 });
 

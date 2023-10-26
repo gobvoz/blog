@@ -43,7 +43,7 @@ const reducerList = {
 const Article = memo((props: Props) => {
   const { className, id } = props;
 
-  const { t } = useAppTranslation('article-page');
+  const { t } = useAppTranslation('article-detail-page');
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -97,17 +97,17 @@ const Article = memo((props: Props) => {
     content = (
       <>
         <Button className={cls.backButton} onClick={handleBack} appLink>
-          {t('back', { ns: 'article-page' })}
+          {t('back', { ns: 'article-detail-page' })}
         </Button>
-        <h1>{t('error-not-found', { ns: 'article-page' })}</h1>
-        <TextBlock>{t('error-not-found-long', { ns: 'article-page' })}</TextBlock>
+        <h1>{t('error-not-found', { ns: 'article-detail-page' })}</h1>
+        <TextBlock>{t('error-not-found-long', { ns: 'article-detail-page' })}</TextBlock>
       </>
     );
   } else if (data) {
     content = (
       <>
         <Button className={cls.backButton} onClick={handleBack} appLink>
-          {t('back', { ns: 'article-page' })}
+          {t('back', { ns: 'article-detail-page' })}
         </Button>
         <TextBlock header={data.title}>{data.subtitle}</TextBlock>
         <div className={cls.skeletonDescription}>
