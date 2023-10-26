@@ -1,8 +1,8 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 
 import cls from './article-list-element.module.scss';
 
-import { Article, ArticleBlockType } from '../../../model/types/article';
+import { Article, ArticleBlockParagraph, ArticleBlockType } from '../../../model/types/article';
 import { ArticleListType } from '../../../model/types/article-list-type';
 
 import EyeIcon from 'shared/assets/icons/eye.svg';
@@ -14,6 +14,10 @@ import { useHover } from 'shared/libs/hooks/useHover';
 import { Avatar } from 'shared/ui/avatar';
 import { Button } from 'shared/ui/button';
 import { classNames } from 'shared/libs/class-names';
+import { ArticleParagraphBlock } from '../../article-paragraph-block';
+import { useNavigate } from 'react-router-dom';
+import { AppRoutes } from 'shared/constants/app-routes';
+import { ArticleListElementSkeleton } from './article-list-element.skeleton';
 
 interface Props {
   className?: string;
@@ -23,9 +27,18 @@ interface Props {
 
 const ArticleListElement = memo((props: Props) => {
   const { className, article, listType } = props;
-  const [isHovered, bindHover] = useHover();
+  const [_, bindHover] = useHover();
+  const navigate = useNavigate();
+
+  const handleReadMore = useCallback(() => {
+    navigate(`${AppRoutes.ARTICLES}/${article.id}`);
+  }, []);
 
   if (listType === ArticleListType.LIST) {
+    const textBlock = article.body.find(
+      block => block.type === ArticleBlockType.PARAGRAPH,
+    ) as ArticleBlockParagraph;
+
     return (
       <Card className={classNames(cls[listType], className)} type={listType} {...bindHover}>
         <div className={cls.header}>
@@ -46,20 +59,14 @@ const ArticleListElement = memo((props: Props) => {
         <div className={cls.main}>
           <img className={cls.image} src={article.image} alt={article.title} />
           <div className={cls.description}>
-            {article.body
-              .filter(block => block.type === ArticleBlockType.PARAGRAPH)[0]
-              .content.map((paragraph, index) => (
-                <TextBlock key={index} className={cls.title} small>
-                  {paragraph}
-                </TextBlock>
-              ))}
+            {textBlock && <ArticleParagraphBlock block={textBlock} small />}
           </div>
         </div>
         <TextBlock className={cls.title} small>
           {article.topics.join(', ')}
         </TextBlock>
         <div className={cls.footer}>
-          <Button>Read...</Button>
+          <Button onClick={handleReadMore}>Read...</Button>
           <div className={cls.views}>
             <TextBlock small>{article.views}</TextBlock>
             <Icon className={cls.icon} Svg={EyeIcon} small />
@@ -70,7 +77,11 @@ const ArticleListElement = memo((props: Props) => {
   }
 
   return (
-    <Card className={classNames(cls[listType], className)} type={listType} {...bindHover}>
+    <Card
+      className={classNames(cls[listType], className)}
+      type={listType}
+      {...bindHover}
+      onClick={handleReadMore}>
       <img className={cls.image} src={article.image} alt={article.title} />
       <div className={cls.flex}>
         <div className={cls.date}>

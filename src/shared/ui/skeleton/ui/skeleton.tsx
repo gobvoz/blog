@@ -8,7 +8,7 @@ interface Props {
   height?: number | string;
   width?: number | string;
   border?: string;
-  radius?: string;
+  radius?: number | string;
 }
 
 const Skeleton = memo((props: Props) => {

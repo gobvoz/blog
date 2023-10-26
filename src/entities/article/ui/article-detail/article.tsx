@@ -13,21 +13,23 @@ import { Icon } from 'shared/ui/icon';
 
 import cls from './article.module.scss';
 
-import { articleReducer } from '../model/slice/article-slice';
-import { fetchArticleData } from '../model/services/fetch-article-data';
-import { selectArticleLoading } from '../model/selectors/select-article-loading';
-import { selectArticleData } from '../model/selectors/select-article-data';
-import { selectArticleError } from '../model/selectors/select-article-error';
-import { ArticleBlock, ArticleBlockType } from '../model/types/article';
-import { ArticleParagraphBlock } from './article-paragraph-block';
-import { ArticleHeaderBlock } from './article-header-block';
-import { ArticleCodeBlock } from './article-code-block';
-import { ArticleSeparatorBlock } from './article-separator-block';
-import { ArticleImageBlock } from './article-image-block';
-import { ArticleHintBlock } from './article-hint-block';
+import { articleReducer } from '../../model/slice/article-slice';
+import { fetchArticleData } from '../../model/services/fetch-article-data';
+import { selectArticleLoading } from '../../model/selectors/select-article-loading';
+import { selectArticleData } from '../../model/selectors/select-article-data';
+import { selectArticleError } from '../../model/selectors/select-article-error';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleParagraphBlock } from '../article-paragraph-block';
+import { ArticleHeaderBlock } from '../article-header-block';
+import { ArticleCodeBlock } from '../article-code-block';
+import { ArticleSeparatorBlock } from '../article-separator-block';
+import { ArticleImageBlock } from '../article-image-block';
+import { ArticleHintBlock } from '../article-hint-block';
 import { useInitialEffect } from 'shared/libs/hooks';
 import { AppRoutes } from 'shared/constants/app-routes';
 import { AppLink } from 'shared/ui/app-link';
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'shared/ui/button';
 
 interface Props {
   className?: string;
@@ -43,6 +45,7 @@ const Article = memo((props: Props) => {
 
   const { t } = useAppTranslation('article-page');
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   useInitialEffect(() => dispatch(fetchArticleData(id)));
 
@@ -51,6 +54,10 @@ const Article = memo((props: Props) => {
   const error = useSelector(selectArticleError);
 
   let content = null;
+
+  const handleBack = useCallback(() => {
+    navigate(AppRoutes.ARTICLES);
+  }, [navigate]);
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
@@ -89,6 +96,9 @@ const Article = memo((props: Props) => {
   } else if (error) {
     content = (
       <>
+        <Button className={cls.backButton} onClick={handleBack} appLink>
+          {t('back', { ns: 'article-page' })}
+        </Button>
         <h1>{t('error-not-found', { ns: 'article-page' })}</h1>
         <TextBlock>{t('error-not-found-long', { ns: 'article-page' })}</TextBlock>
       </>
@@ -96,6 +106,9 @@ const Article = memo((props: Props) => {
   } else if (data) {
     content = (
       <>
+        <Button className={cls.backButton} onClick={handleBack} appLink>
+          {t('back', { ns: 'article-page' })}
+        </Button>
         <TextBlock header={data.title}>{data.subtitle}</TextBlock>
         <div className={cls.skeletonDescription}>
           <AppLink to={AppRoutes.PROFILE + '/' + data.profile.id} withoutPadding>

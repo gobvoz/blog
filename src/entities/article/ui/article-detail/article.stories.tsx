@@ -4,7 +4,7 @@ import { Article } from './article';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
-import { ArticleBlockType, Article as ArticleType } from '../model/types/article';
+import { ArticleBlockType, Article as ArticleType } from '../../model/types/article';
 
 export default {
   title: 'entities/article/article',
@@ -17,7 +17,8 @@ const article: ArticleType = {
   id: '1',
   profile: {
     id: '1',
-    username: 'John Doe',
+    first: 'John',
+    last: 'Doe',
     avatar: 'https://i.pravatar.cc/300?img=13',
   },
   title: '7 New JavaScript Features in ECMAScript 2022',

@@ -5,7 +5,7 @@ import cls from './article-list.module.scss';
 
 import { Article } from '../../../model/types/article';
 import { ArticleListType } from '../../../model/types/article-list-type';
-import { ArticleListElement } from '../../article-list-element';
+import { ArticleListElement, ArticleListElementSkeleton } from '../../article-list-element';
 
 interface Props {
   className?: string;
@@ -14,8 +14,24 @@ interface Props {
   listType?: ArticleListType;
 }
 
+const generateSkeletonsArray = (listType: ArticleListType) => {
+  const SkeletonArray = new Array(listType === ArticleListType.GRID ? 12 : 3)
+    .fill(0)
+    .map((_, index) => <ArticleListElementSkeleton key={index} listType={listType} />);
+
+  return SkeletonArray;
+};
+
 const ArticleList = memo((props: Props) => {
   const { className, articleList, isLoading, listType = ArticleListType.GRID } = props;
+
+  if (isLoading) {
+    return (
+      <div className={classNames(cls.articleList, cls[listType], className)}>
+        {generateSkeletonsArray(listType)}
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cls.articleList, cls[listType], className)}>

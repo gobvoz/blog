@@ -26,6 +26,16 @@ const article = {
     avatar: 'https://picsum.photos/200/300',
   },
   topics: ['topic1', 'topic2'],
+  body: [
+    {
+      id: '1',
+      type: 'PARAGRAPH',
+      content: [
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
+      ],
+    },
+  ],
 } as Article;
 
 const Template: ComponentStory<typeof ArticleList> = args => <ArticleList {...args} />;

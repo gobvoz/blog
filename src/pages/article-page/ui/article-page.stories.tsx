@@ -1,6 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ArticlePage } from './article-page';
+import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
+import { Theme } from 'shared/constants/theme';
 
 export default {
   title: 'page/article-page',
@@ -9,4 +11,7 @@ export default {
 
 const Template: ComponentStory<typeof ArticlePage> = args => <ArticlePage {...args} />;
 
-export const Default = Template.bind({});
+export const Light = Template.bind({});
+
+export const Dark = Template.bind({});
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

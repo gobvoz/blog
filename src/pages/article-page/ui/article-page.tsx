@@ -337,8 +337,8 @@ const ArticlePage: FC = memo(() => {
           ...article,
           id: index,
         }))}
-        isLoading={false}
-        listType={ArticleListType.LIST}
+        isLoading={true}
+        listType={ArticleListType.GRID}
       />
     </section>
   );

@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { Article } from 'entities/article';
 import { TextBlock } from 'shared/ui/text-block';
@@ -9,10 +9,13 @@ import { ArticleCommentList } from 'features/comment-list';
 import { NewCommentForm } from 'features/new-comment-form';
 import { addCommentForArticle } from '../model/services/add-comment-for-article';
 import { fetchCommentListByArticleId } from 'features/comment-list/model/services/fetch-comment-by-article-id';
+import { Button } from 'shared/ui/button';
+import { AppRoutes } from 'shared/constants/app-routes';
 
 const ArticleDetailPage = memo(() => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const onSendComment = useCallback(
     (text: string) => {
