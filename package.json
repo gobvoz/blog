@@ -70,7 +70,6 @@
     "style-loader": "^3.3.1",
     "stylelint": "^15.2.0",
     "stylelint-config-standard-scss": "^7.0.1",
-    "test-package-for-eslint": "^0.0.1",
     "ts-jest": "^29.0.5",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
