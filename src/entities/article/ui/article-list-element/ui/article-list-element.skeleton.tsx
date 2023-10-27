@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import cls from './article-list-element.module.scss';
 
-import { ArticleListType } from '../../../model/types/article-list-type';
+import { ListType } from 'features/list-type-switcher';
 
 import { Card } from 'shared/ui/card';
 import { classNames } from 'shared/libs/class-names';
@@ -10,13 +10,13 @@ import { Skeleton } from 'shared/ui/skeleton';
 
 interface Props {
   className?: string;
-  listType: ArticleListType;
+  listType: ListType;
 }
 
 const ArticleListElementSkeleton = memo((props: Props) => {
   const { className, listType } = props;
 
-  if (listType === ArticleListType.LIST) {
+  if (listType === ListType.LIST) {
     return (
       <Card className={classNames(cls[listType], className)} type={listType}>
         <div className={cls.header}>

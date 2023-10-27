@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/store-provider';
 
-import { ArticleListType } from 'entities/article';
+import { ListType } from 'features/list-type-switcher';
 
 export const selectArticleListType = (state: StateSchema) =>
-  state?.articleList?.listType || ArticleListType.GRID;
+  state?.articleList?.listType || ListType.GRID;

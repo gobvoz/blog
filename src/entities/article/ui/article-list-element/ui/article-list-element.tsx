@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react';
 import cls from './article-list-element.module.scss';
 
 import { Article, ArticleBlockParagraph, ArticleBlockType } from '../../../model/types/article';
-import { ArticleListType } from '../../../model/types/article-list-type';
+import { ListType } from 'features/list-type-switcher';
 
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import DateIcon from 'shared/assets/icons/date.svg';
@@ -22,7 +22,7 @@ import { ArticleListElementSkeleton } from './article-list-element.skeleton';
 interface Props {
   className?: string;
   article: Article;
-  listType: ArticleListType;
+  listType: ListType;
 }
 
 const ArticleListElement = memo((props: Props) => {
@@ -34,7 +34,7 @@ const ArticleListElement = memo((props: Props) => {
     navigate(`${AppRoutes.ARTICLES}/${article.id}`);
   }, []);
 
-  if (listType === ArticleListType.LIST) {
+  if (listType === ListType.LIST) {
     const textBlock = article.body.find(
       block => block.type === ArticleBlockType.PARAGRAPH,
     ) as ArticleBlockParagraph;

@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 
-import { ArticleListType } from '../../../model/types/article-list-type';
+import { ListType } from 'features/list-type-switcher';
 import { ArticleListElementSkeleton } from './article-list-element.skeleton';
 
 export default {
@@ -16,15 +16,15 @@ const Template: ComponentStory<typeof ArticleListElementSkeleton> = args => (
 );
 
 export const LightGrid = Template.bind({});
-LightGrid.args = { listType: ArticleListType.GRID };
+LightGrid.args = { listType: ListType.GRID };
 
 export const LightList = Template.bind({});
-LightList.args = { listType: ArticleListType.LIST };
+LightList.args = { listType: ListType.LIST };
 
 export const DarkGrid = Template.bind({});
 DarkGrid.decorators = [ThemeDecorator(Theme.DARK)];
-DarkGrid.args = { listType: ArticleListType.GRID };
+DarkGrid.args = { listType: ListType.GRID };
 
 export const DarkList = Template.bind({});
 DarkList.decorators = [ThemeDecorator(Theme.DARK)];
-DarkList.args = { listType: ArticleListType.LIST };
+DarkList.args = { listType: ListType.LIST };

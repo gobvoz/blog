@@ -4,18 +4,18 @@ import { classNames } from 'shared/libs/class-names';
 import cls from './article-list.module.scss';
 
 import { Article } from '../../../model/types/article';
-import { ArticleListType } from '../../../model/types/article-list-type';
+import { ListType } from 'features/list-type-switcher';
 import { ArticleListElement, ArticleListElementSkeleton } from '../../article-list-element';
 
 interface Props {
   className?: string;
   articleList: Article[];
   isLoading: boolean;
-  listType?: ArticleListType;
+  listType: ListType;
 }
 
-const generateSkeletonsArray = (listType: ArticleListType) => {
-  const SkeletonArray = new Array(listType === ArticleListType.GRID ? 12 : 3)
+const generateSkeletonsArray = (listType: ListType) => {
+  const SkeletonArray = new Array(listType === ListType.GRID ? 12 : 3)
     .fill(0)
     .map((_, index) => <ArticleListElementSkeleton key={index} listType={listType} />);
 
@@ -23,7 +23,7 @@ const generateSkeletonsArray = (listType: ArticleListType) => {
 };
 
 const ArticleList = memo((props: Props) => {
-  const { className, articleList, isLoading, listType = ArticleListType.GRID } = props;
+  const { className, articleList, isLoading, listType } = props;
 
   if (isLoading) {
     return (

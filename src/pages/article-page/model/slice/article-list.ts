@@ -4,8 +4,9 @@ import { StateSchema } from 'app/providers/store-provider';
 
 import { ArticleType } from 'entities/article';
 import { ArticleListSchema } from '../types/article-list-schema';
-import { ArticleListType } from 'entities/article';
+import { ListType } from 'features/list-type-switcher';
 import { fetchArticleList } from '../services/fetch-article-list';
+import { LOCAL_STORAGE_ARTICLE_LIST_TYPE_KEY } from 'shared/constants/local-storage-key';
 
 const articleListAdapter = createEntityAdapter<ArticleType>({
   selectId: article => article.id,
@@ -14,7 +15,8 @@ const articleListAdapter = createEntityAdapter<ArticleType>({
 const initialState = articleListAdapter.getInitialState<ArticleListSchema>({
   isLoading: false,
   error: undefined,
-  listType: ArticleListType.GRID,
+  listType:
+    (localStorage.getItem(LOCAL_STORAGE_ARTICLE_LIST_TYPE_KEY) as ListType) || ListType.GRID,
 
   ids: [],
   entities: {},
@@ -28,8 +30,9 @@ const articleListSlice = createSlice({
   name: 'article-list',
   initialState,
   reducers: {
-    setListType(state, action: PayloadAction<ArticleListType>) {
+    setListType(state, action: PayloadAction<ListType>) {
       state.listType = action.payload;
+      localStorage.setItem(LOCAL_STORAGE_ARTICLE_LIST_TYPE_KEY, action.payload);
     },
   },
   extraReducers: builder => {

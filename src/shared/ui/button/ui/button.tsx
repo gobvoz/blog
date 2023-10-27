@@ -8,10 +8,12 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 
   primary?: boolean;
+  icon?: boolean;
   transparent?: boolean;
   appLink?: boolean;
   loading?: boolean;
   outlineRed?: boolean;
+  checked?: boolean;
 }
 
 const Button: FC<Props> = memo((props: Props) => {
@@ -20,10 +22,12 @@ const Button: FC<Props> = memo((props: Props) => {
     children,
 
     primary,
+    icon,
     transparent,
     appLink,
     loading,
     outlineRed,
+    checked,
 
     type = 'button',
     ...otherProps
@@ -31,10 +35,12 @@ const Button: FC<Props> = memo((props: Props) => {
 
   const mods = {
     [cls.primary]: primary,
+    [cls.icon]: icon,
     [cls.transparent]: transparent,
     [cls.appLink]: appLink,
     [cls.loading]: loading,
     [cls.outlineRed]: outlineRed,
+    [cls.checked]: checked,
   };
 
   return (

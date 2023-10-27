@@ -5,7 +5,7 @@ import { Theme } from 'shared/constants/theme';
 
 import { ArticleListElement } from './article-list-element';
 import { Article } from '../../../model/types/article';
-import { ArticleListType } from '../../../model/types/article-list-type';
+import { ListType } from 'features/list-type-switcher';
 
 export default {
   title: 'entities/article/article-list-element',
@@ -43,15 +43,15 @@ const article = {
 } as Article;
 
 export const LightGrid = Template.bind({});
-LightGrid.args = { article, listType: ArticleListType.GRID };
+LightGrid.args = { article, listType: ListType.GRID };
 
 export const LightList = Template.bind({});
-LightList.args = { article, listType: ArticleListType.LIST };
+LightList.args = { article, listType: ListType.LIST };
 
 export const DarkGrid = Template.bind({});
 DarkGrid.decorators = [ThemeDecorator(Theme.DARK)];
-DarkGrid.args = { article, listType: ArticleListType.GRID };
+DarkGrid.args = { article, listType: ListType.GRID };
 
 export const DarkList = Template.bind({});
 DarkList.decorators = [ThemeDecorator(Theme.DARK)];
-DarkList.args = { article, listType: ArticleListType.LIST };
+DarkList.args = { article, listType: ListType.LIST };

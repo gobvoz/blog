@@ -33,6 +33,15 @@ button {
   background: var(--bg-button-primary);
 }
 
+.icon {
+  padding: 5px;
+}
+
+.checked {
+  color: var(--hover-color-button-default);
+  background-color: var(--hover-bg-button-default);
+}
+
 .app-link {
   color: var(--color-link);
   background: transparent;
