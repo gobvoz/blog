@@ -31,9 +31,7 @@ const App: FC = () => {
         <Navbar />
         <PageContent>
           <Sidebar />
-          <PageWrapper>
-            <AppRouter />
-          </PageWrapper>
+          <AppRouter />
           <ThemeToggler />
         </PageContent>
       </Suspense>

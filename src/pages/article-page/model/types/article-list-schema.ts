@@ -8,4 +8,8 @@ export interface ArticleListSchema extends EntityState<Article> {
   error?: string;
 
   listType?: ListType;
+
+  page: number;
+  limit: number;
+  hasMore: boolean;
 }

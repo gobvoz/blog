@@ -18,6 +18,9 @@ import { selectArticleListError } from '../model/selectors/select-article-list-e
 import { selectArticleListLoading } from '../model/selectors/select-article-list-loading';
 import { selectArticleListType } from '../model/selectors/select-article-list-type';
 import { ListType, ListTypeSwitcher } from 'features/list-type-switcher';
+import { PageWrapper } from 'widgets/page-wrapper';
+import { selectArticleListPage } from '../model/selectors/select-article-list-page';
+import { selectArticleListHasMore } from '../model/selectors/select-article-list-has-more';
 
 const reducerList: ReducerList = {
   articleList: articleListReducer,
@@ -30,26 +33,43 @@ const ArticlePage: FC = memo(() => {
   const error = useSelector(selectArticleListError);
   const isLoading = useSelector(selectArticleListLoading);
   const listType = useSelector(selectArticleListType);
+  const page = useSelector(selectArticleListPage);
+  const hasMore = useSelector(selectArticleListHasMore);
 
   useInitialEffect(() => {
-    dispatch(fetchArticleList());
+    dispatch(
+      fetchArticleList({
+        page: 1,
+      }),
+    );
   }, [dispatch]);
 
   const handleListTypeChange = useCallback((type: ListType) => {
     dispatch(articleListActions.setListType(type));
   }, []);
 
+  const handleScrollToBottom = useCallback(() => {
+    if (hasMore && !isLoading) {
+      dispatch(articleListActions.setPage(page + 1));
+      dispatch(
+        fetchArticleList({
+          page: page + 1,
+        }),
+      );
+    }
+  }, [dispatch, page, hasMore, isLoading]);
+
   return (
-    <DynamicModuleLoader reducerList={reducerList}>
-      <ListTypeSwitcher
-        className={cls.listTypeSwitcher}
-        currentType={listType}
-        onChange={handleListTypeChange}
-      />
-      <section>
+    <PageWrapper onScrollEnd={handleScrollToBottom}>
+      <DynamicModuleLoader reducerList={reducerList}>
+        <ListTypeSwitcher
+          className={cls.listTypeSwitcher}
+          currentType={listType}
+          onChange={handleListTypeChange}
+        />
         <ArticleList articleList={articleList} isLoading={isLoading} listType={listType} />
-      </section>
-    </DynamicModuleLoader>
+      </DynamicModuleLoader>
+    </PageWrapper>
   );
 });
 

@@ -25,19 +25,12 @@ const generateSkeletonsArray = (listType: ListType) => {
 const ArticleList = memo((props: Props) => {
   const { className, articleList, isLoading, listType } = props;
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.articleList, cls[listType], className)}>
-        {generateSkeletonsArray(listType)}
-      </div>
-    );
-  }
-
   return (
     <div className={classNames(cls.articleList, cls[listType], className)}>
       {articleList.map(article => (
         <ArticleListElement key={article.id} article={article} listType={listType} />
       ))}
+      {isLoading && generateSkeletonsArray(listType)}
     </div>
   );
 });

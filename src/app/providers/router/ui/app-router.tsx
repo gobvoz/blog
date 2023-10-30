@@ -20,9 +20,7 @@ const AppRouter = memo(() => {
 
   return (
     <Suspense fallback={<PageLoader />}>
-      <div className="page-wrapper">
-        <Routes>{routerConfig.map(renderWithAuth)}</Routes>
-      </div>
+      <Routes>{routerConfig.map(renderWithAuth)}</Routes>
     </Suspense>
   );
 });

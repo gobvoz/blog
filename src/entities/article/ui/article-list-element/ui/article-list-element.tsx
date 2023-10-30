@@ -10,7 +10,7 @@ import DateIcon from 'shared/assets/icons/date.svg';
 import { TextBlock } from 'shared/ui/text-block';
 import { Icon } from 'shared/ui/icon';
 import { Card } from 'shared/ui/card';
-import { useHover } from 'shared/libs/hooks/useHover';
+import { useHover } from 'shared/libs/hooks/use-hover';
 import { Avatar } from 'shared/ui/avatar';
 import { Button } from 'shared/ui/button';
 import { classNames } from 'shared/libs/class-names';
