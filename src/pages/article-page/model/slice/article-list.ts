@@ -26,6 +26,8 @@ const initialState = articleListAdapter.getInitialState<ArticleListSchema>({
   page: 1,
   limit: listType === ListType.GRID ? ITEMS_PER_PAGE_GRID : ITEMS_PER_PAGE_LIST,
   hasMore: true,
+
+  _initialized: false,
 });
 
 const getArticleList = articleListAdapter.getSelectors<StateSchema>(
@@ -42,6 +44,9 @@ const articleListSlice = createSlice({
     },
     setPage(state, action: PayloadAction<number>) {
       state.page = action.payload;
+    },
+    setInitialized(state) {
+      state._initialized = true;
     },
   },
   extraReducers: builder => {

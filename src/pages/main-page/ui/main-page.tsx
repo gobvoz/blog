@@ -3,6 +3,7 @@ import { useAppTranslation } from 'shared/libs/hooks';
 
 import { Button } from 'shared/ui/button';
 import { Modal } from 'widgets/modal';
+import { PageWrapper } from 'widgets/page-wrapper';
 
 const MainPage: FC = memo(() => {
   const { t } = useAppTranslation('main-page');
@@ -12,7 +13,7 @@ const MainPage: FC = memo(() => {
   const handleCloseModalClick = (open: boolean) => setModalOpen(open);
 
   return (
-    <section>
+    <PageWrapper>
       <h1>{t('page-main', { ns: 'main-page' })}</h1>
       {/* eslint-disable i18next/no-literal-string */}
       <p>
@@ -84,7 +85,7 @@ const MainPage: FC = memo(() => {
         Primary loading
       </Button>
       {isModalOpen && <Modal setOpen={handleCloseModalClick}>Modal window</Modal>}
-    </section>
+    </PageWrapper>
   );
 });
 

@@ -16,10 +16,11 @@ type reducerListEntry = [string, Reducer];
 interface Props {
   children: React.ReactNode;
   reducerList: ReducerList;
+  leaveAfterUnmount?: boolean;
 }
 
 export const DynamicModuleLoader: FC<Props> = props => {
-  const { children, reducerList } = props;
+  const { children, reducerList, leaveAfterUnmount } = props;
 
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useAppDispatch();
@@ -29,6 +30,8 @@ export const DynamicModuleLoader: FC<Props> = props => {
       store.reducerManager.add(reducerKey as StateSchemaKeys, reducer);
       dispatch({ type: `@@INIT ${reducerKey}` });
     });
+
+    if (leaveAfterUnmount) return undefined;
 
     return () => {
       Object.entries(reducerList).forEach(([reducerKey, _]: reducerListEntry) => {

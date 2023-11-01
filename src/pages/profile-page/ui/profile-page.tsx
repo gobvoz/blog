@@ -24,6 +24,7 @@ import { ProfileButtons } from './profile-buttons/profile-buttons';
 import cls from './profile-page.module.scss';
 import { useParams } from 'react-router-dom';
 import { selectUserAuthData } from 'entities/user/model/selectors/select-user-auth-data';
+import { PageWrapper } from 'widgets/page-wrapper';
 
 const reducerList: ReducerList = {
   profile: profileReducer,
@@ -101,7 +102,7 @@ const ProfilePage: FC = memo(() => {
   );
 
   return (
-    <section>
+    <PageWrapper>
       <h1>{t('profile-info', { ns: 'profile-page' })}</h1>
       <DynamicModuleLoader reducerList={reducerList}>
         <ProfileCard
@@ -124,7 +125,7 @@ const ProfilePage: FC = memo(() => {
         {!isLoading && formData && <ProfileButtons className={cls.buttonSection} />}
       </DynamicModuleLoader>
       <ThrowErrorButton />
-    </section>
+    </PageWrapper>
   );
 });
 

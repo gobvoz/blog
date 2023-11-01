@@ -28,8 +28,10 @@ const PageWrapper: FC<Props> = props => {
   });
 
   return (
-    <div className={classNames(cls.pageWrapper, className, mods)} ref={wrapperRef}>
-      {children} <div ref={triggerRef} />
+    <div className={cls.wrapper} ref={wrapperRef}>
+      <div className={classNames(cls.innerWrapper, className, mods)}>
+        {children} <div ref={triggerRef} />
+      </div>
     </div>
   );
 };

@@ -13,12 +13,12 @@ import {
   articleListReducer,
   getArticleList,
 } from '../model/slice/article-list';
-import { fetchArticleList } from '../model/services/fetch-article-list';
 import { selectArticleListLoading } from '../model/selectors/select-article-list-loading';
 import { selectArticleListType } from '../model/selectors/select-article-list-type';
 import { ListType, ListTypeSwitcher } from 'features/list-type-switcher';
 import { PageWrapper } from 'widgets/page-wrapper';
 import { fetchNextArticleList } from '../model/services/fetch-next-article-list';
+import { initArticlePage } from '../model/services/init-article-page';
 
 const reducerList: ReducerList = {
   articleList: articleListReducer,
@@ -31,7 +31,7 @@ const ArticlePage: FC = memo(() => {
   const listType = useSelector(selectArticleListType);
 
   useInitialEffect(() => {
-    dispatch(fetchArticleList({ page: 1 }));
+    dispatch(initArticlePage());
   }, [dispatch]);
 
   const handleListTypeChange = useCallback(
@@ -47,7 +47,7 @@ const ArticlePage: FC = memo(() => {
 
   return (
     <PageWrapper onScrollEnd={handleScrollToBottom}>
-      <DynamicModuleLoader reducerList={reducerList}>
+      <DynamicModuleLoader reducerList={reducerList} leaveAfterUnmount>
         <ListTypeSwitcher
           className={cls.listTypeSwitcher}
           currentType={listType}
