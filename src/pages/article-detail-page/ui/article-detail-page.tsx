@@ -9,8 +9,8 @@ import { ArticleCommentList } from 'features/comment-list';
 import { NewCommentForm } from 'features/new-comment-form';
 import { addCommentForArticle } from '../model/services/add-comment-for-article';
 import { fetchCommentListByArticleId } from 'features/comment-list/model/services/fetch-comment-by-article-id';
-import { Button } from 'shared/ui/button';
-import { AppRoutes } from 'shared/constants/app-routes';
+
+import cls from './article-detail-page.module.scss';
 
 const ArticleDetailPage = memo(() => {
   const { id } = useParams<{ id: string }>();
@@ -29,12 +29,12 @@ const ArticleDetailPage = memo(() => {
 
   const { t } = useAppTranslation('article-detail-page');
   return (
-    <section>
+    <div className={cls.wrapper}>
       <Article id={id || ''} />
       <TextBlock header={t('comments', { ns: 'article-detail-page' })} />
       <NewCommentForm onSendComment={onSendComment} />
       <ArticleCommentList id={id || ''} />
-    </section>
+    </div>
   );
 });
 
