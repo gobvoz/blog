@@ -24,7 +24,7 @@ export interface StateSchema {
 export type StateSchemaKeys = keyof StateSchema;
 // FIXME: export from public api
 export interface ReducerManager {
-  getReducerMap: () => ReducersMapObject<StateSchema>;
+  getMountedReducerList: () => ReducersMapObject<StateSchema>;
   reduce: (state: StateSchema, action: AnyAction) => StateSchema;
   add: (key: StateSchemaKeys, reducer: Reducer) => void;
   remove: (key: StateSchemaKeys) => void;
