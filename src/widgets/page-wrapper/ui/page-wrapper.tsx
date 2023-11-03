@@ -11,6 +11,7 @@ import { useLocation } from 'react-router-dom';
 import { selectRestoreScrollByPath } from 'features/restore-scroll';
 import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/store-provider';
+import { useThrottle } from 'shared/libs/hooks';
 
 interface Props extends DOMAttributes<HTMLDivElement> {
   className?: string;
@@ -37,11 +38,11 @@ const PageWrapper: FC<Props> = props => {
     callback: onScrollEnd,
   });
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+  const handleScroll = useThrottle((e: React.UIEvent<HTMLDivElement>) => {
     const { scrollTop } = e.currentTarget;
 
     dispatch(restoreScrollActions.setScrollPosition({ path: pathname, position: scrollTop }));
-  };
+  }, 1000);
 
   useInitialEffect(() => {
     if (scrollPosition) {
