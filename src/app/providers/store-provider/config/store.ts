@@ -7,6 +7,7 @@ import { api } from 'shared/api/api';
 
 import { StateSchema, ThunkExtraArgument } from './state-schema';
 import { createReducerManager } from './reducer-manager';
+import { restoreScrollReducer } from 'features/restore-scroll';
 
 export const createReduxStore = (
   initialState?: StateSchema,
@@ -16,6 +17,7 @@ export const createReduxStore = (
   const rootReducer: ReducersMapObject = {
     ...asyncReducers,
     user: userReducer,
+    restoreScroll: restoreScrollReducer,
   };
 
   const reducerManager = createReducerManager(rootReducer);

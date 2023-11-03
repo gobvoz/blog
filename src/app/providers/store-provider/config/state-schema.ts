@@ -8,9 +8,11 @@ import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleCommentListSchema } from 'features/comment-list';
 import { NewCommentFormSchema } from 'features/new-comment-form';
 import { ArticleListSchema } from 'pages/article-page';
+import { RestoreScrollSchema } from 'features/restore-scroll';
 
 export interface StateSchema {
   user: UserSchema;
+  restoreScroll: RestoreScrollSchema;
 
   // async reducers
   loginForm?: LoginSchema;
