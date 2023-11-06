@@ -60,3 +60,9 @@ export interface Article {
   topics: string[];
   body: ArticleBlock[];
 }
+
+export enum ArticleSortField {
+  CREATED_AT = 'createdAt',
+  VIEWS = 'views',
+  TITLE = 'title',
+}

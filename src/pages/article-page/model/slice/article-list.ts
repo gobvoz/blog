@@ -2,12 +2,12 @@ import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolki
 
 import { StateSchema } from 'app/providers/store-provider';
 
-import { ArticleType } from 'entities/article';
+import { ArticleSortField, ArticleType } from 'entities/article';
 import { ArticleListSchema } from '../types/article-list-schema';
 import { ListType } from 'features/list-type-switcher';
 import { fetchArticleList } from '../services/fetch-article-list';
 import { LOCAL_STORAGE_ARTICLE_LIST_TYPE_KEY } from 'shared/constants/local-storage-key';
-import { ITEMS_PER_PAGE_GRID, ITEMS_PER_PAGE_LIST } from 'shared/constants/ui';
+import { ITEMS_PER_PAGE_GRID, ITEMS_PER_PAGE_LIST, SortOrder } from 'shared/constants/ui';
 
 const articleListAdapter = createEntityAdapter<ArticleType>({
   selectId: article => article.id,
@@ -27,6 +27,10 @@ const initialState = articleListAdapter.getInitialState<ArticleListSchema>({
   limit: listType === ListType.GRID ? ITEMS_PER_PAGE_GRID : ITEMS_PER_PAGE_LIST,
   hasMore: true,
 
+  order: SortOrder.DESC,
+  sort: ArticleSortField.CREATED_AT,
+  search: '',
+
   _initialized: false,
 });
 
@@ -44,6 +48,15 @@ const articleListSlice = createSlice({
     },
     setPage(state, action: PayloadAction<number>) {
       state.page = action.payload;
+    },
+    setOrder(state, action: PayloadAction<SortOrder>) {
+      state.order = action.payload;
+    },
+    setSortField(state, action: PayloadAction<ArticleSortField>) {
+      state.sort = action.payload;
+    },
+    setSearch(state, action: PayloadAction<string>) {
+      state.search = action.payload;
     },
     setInitialized(state) {
       state._initialized = true;

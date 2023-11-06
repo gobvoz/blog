@@ -5,26 +5,26 @@ import { classNames } from 'shared/libs/class-names';
 import cls from './select.module.scss';
 import { Label } from 'shared/ui/label';
 
-export interface SelectOption {
-  value: string;
+export interface SelectOption<T> {
+  value: T;
   label: string;
 }
 
 type SelectHTMLProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'value' | 'onChange'>;
 
-interface Props extends SelectHTMLProps {
+interface Props<T extends string> extends SelectHTMLProps {
   className?: string;
   label?: string;
   placeholder?: string;
-  value?: string;
-  options?: SelectOption[];
+  value?: T;
+  options?: SelectOption<T>[];
 
   readOnly?: boolean;
   error?: any;
-  onChange?: (value: string) => void;
+  onChange?: (value: T) => void;
 }
 
-const Select = memo((props: Props) => {
+const Select = <T extends string>(props: Props<T>) => {
   const {
     className,
     value,
@@ -38,7 +38,7 @@ const Select = memo((props: Props) => {
   } = props;
 
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(event.target.value);
+    onChange?.(event.target.value as T);
   };
 
   const optionList = useMemo(
@@ -75,6 +75,6 @@ const Select = memo((props: Props) => {
       </div>
     </Label>
   );
-});
+};
 
 export { Select };

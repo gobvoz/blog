@@ -8,3 +8,8 @@ export const enum Key {
 
 export const ITEMS_PER_PAGE_GRID = 9;
 export const ITEMS_PER_PAGE_LIST = 5;
+
+export enum SortOrder {
+  ASC = 'asc',
+  DESC = 'desc',
+}

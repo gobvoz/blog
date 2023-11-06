@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.sort-by {
+  width: 200px;
+  flex-basis: 200px;
+  flex-shrink: 1;
+}
+
+.order {
+  min-width: 70px;
+}

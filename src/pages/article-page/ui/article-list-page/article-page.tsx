@@ -6,19 +6,13 @@ import { ArticleList } from 'entities/article';
 import { DynamicModuleLoader, ReducerList } from 'shared/libs/components/dynamic-module-loader';
 import { useAppDispatch, useInitialEffect } from 'shared/libs/hooks';
 
-import cls from './article-page.module.scss';
-
-import {
-  articleListActions,
-  articleListReducer,
-  getArticleList,
-} from '../model/slice/article-list';
-import { selectArticleListLoading } from '../model/selectors/select-article-list-loading';
-import { selectArticleListType } from '../model/selectors/select-article-list-type';
-import { ListType, ListTypeSwitcher } from 'features/list-type-switcher';
+import { articleListReducer, getArticleList } from '../../model/slice/article-list';
+import { selectArticleListLoading } from '../../model/selectors/select-article-list-loading';
+import { selectArticleListType } from '../../model/selectors/select-article-list-type';
 import { PageWrapper } from 'widgets/page-wrapper';
-import { fetchNextArticleList } from '../model/services/fetch-next-article-list';
-import { initArticlePage } from '../model/services/init-article-page';
+import { fetchNextArticleList } from '../../model/services/fetch-next-article-list';
+import { initArticlePage } from '../../model/services/init-article-page';
+import { ArticleListFilters } from '../article-list-filters/article-list-filters';
 
 const reducerList: ReducerList = {
   articleList: articleListReducer,
@@ -34,13 +28,6 @@ const ArticlePage: FC = memo(() => {
     dispatch(initArticlePage());
   }, [dispatch]);
 
-  const handleListTypeChange = useCallback(
-    (type: ListType) => {
-      dispatch(articleListActions.setListType(type));
-    },
-    [dispatch],
-  );
-
   const handleScrollToBottom = useCallback(() => {
     dispatch(fetchNextArticleList());
   }, [dispatch]);
@@ -48,11 +35,7 @@ const ArticlePage: FC = memo(() => {
   return (
     <PageWrapper onScrollEnd={handleScrollToBottom}>
       <DynamicModuleLoader reducerList={reducerList} leaveAfterUnmount>
-        <ListTypeSwitcher
-          className={cls.listTypeSwitcher}
-          currentType={listType}
-          onChange={handleListTypeChange}
-        />
+        <ArticleListFilters />
         <ArticleList articleList={articleList} isLoading={isLoading} listType={listType} />
       </DynamicModuleLoader>
     </PageWrapper>

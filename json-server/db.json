@@ -36,9 +36,9 @@
       "title": "7 New JavaScript Features in ECMAScript 2022",
       "subtitle": "",
       "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
-      "createdAt": "31.01.2023",
+      "createdAt": "12.01.2023",
       "link": "https://enlear.academy/7-new-javascript-features-in-ecmascript-2022-64a330f6eae2",
-      "views": "1",
+      "views": "19",
       "topics": ["Ecmascript", "JavaScript", "Features", "JS", "WebDevelopment"],
       "body": [
         {
@@ -347,7 +347,7 @@
       "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "79",
       "topics": [
         "JavaScript",
         "JavaScript Interview",
@@ -884,11 +884,11 @@
       "profileId": "2",
       "title": "Test article 3",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
-      "createdAt": "16.12.2022",
+      "image": "https://picsum.photos/id/2/480/240",
+      "createdAt": "15.03.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "5",
+      "topics": ["JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -918,11 +918,11 @@
       "profileId": "2",
       "title": "Test article 4",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
-      "createdAt": "16.12.2022",
+      "image": "https://picsum.photos/id/20/480/240",
+      "createdAt": "12.01.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "24",
+      "topics": ["Interview Questions", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -952,11 +952,11 @@
       "profileId": "2",
       "title": "Test article 5",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
-      "createdAt": "16.12.2022",
+      "image": "https://picsum.photos/id/26/480/240",
+      "createdAt": "21.10.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "90",
+      "topics": ["JavaScript", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -986,11 +986,11 @@
       "profileId": "2",
       "title": "Test article 6",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
-      "createdAt": "16.12.2022",
+      "image": "https://picsum.photos/id/24/480/240",
+      "createdAt": "15.01.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "36",
+      "topics": ["JavaScript", "JavaScript Interview", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -1020,11 +1020,11 @@
       "profileId": "2",
       "title": "Test article 7",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
-      "createdAt": "16.12.2022",
+      "image": "https://picsum.photos/id/39/480/240",
+      "createdAt": "08.03.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
       "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "topics": ["JavaScript", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -1054,11 +1054,11 @@
       "profileId": "2",
       "title": "Test article 8",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
-      "createdAt": "16.12.2022",
+      "image": "https://picsum.photos/id/42/480/240",
+      "createdAt": "05.06.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "15",
+      "topics": ["JavaScript", "Interview Questions", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -1088,11 +1088,11 @@
       "profileId": "2",
       "title": "Test article 9",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
-      "createdAt": "16.12.2022",
+      "image": "https://picsum.photos/id/48/480/240",
+      "createdAt": "23.09.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "24",
+      "topics": ["JavaScript"],
       "body": [
         {
           "id": "1",
@@ -1122,11 +1122,11 @@
       "profileId": "2",
       "title": "Test article 10",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/96/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "51",
+      "topics": ["Interview Questions", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -1156,11 +1156,11 @@
       "profileId": "2",
       "title": "Test article 11",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/119/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "66",
+      "topics": ["JavaScript Interview", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -1190,11 +1190,11 @@
       "profileId": "2",
       "title": "Test article 12",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/160/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "35",
+      "topics": ["JavaScript", "Interview Questions"],
       "body": [
         {
           "id": "1",
@@ -1224,11 +1224,11 @@
       "profileId": "2",
       "title": "Test article 13",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/176/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "78",
+      "topics": ["JavaScript", "Interview Questions", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -1258,11 +1258,11 @@
       "profileId": "2",
       "title": "Test article 14",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/180/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "41",
+      "topics": ["JavaScript", "JavaScript Interview", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -1292,11 +1292,11 @@
       "profileId": "2",
       "title": "Test article 15",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/201/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "39",
+      "topics": ["JavaScript Interview", "Interview Questions"],
       "body": [
         {
           "id": "1",
@@ -1326,11 +1326,11 @@
       "profileId": "2",
       "title": "Test article 16",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/217/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "56",
+      "topics": ["JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
           "id": "1",
@@ -1360,11 +1360,11 @@
       "profileId": "2",
       "title": "Test article 17",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/292/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "19",
+      "topics": ["Food", "Cooking", "Recipe"],
       "body": [
         {
           "id": "1",
@@ -1394,11 +1394,11 @@
       "profileId": "2",
       "title": "Test article 18",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/304/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "8",
+      "topics": ["Technology"],
       "body": [
         {
           "id": "1",
@@ -1428,11 +1428,11 @@
       "profileId": "2",
       "title": "Test article 19",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/312/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "25",
+      "topics": ["Food"],
       "body": [
         {
           "id": "1",
@@ -1462,11 +1462,11 @@
       "profileId": "2",
       "title": "Test article 20",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/326/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "71",
+      "topics": ["Food", "Recipe"],
       "body": [
         {
           "id": "1",
@@ -1496,11 +1496,11 @@
       "profileId": "2",
       "title": "Test article 21",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/364/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "33",
+      "topics": ["Technology"],
       "body": [
         {
           "id": "1",
@@ -1530,10 +1530,10 @@
       "profileId": "2",
       "title": "Test article 22",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/366/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "64",
       "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
@@ -1567,7 +1567,7 @@
       "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "29",
       "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
@@ -1598,10 +1598,10 @@
       "profileId": "2",
       "title": "Test article 24",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/370/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "95",
       "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
@@ -1632,10 +1632,10 @@
       "profileId": "2",
       "title": "Test article 25",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/445/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "71",
       "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
@@ -1666,11 +1666,11 @@
       "profileId": "2",
       "title": "Test article 26",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/490/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "11",
+      "topics": ["Cooking", "Recipe"],
       "body": [
         {
           "id": "1",
@@ -1700,11 +1700,11 @@
       "profileId": "2",
       "title": "Test article 27",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/493/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
-      "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
+      "views": "47",
+      "topics": ["Food"],
       "body": [
         {
           "id": "1",
@@ -1737,7 +1737,7 @@
       "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "50",
       "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
@@ -1771,7 +1771,7 @@
       "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "21",
       "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
@@ -1802,10 +1802,10 @@
       "profileId": "2",
       "title": "Test article 30",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/532/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "42",
       "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
@@ -1836,10 +1836,10 @@
       "profileId": "2",
       "title": "Test article 31",
       "subtitle": "Test article subtitle",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
+      "image": "https://picsum.photos/id/668/480/240",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "57",
       "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
@@ -1873,7 +1873,7 @@
       "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "71",
       "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
@@ -1907,7 +1907,7 @@
       "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*KionUgns58P78XvfAFeeuw.jpeg",
       "createdAt": "16.12.2022",
       "link": "https://andreassujono.medium.com/top-10-tricky-javascript-questions-often-asked-by-interviewers-45c7dd90495e",
-      "views": "1",
+      "views": "68",
       "topics": ["JavaScript", "JavaScript Interview", "Interview Questions", "Tricky Questions"],
       "body": [
         {
