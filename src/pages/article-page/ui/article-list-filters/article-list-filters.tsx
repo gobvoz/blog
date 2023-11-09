@@ -5,7 +5,7 @@ import { ArticleSortField } from 'entities/article';
 
 import { ArticleSortList } from 'features/article-sort-list';
 
-import { useAppDispatch } from 'shared/libs/hooks';
+import { useAppDispatch, useDebounce } from 'shared/libs/hooks';
 import { Input } from 'shared/ui/input';
 import { SortOrder } from 'shared/constants/ui';
 
@@ -25,6 +25,13 @@ const ArticleListFilters: FC = memo(() => {
   const order = useSelector(selectArticleListOrder);
   const sortField = useSelector(selectArticleListSortField);
   const searchString = useSelector(selectArticleListSearch);
+
+  const fetchData = useCallback(() => {
+    dispatch(articleListActions.setPage(1));
+    dispatch(fetchArticleList({ replace: true }));
+  }, [dispatch]);
+
+  const debouncedSearchChange = useDebounce(fetchData, 1000);
 
   const handleListTypeChange = useCallback(
     (type: ListType) => {
@@ -55,15 +62,10 @@ const ArticleListFilters: FC = memo(() => {
     (searchString: string) => {
       dispatch(articleListActions.setSearch(searchString));
 
-      fetchData();
+      debouncedSearchChange();
     },
     [dispatch],
   );
-
-  const fetchData = useCallback(() => {
-    dispatch(articleListActions.setPage(1));
-    dispatch(fetchArticleList({ replace: true }));
-  }, [dispatch]);
 
   return (
     <div className={cls.filterWrapper}>

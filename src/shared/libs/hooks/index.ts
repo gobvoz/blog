@@ -4,3 +4,4 @@ export { useInitialEffect } from './use-initial-effect';
 export { useHover } from './use-hover';
 export { useInfinityScroll } from './use-infinity-scroll';
 export { useThrottle } from './use-throttle';
+export { useDebounce } from './use-debounce';
