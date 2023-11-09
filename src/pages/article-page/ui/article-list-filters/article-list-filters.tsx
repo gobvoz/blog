@@ -17,8 +17,7 @@ import { selectArticleListOrder } from '../../model/selectors/select-article-lis
 import { ListType, ListTypeSwitcher } from 'features/list-type-switcher';
 import { selectArticleListSortField } from '../../model/selectors/select-article-list-sort-field';
 import { selectArticleListSearch } from '../../model/selectors/select-article-list-search';
-import { fetchArticleList } from 'pages/article-page/model/services/fetch-article-list';
-import { fetchNextArticleList } from 'pages/article-page/model/services/fetch-next-article-list';
+import { fetchArticleList } from '../../model/services/fetch-article-list';
 
 const ArticleListFilters: FC = memo(() => {
   const dispatch = useAppDispatch();
@@ -37,7 +36,7 @@ const ArticleListFilters: FC = memo(() => {
   const handleSortFieldChange = useCallback(
     (sortField: ArticleSortField) => {
       dispatch(articleListActions.setSortField(sortField));
-      dispatch(articleListActions.setPage(1));
+
       fetchData();
     },
     [dispatch],
@@ -46,7 +45,7 @@ const ArticleListFilters: FC = memo(() => {
   const handleOrderChange = useCallback(
     (order: SortOrder) => {
       dispatch(articleListActions.setOrder(order));
-      dispatch(articleListActions.setPage(1));
+
       fetchData();
     },
     [dispatch],
@@ -55,7 +54,6 @@ const ArticleListFilters: FC = memo(() => {
   const handleSearchChange = useCallback(
     (searchString: string) => {
       dispatch(articleListActions.setSearch(searchString));
-      dispatch(articleListActions.setPage(1));
 
       fetchData();
     },
@@ -63,7 +61,8 @@ const ArticleListFilters: FC = memo(() => {
   );
 
   const fetchData = useCallback(() => {
-    dispatch(fetchNextArticleList());
+    dispatch(articleListActions.setPage(1));
+    dispatch(fetchArticleList({ replace: true }));
   }, [dispatch]);
 
   return (

@@ -11,7 +11,7 @@ interface Props {
   replace?: boolean;
 }
 
-export const fetchArticleList = createAsyncThunk<ArticleType[], void, ThunkApiConfig<string>>(
+export const fetchArticleList = createAsyncThunk<ArticleType[], Props, ThunkApiConfig<string>>(
   'articleList/fetchArticleList',
   async (_, thunkApi) => {
     const { extra, rejectWithValue, getState } = thunkApi;

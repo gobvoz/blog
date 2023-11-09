@@ -17,6 +17,6 @@ export const initArticlePage = createAsyncThunk<void, void, ThunkApiConfig<strin
     if (stateInitialized) return;
 
     dispatch(articleListActions.setInitialized());
-    dispatch(fetchArticleList());
+    dispatch(fetchArticleList({}));
   },
 );

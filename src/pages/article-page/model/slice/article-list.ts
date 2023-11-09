@@ -44,6 +44,7 @@ const articleListSlice = createSlice({
   reducers: {
     setListType(state, action: PayloadAction<ListType>) {
       state.listType = action.payload;
+      state.limit = action.payload === ListType.GRID ? ITEMS_PER_PAGE_GRID : ITEMS_PER_PAGE_LIST;
       localStorage.setItem(LOCAL_STORAGE_ARTICLE_LIST_TYPE_KEY, action.payload);
     },
     setPage(state, action: PayloadAction<number>) {
@@ -68,9 +69,9 @@ const articleListSlice = createSlice({
         state.error = undefined;
         state.isLoading = true;
 
-        //if (action.meta.arg.replace) {
-        articleListAdapter.removeAll(state);
-        //}
+        if (action.meta.arg?.replace) {
+          articleListAdapter.removeAll(state);
+        }
       })
       .addCase(fetchArticleList.fulfilled, (state, action: any) => {
         state.isLoading = false;
@@ -82,7 +83,6 @@ const articleListSlice = createSlice({
         } else {
           articleListAdapter.addMany(state, action.payload);
         }
-        //articleListAdapter.addMany(state, action.payload);
       })
       .addCase(fetchArticleList.rejected, (state, action) => {
         state.isLoading = false;
