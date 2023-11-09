@@ -13,6 +13,7 @@ import { PageWrapper } from 'widgets/page-wrapper';
 import { fetchNextArticleList } from '../../model/services/fetch-next-article-list';
 import { initArticlePage } from '../../model/services/init-article-page';
 import { ArticleListFilters } from '../article-list-filters/article-list-filters';
+import { useSearchParams } from 'react-router-dom';
 
 const reducerList: ReducerList = {
   articleList: articleListReducer,
@@ -24,8 +25,10 @@ const ArticlePage: FC = memo(() => {
   const isLoading = useSelector(selectArticleListLoading);
   const listType = useSelector(selectArticleListType);
 
+  const [searchParams] = useSearchParams();
+
   useInitialEffect(() => {
-    dispatch(initArticlePage());
+    dispatch(initArticlePage(searchParams));
   }, [dispatch]);
 
   const handleScrollToBottom = useCallback(() => {

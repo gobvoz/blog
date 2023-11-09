@@ -6,6 +6,7 @@ import { selectArticleListOrder } from '../selectors/select-article-list-order';
 import { selectArticleListSortField } from '../selectors/select-article-list-sort-field';
 import { selectArticleListSearch } from '../selectors/select-article-list-search';
 import { selectArticleListPage } from '../selectors/select-article-list-page';
+import { addQueryParams } from 'shared/libs/url/add-query-params';
 
 interface Props {
   replace?: boolean;
@@ -24,6 +25,12 @@ export const fetchArticleList = createAsyncThunk<ArticleType[], Props, ThunkApiC
     const searchString = selectArticleListSearch(state);
 
     try {
+      addQueryParams({
+        search: searchString,
+        sortField,
+        order,
+      });
+
       const response = await extra.api.get<ArticleType[]>('/articles', {
         params: {
           _expand: 'profile',

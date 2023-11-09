@@ -5,18 +5,29 @@ import { fetchArticleList } from './fetch-article-list';
 
 import { articleListActions } from '../slice/article-list';
 import { selectArticleListInitialized } from '../selectors/select-article-list-initialized';
+import { ArticleSortField } from 'entities/article';
+import { SortOrder } from 'shared/constants/ui';
 
-export const initArticlePage = createAsyncThunk<void, void, ThunkApiConfig<string>>(
+export const initArticlePage = createAsyncThunk<void, URLSearchParams, ThunkApiConfig<string>>(
   'articleList/fetchNextArticleList',
-  async (_, thunkApi) => {
+  async (searchParams, thunkApi) => {
     const { getState, dispatch } = thunkApi;
 
     const state = getState();
     const stateInitialized = selectArticleListInitialized(state);
 
+    const search = searchParams.get('search') || '';
+    const order = (searchParams.get('order') as SortOrder) || SortOrder.DESC;
+    const sortField =
+      (searchParams.get('sortField') as ArticleSortField) || ArticleSortField.CREATED_AT;
+
     if (stateInitialized) return;
 
+    dispatch(articleListActions.setSearch(search));
+    dispatch(articleListActions.setOrder(order));
+    dispatch(articleListActions.setSortField(sortField));
     dispatch(articleListActions.setInitialized());
+
     dispatch(fetchArticleList({}));
   },
 );
