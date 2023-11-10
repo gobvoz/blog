@@ -2,7 +2,7 @@ import { EntityState } from '@reduxjs/toolkit';
 
 import { ListType } from 'features/list-type-switcher';
 import { ArticleType, ArticleSortField } from 'entities/article';
-import { SortOrder } from 'shared/constants/ui';
+import { ArticleTag, SortOrder } from 'shared/constants/ui';
 
 export interface ArticleListSchema extends EntityState<ArticleType> {
   isLoading: boolean;
@@ -17,6 +17,7 @@ export interface ArticleListSchema extends EntityState<ArticleType> {
   order: SortOrder;
   sort: ArticleSortField;
   search: string;
+  selectedTag: ArticleTag;
 
   _initialized: boolean;
 }

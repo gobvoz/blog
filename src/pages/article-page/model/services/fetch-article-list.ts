@@ -7,6 +7,8 @@ import { selectArticleListSortField } from '../selectors/select-article-list-sor
 import { selectArticleListSearch } from '../selectors/select-article-list-search';
 import { selectArticleListPage } from '../selectors/select-article-list-page';
 import { addQueryParams } from 'shared/libs/url/add-query-params';
+import { selectArticleListTag } from '../selectors/select-article-list-tag';
+import { ArticleTag } from 'shared/constants/ui';
 
 interface Props {
   replace?: boolean;
@@ -23,6 +25,7 @@ export const fetchArticleList = createAsyncThunk<ArticleType[], Props, ThunkApiC
     const order = selectArticleListOrder(state);
     const sortField = selectArticleListSortField(state);
     const searchString = selectArticleListSearch(state);
+    const articleTag = selectArticleListTag(state);
 
     try {
       addQueryParams({
@@ -39,6 +42,7 @@ export const fetchArticleList = createAsyncThunk<ArticleType[], Props, ThunkApiC
           _sort: sortField,
           _order: order,
           q: searchString,
+          topics_like: articleTag === ArticleTag.ALL ? undefined : articleTag,
         },
       });
 

@@ -13,3 +13,18 @@ export enum SortOrder {
   ASC = 'asc',
   DESC = 'desc',
 }
+
+export enum ArticleTag {
+  ALL = 'ALL',
+  JS = 'JS',
+  JAVA_SCRIPT = 'JavaScript',
+  ECMASCRIPT = 'Ecmascript',
+  FEATURES = 'Features',
+  TRICKY_QUESTIONS = 'Tricky Questions',
+  INTERVIEW_QUESTIONS = 'Interview Questions',
+  WEB_DEVELOPMENT = 'WebDevelopment',
+  FOOD = 'Food',
+  COOKING = 'Cooking',
+  RECIPE = 'Recipe',
+  TECHNOLOGY = 'Technology',
+}

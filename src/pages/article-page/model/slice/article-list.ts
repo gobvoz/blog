@@ -7,7 +7,12 @@ import { ArticleListSchema } from '../types/article-list-schema';
 import { ListType } from 'features/list-type-switcher';
 import { fetchArticleList } from '../services/fetch-article-list';
 import { LOCAL_STORAGE_ARTICLE_LIST_TYPE_KEY } from 'shared/constants/local-storage-key';
-import { ITEMS_PER_PAGE_GRID, ITEMS_PER_PAGE_LIST, SortOrder } from 'shared/constants/ui';
+import {
+  ArticleTag,
+  ITEMS_PER_PAGE_GRID,
+  ITEMS_PER_PAGE_LIST,
+  SortOrder,
+} from 'shared/constants/ui';
 
 const articleListAdapter = createEntityAdapter<ArticleType>({
   selectId: article => article.id,
@@ -30,6 +35,7 @@ const initialState = articleListAdapter.getInitialState<ArticleListSchema>({
   order: SortOrder.DESC,
   sort: ArticleSortField.CREATED_AT,
   search: '',
+  selectedTag: ArticleTag.ALL,
 
   _initialized: false,
 });
@@ -58,6 +64,9 @@ const articleListSlice = createSlice({
     },
     setSearch(state, action: PayloadAction<string>) {
       state.search = action.payload;
+    },
+    setArticleTag(state, action: PayloadAction<ArticleTag>) {
+      state.selectedTag = action.payload;
     },
     setInitialized(state) {
       state._initialized = true;

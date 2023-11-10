@@ -18,6 +18,7 @@ import { ListType, ListTypeSwitcher } from 'features/list-type-switcher';
 import { selectArticleListSortField } from '../../model/selectors/select-article-list-sort-field';
 import { selectArticleListSearch } from '../../model/selectors/select-article-list-search';
 import { fetchArticleList } from '../../model/services/fetch-article-list';
+import { ArticleTagList } from 'features/article-tag-list/ui/article-tag-list/article-tag-list';
 
 const ArticleListFilters: FC = memo(() => {
   const dispatch = useAppDispatch();
@@ -83,6 +84,7 @@ const ArticleListFilters: FC = memo(() => {
         />
       </div>
       <Input label="Search..." value={searchString} onChange={handleSearchChange} />
+      <ArticleTagList onTagChange={fetchData} />
     </div>
   );
 });
