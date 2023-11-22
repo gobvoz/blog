@@ -4,6 +4,15 @@ import { action } from '@storybook/addon-actions';
 import { TabList } from './tab-list';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
+import { ArticleTag } from 'shared/constants/ui';
+
+const tabList = [
+  { value: ArticleTag.ALL, content: 'All' },
+  { value: ArticleTag.JS, content: 'JS' },
+  { value: ArticleTag.FOOD, content: 'FOOD' },
+  { value: ArticleTag.RECIPE, content: 'Recipe' },
+  { value: ArticleTag.COOKING, content: 'Cooking' },
+];
 
 export default {
   title: 'shared/tab-list',
@@ -14,26 +23,14 @@ const Template: ComponentStory<typeof TabList> = args => <TabList {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {
-  tabList: [
-    { value: 'tab1', content: 'Tab 1' },
-    { value: 'tab2', content: 'Tab 2' },
-    { value: 'tab3', content: 'Tab 3' },
-    { value: 'tab4', content: 'Tab 4' },
-    { value: 'tab5', content: 'Tab 5' },
-  ],
-  currentTab: 'tab1',
+  tabList,
+  currentTab: ArticleTag.ALL,
 };
 
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 Dark.args = {
-  tabList: [
-    { value: 'tab1', content: 'Tab 1' },
-    { value: 'tab2', content: 'Tab 2' },
-    { value: 'tab3', content: 'Tab 3' },
-    { value: 'tab4', content: 'Tab 4' },
-    { value: 'tab5', content: 'Tab 5' },
-  ],
-  currentTab: 'tab2',
+  tabList,
+  currentTab: ArticleTag.ALL,
   onTabChange: action('onTabChange'),
 };
