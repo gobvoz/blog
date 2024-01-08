@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/libs/class-names';
@@ -30,6 +30,15 @@ import { AppRoutes } from 'shared/constants/app-routes';
 import { AppLink } from 'shared/ui/app-link';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'shared/ui/button';
+import { ArticleList } from '../article-list';
+import { ListType } from 'features/list-type-switcher';
+import {
+  articleRecommendationListReducer,
+  selectArticleRecommendationList,
+} from '../../model/slice/article-recommendation-list';
+import { selectArticleRecommendationListLoading } from '../../model/selectors/select-article-recommendation-list-loading';
+import { selectArticleRecommendationListError } from '../../model/selectors/select-article-recommendation-list-error';
+import { fetchArticleRecommendationList } from '../../model/services/fetch-article-recommendation-list';
 
 interface Props {
   className?: string;
@@ -38,6 +47,7 @@ interface Props {
 
 const reducerList = {
   article: articleReducer,
+  articleRecommendationList: articleRecommendationListReducer,
 };
 
 const Article = memo((props: Props) => {
@@ -47,11 +57,18 @@ const Article = memo((props: Props) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  useInitialEffect(() => dispatch(fetchArticleData(id)));
+  useInitialEffect(() => {
+    dispatch(fetchArticleData(id));
+    dispatch(fetchArticleRecommendationList());
+  }, [dispatch, id]);
 
   const isLoading = useSelector(selectArticleLoading);
   const data = useSelector(selectArticleData);
   const error = useSelector(selectArticleError);
+
+  const recommendationLoading = useSelector(selectArticleRecommendationListLoading);
+  const recommendationError = useSelector(selectArticleRecommendationListError);
+  const recommendationList = useSelector(selectArticleRecommendationList.selectAll);
 
   let content = null;
 
@@ -137,6 +154,13 @@ const Article = memo((props: Props) => {
   return (
     <DynamicModuleLoader reducerList={reducerList}>
       <section className={classNames(cls.article, className)}>{content}</section>
+      <TextBlock header={t('recommendations', { ns: 'article-detail-page' })} />
+      <ArticleList
+        className={cls.recommendationList}
+        articleList={recommendationList}
+        listType={ListType.GRID}
+        isLoading={recommendationLoading}
+      />
     </DynamicModuleLoader>
   );
 });

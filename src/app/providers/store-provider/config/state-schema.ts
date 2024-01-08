@@ -9,6 +9,7 @@ import { ArticleCommentListSchema } from 'features/comment-list';
 import { NewCommentFormSchema } from 'features/new-comment-form';
 import { ArticleListSchema } from 'pages/article-page';
 import { RestoreScrollSchema } from 'features/restore-scroll';
+import { ArticleRecommendationListSchema } from 'entities/article/model/slice/article-recommendation-list-schema';
 
 export interface StateSchema {
   user: UserSchema;
@@ -18,6 +19,7 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   article?: ArticleSchema;
+  articleRecommendationList?: ArticleRecommendationListSchema;
   commentList?: ArticleCommentListSchema;
   newCommentForm?: NewCommentFormSchema;
   articleList?: ArticleListSchema;
