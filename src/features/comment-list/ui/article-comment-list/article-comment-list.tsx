@@ -26,7 +26,9 @@ const ArticleCommentList = memo((props: Props) => {
   const { className, id } = props;
   const dispatch = useAppDispatch();
 
-  useInitialEffect(() => dispatch(fetchCommentListByArticleId(id)));
+  useInitialEffect(() => {
+    dispatch(fetchCommentListByArticleId(id));
+  }, [dispatch, id]);
 
   const commentList = useSelector(getArticleCommentList.selectAll);
   const isLoading = useSelector(selectCommentListLoading);

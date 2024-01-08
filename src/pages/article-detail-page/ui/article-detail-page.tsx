@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { Article } from 'entities/article';
 import { TextBlock } from 'shared/ui/text-block';
@@ -14,7 +14,6 @@ import { PageWrapper } from 'widgets/page-wrapper';
 const ArticleDetailPage = memo(() => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   const onSendComment = useCallback(
     (text: string) => {
