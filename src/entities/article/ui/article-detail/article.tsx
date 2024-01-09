@@ -159,6 +159,7 @@ const Article = memo((props: Props) => {
         className={cls.recommendationList}
         articleList={recommendationList}
         listType={ListType.GRID}
+        target="_blank"
         isLoading={recommendationLoading}
       />
     </DynamicModuleLoader>

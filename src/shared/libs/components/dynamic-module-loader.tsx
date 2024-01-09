@@ -4,12 +4,15 @@ import { Reducer } from '@reduxjs/toolkit';
 
 import {
   ReduxStoreWithManager,
+  StateSchema,
   StateSchemaKeys,
 } from 'app/providers/store-provider/config/state-schema';
 
 import { useAppDispatch } from 'shared/libs/hooks';
 
-export type ReducerList = { [reducerKey in StateSchemaKeys]?: Reducer };
+export type ReducerList = {
+  [reducerKey in StateSchemaKeys]?: Reducer<NonNullable<StateSchema[reducerKey]>>;
+};
 
 type reducerListEntry = [string, Reducer];
 

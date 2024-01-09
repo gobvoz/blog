@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 
 import { classNames } from 'shared/libs/class-names';
 import cls from './article-list.module.scss';
@@ -12,7 +12,7 @@ interface Props {
   articleList: Article[];
   isLoading: boolean;
   listType: ListType;
-  target?: string;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const generateSkeletonsArray = (listType: ListType) => {

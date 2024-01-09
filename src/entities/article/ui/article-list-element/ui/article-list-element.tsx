@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 
 import cls from './article-list-element.module.scss';
 
@@ -21,7 +21,7 @@ interface Props {
   className?: string;
   article: Article;
   listType: ListType;
-  target?: string;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const ArticleListElement = memo((props: Props) => {
