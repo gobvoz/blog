@@ -51,6 +51,17 @@
   }
 }
 
+.link-card {
+  text-decoration: none;
+  color: var(--text-primary);
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: var(--text-primary);
+  }
+}
+
 .list {
   padding: 5px 0;
 

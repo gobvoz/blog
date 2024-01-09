@@ -12,6 +12,7 @@ interface Props {
   articleList: Article[];
   isLoading: boolean;
   listType: ListType;
+  target?: string;
 }
 
 const generateSkeletonsArray = (listType: ListType) => {
@@ -23,12 +24,17 @@ const generateSkeletonsArray = (listType: ListType) => {
 };
 
 const ArticleList = memo((props: Props) => {
-  const { className, articleList, isLoading, listType } = props;
+  const { className, articleList, isLoading, listType, target } = props;
 
   return (
     <div className={classNames(cls.articleList, cls[listType], className)}>
       {articleList.map(article => (
-        <ArticleListElement key={article.id} article={article} listType={listType} />
+        <ArticleListElement
+          key={article.id}
+          article={article}
+          listType={listType}
+          target={target}
+        />
       ))}
       {isLoading && generateSkeletonsArray(listType)}
     </div>

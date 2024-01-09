@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo } from 'react';
 
 import cls from './article-list-element.module.scss';
 
@@ -12,27 +12,21 @@ import { Icon } from 'shared/ui/icon';
 import { Card } from 'shared/ui/card';
 import { useHover } from 'shared/libs/hooks/use-hover';
 import { Avatar } from 'shared/ui/avatar';
-import { Button } from 'shared/ui/button';
 import { classNames } from 'shared/libs/class-names';
 import { ArticleParagraphBlock } from '../../article-paragraph-block';
-import { useNavigate } from 'react-router-dom';
 import { AppRoutes } from 'shared/constants/app-routes';
-import { ArticleListElementSkeleton } from './article-list-element.skeleton';
+import { AppLink } from 'shared/ui/app-link';
 
 interface Props {
   className?: string;
   article: Article;
   listType: ListType;
+  target?: string;
 }
 
 const ArticleListElement = memo((props: Props) => {
-  const { className, article, listType } = props;
+  const { className, article, listType, target = '' } = props;
   const [_, bindHover] = useHover();
-  const navigate = useNavigate();
-
-  const handleReadMore = useCallback(() => {
-    navigate(`${AppRoutes.ARTICLES}/${article.id}`);
-  }, []);
 
   if (listType === ListType.LIST) {
     const textBlock = article.body.find(
@@ -66,7 +60,7 @@ const ArticleListElement = memo((props: Props) => {
           {article.topics.join(', ')}
         </TextBlock>
         <div className={cls.footer}>
-          <Button onClick={handleReadMore}>Read...</Button>
+          <AppLink to={`${AppRoutes.ARTICLES}/${article.id}`}>Read...</AppLink>
           <div className={cls.views}>
             <TextBlock small>{article.views}</TextBlock>
             <Icon className={cls.icon} Svg={EyeIcon} small />
@@ -77,26 +71,28 @@ const ArticleListElement = memo((props: Props) => {
   }
 
   return (
-    <Card
-      className={classNames(cls[listType], className)}
-      type={listType}
-      {...bindHover}
-      onClick={handleReadMore}>
-      <img className={cls.image} src={article.image} alt={article.title} />
-      <div className={cls.flex}>
-        <div className={cls.date}>
-          <Icon className={cls.icon} Svg={DateIcon} small />
-          <TextBlock small>{article.createdAt} </TextBlock>
+    <AppLink
+      className={cls.linkCard}
+      to={`${AppRoutes.ARTICLES}/${article.id}`}
+      target={target}
+      withoutPadding>
+      <Card className={classNames(cls[listType], className)} type={listType} {...bindHover}>
+        <img className={cls.image} src={article.image} alt={article.title} />
+        <div className={cls.flex}>
+          <div className={cls.date}>
+            <Icon className={cls.icon} Svg={DateIcon} small />
+            <TextBlock small>{article.createdAt} </TextBlock>
+          </div>
+          <div className={cls.views}>
+            <TextBlock small>{article.views}</TextBlock>
+            <Icon className={cls.icon} Svg={EyeIcon} small />
+          </div>
         </div>
-        <div className={cls.views}>
-          <TextBlock small>{article.views}</TextBlock>
-          <Icon className={cls.icon} Svg={EyeIcon} small />
-        </div>
-      </div>
-      <TextBlock className={cls.title} small>
-        {article.title}
-      </TextBlock>
-    </Card>
+        <TextBlock className={cls.title} small>
+          {article.title}
+        </TextBlock>
+      </Card>
+    </AppLink>
   );
 });
 
