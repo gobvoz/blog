@@ -28,8 +28,6 @@ import { ArticleHintBlock } from '../article-hint-block';
 import { useInitialEffect } from 'shared/libs/hooks';
 import { AppRoutes } from 'shared/constants/app-routes';
 import { AppLink } from 'shared/ui/app-link';
-import { useNavigate } from 'react-router-dom';
-import { Button } from 'shared/ui/button';
 import { ArticleList } from '../article-list';
 import { ListType } from 'features/list-type-switcher';
 import {
@@ -55,7 +53,6 @@ const Article = memo((props: Props) => {
 
   const { t } = useAppTranslation('article-detail-page');
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   useInitialEffect(() => {
     dispatch(fetchArticleData(id));
@@ -71,10 +68,6 @@ const Article = memo((props: Props) => {
   const recommendationList = useSelector(selectArticleRecommendationList.selectAll);
 
   let content = null;
-
-  const handleBack = useCallback(() => {
-    navigate(AppRoutes.ARTICLES);
-  }, [navigate]);
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
@@ -113,9 +106,6 @@ const Article = memo((props: Props) => {
   } else if (error) {
     content = (
       <>
-        <Button className={cls.backButton} onClick={handleBack} appLink>
-          {t('back', { ns: 'article-detail-page' })}
-        </Button>
         <h1>{t('error-not-found', { ns: 'article-detail-page' })}</h1>
         <TextBlock>{t('error-not-found-long', { ns: 'article-detail-page' })}</TextBlock>
       </>
@@ -123,9 +113,6 @@ const Article = memo((props: Props) => {
   } else if (data) {
     content = (
       <>
-        <Button className={cls.backButton} onClick={handleBack} appLink>
-          {t('back', { ns: 'article-detail-page' })}
-        </Button>
         <TextBlock header={data.title}>{data.subtitle}</TextBlock>
         <div className={cls.skeletonDescription}>
           <AppLink to={AppRoutes.PROFILE + '/' + data.profile.id} withoutPadding>

@@ -14,6 +14,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   outlineRed?: boolean;
   checked?: boolean;
+  noPadding?: boolean;
 }
 
 const Button: FC<Props> = memo((props: Props) => {
@@ -28,6 +29,7 @@ const Button: FC<Props> = memo((props: Props) => {
     loading,
     outlineRed,
     checked,
+    noPadding,
 
     type = 'button',
     ...otherProps
@@ -41,6 +43,7 @@ const Button: FC<Props> = memo((props: Props) => {
     [cls.loading]: loading,
     [cls.outlineRed]: outlineRed,
     [cls.checked]: checked,
+    [cls.noPadding]: noPadding,
   };
 
   return (
