@@ -12,15 +12,6 @@ server.use(cors());
 server.use(jsonServer.defaults());
 server.use(jsonServer.bodyParser);
 
-// server response delay, just for the lulz
-server.use(async (req, res, next) => {
-  await new Promise(response => {
-    setTimeout(response, 1000);
-  });
-
-  next();
-});
-
 server.post('/login', (req, res) => {
   const { username, password } = req.body;
 

@@ -24,6 +24,8 @@ const buildConfig = (env: BuildEnv) => {
       output: path.resolve(__dirname, 'build'),
       html: path.resolve(__dirname, 'public', 'index.html'),
       src: path.resolve(__dirname, 'src'),
+      locale: path.resolve(__dirname, 'public', 'locales'),
+      buildLocale: path.resolve(__dirname, 'build', 'locales'),
     },
     isDevelopment,
     port: PORT,
