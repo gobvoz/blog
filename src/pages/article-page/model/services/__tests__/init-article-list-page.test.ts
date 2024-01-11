@@ -15,7 +15,7 @@ describe('initArticleListPage', () => {
 
     await thunk.dispatchAsync(new URLSearchParams());
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(7);
+    expect(thunk.dispatch).toHaveBeenCalledTimes(8);
     expect(fetchArticleList).toHaveBeenCalledWith({});
   });
 
