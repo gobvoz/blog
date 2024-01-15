@@ -5,6 +5,7 @@ import { Key, MODAL_ANIMATION_DURATION } from 'shared/constants/ui';
 import { Button } from 'shared/ui/button';
 
 import cls from './modal.module.scss';
+import { CenterFlex } from 'shared/ui/flex';
 
 interface Props {
   className?: string;
@@ -78,8 +79,8 @@ const Modal: FC<Props> = props => {
   }, [keepOpen, closeModal]);
 
   return (
-    <div
-      className={classNames(cls.overlay, cls.center, {
+    <CenterFlex
+      className={classNames(cls.overlay, {
         [cls.overlayAnimationIn]: isInAnimation,
         [cls.overlayAnimationOut]: isOutAnimation,
         [cls.overlayNoAnimation]: isNoAnimation,
@@ -102,7 +103,7 @@ const Modal: FC<Props> = props => {
         </div>
         {children}
       </div>
-    </div>
+    </CenterFlex>
   );
 };
 

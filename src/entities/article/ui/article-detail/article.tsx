@@ -37,6 +37,7 @@ import {
 import { selectArticleRecommendationListLoading } from '../../model/selectors/select-article-recommendation-list-loading';
 import { selectArticleRecommendationListError } from '../../model/selectors/select-article-recommendation-list-error';
 import { fetchArticleRecommendationList } from '../../model/services/fetch-article-recommendation-list';
+import { HFlex, VFlex } from 'shared/ui/flex';
 
 interface Props {
   className?: string;
@@ -92,13 +93,13 @@ const Article = memo((props: Props) => {
     content = (
       <>
         <Skeleton className={cls.skeletonTitle} />
-        <div className={cls.skeletonDescription}>
+        <HFlex className={cls.skeletonDescription} gap="xxl">
           <Skeleton className={cls.skeletonAvatar} />
-          <div className={cls.skeletonGroup}>
+          <VFlex className={cls.skeletonGroup} justify="center" gap="xl">
             <Skeleton className={cls.skeletonName} />
             <Skeleton className={cls.skeletonName} />
-          </div>
-        </div>
+          </VFlex>
+        </HFlex>
         <Skeleton className={cls.skeletonArea} />
         <Skeleton className={cls.skeletonArea} />
       </>
@@ -114,25 +115,25 @@ const Article = memo((props: Props) => {
     content = (
       <>
         <TextBlock header={data.title}>{data.subtitle}</TextBlock>
-        <div className={cls.skeletonDescription}>
+        <HFlex className={cls.skeletonDescription} gap="xxl">
           <AppLink to={AppRoutes.PROFILE + '/' + data.profile.id} withoutPadding>
             <Avatar className={cls.skeletonAvatar} src={data.profile.avatar} />
           </AppLink>
-          <div className={cls.skeletonGroup}>
+          <VFlex className={cls.skeletonGroup} justify="center" gap="xl">
             <AppLink to={AppRoutes.PROFILE + '/' + data.profile.id} withoutPadding>
               <TextBlock header={data.profile.first + ' ' + data.profile.last} />
             </AppLink>
             <TextBlock>{data.profile.about}</TextBlock>
-          </div>
-        </div>
-        <div className={cls.iconText}>
+          </VFlex>
+        </HFlex>
+        <HFlex className={cls.iconText} gap="m">
           <Icon Svg={EyeIcon} />
           <span>17</span>
-        </div>
-        <div className={cls.iconText}>
+        </HFlex>
+        <HFlex className={cls.iconText} gap="m">
           <Icon Svg={DateIcon} />
           {data.createdAt}
-        </div>
+        </HFlex>
         <div className={cls.content}>{data.body.map(renderBlock)}</div>
       </>
     );

@@ -12,6 +12,7 @@ import cls from './article-header.module.scss';
 import { useSelector } from 'react-redux';
 import { selectCanEditArticle } from 'pages/article-detail-page';
 import { selectArticleData } from '../../../model/selectors/select-article-data';
+import { HFlex } from 'shared/ui/flex';
 
 interface Props {
   className?: string;
@@ -37,7 +38,7 @@ const ArticleHeader: FC = memo((props: Props) => {
   }, [navigate, article]);
 
   return (
-    <div className={classNames(cls.header, className)}>
+    <HFlex className={classNames(cls.header, className)} justify="between" align="center">
       <Button onClick={handleBack} appLink noPadding>
         {t('back', { ns: 'article-detail-page' })}
       </Button>
@@ -47,7 +48,7 @@ const ArticleHeader: FC = memo((props: Props) => {
           {t('edit', { ns: 'article-detail-page' })}
         </Button>
       )}
-    </div>
+    </HFlex>
   );
 });
 
