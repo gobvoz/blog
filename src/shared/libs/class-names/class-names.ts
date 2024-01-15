@@ -1,6 +1,6 @@
 export type ModsType = Record<string, boolean | undefined>;
 
-type ClassType = string | undefined | string[] | ModsType;
+type ClassType = string | undefined | Array<string | undefined> | ModsType;
 
 export const classNames = (...classes: Array<ClassType>): string => {
   const classArray: string[] = [];

@@ -13,6 +13,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
     output: '',
     html: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
+    locale: '',
+    buildLocale: '',
   };
 
   config.resolve.modules.push(paths.src);
