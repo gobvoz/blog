@@ -45,6 +45,19 @@ LightError.args = {
   errorMessage: true,
 };
 
+export const LightH1 = Template.bind({});
+LightH1.args = {
+  headerTag: 'h1',
+};
+export const LightH2 = Template.bind({});
+LightH2.args = {
+  headerTag: 'h2',
+};
+export const LightH3 = Template.bind({});
+LightH3.args = {
+  headerTag: 'h3',
+};
+
 export const LightForm = Template.bind({});
 LightForm.args = {
   form: true,
@@ -88,3 +101,19 @@ DarkForm.args = {
   form: true,
 };
 DarkForm.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DarkH1 = Template.bind({});
+DarkH1.args = {
+  headerTag: 'h1',
+};
+DarkH1.decorators = [ThemeDecorator(Theme.DARK)];
+export const DarkH2 = Template.bind({});
+DarkH2.args = {
+  headerTag: 'h2',
+};
+DarkH2.decorators = [ThemeDecorator(Theme.DARK)];
+export const DarkH3 = Template.bind({});
+DarkH3.args = {
+  headerTag: 'h3',
+};
+DarkH3.decorators = [ThemeDecorator(Theme.DARK)];

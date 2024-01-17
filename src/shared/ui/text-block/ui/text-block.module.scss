@@ -1,12 +1,30 @@
+.text-block {
+  & > h1 {
+    font-size: 1.4em;
+  }
+
+  & > h2 {
+    font-size: 1.2em;
+  }
+
+  & > h3 {
+    font-size: 1.1em;
+  }
+
+  & > h4,
+  & > h5,
+  & > h6 {
+    font-size: 1em;
+  }
+}
+
 .header {
   color: var(--color-header);
   margin: 0;
-  font-size: var(--font-size-m);
 }
 
 .paragraph {
   margin: 0;
-  font-size: var(--font-size-m);
   line-height: normal;
 }
 
@@ -17,14 +35,6 @@
 .form {
   font-size: var(--font-size-m);
   line-height: 1;
-
-  & .header {
-    font-size: var(--font-size-m);
-  }
-
-  & .paragraph {
-    font-size: var(--font-size-m);
-  }
 }
 
 .error-message {
@@ -44,31 +54,13 @@
 }
 
 .small {
-  & > .header {
-    font-size: var(--font-size-s);
-  }
-
-  & > .paragraph {
-    font-size: var(--font-size-s);
-  }
+  font-size: var(--font-size-s);
 }
 
 .medium {
-  & > .header {
-    font-size: var(--font-size-m);
-  }
-
-  & > .paragraph {
-    font-size: var(--font-size-m);
-  }
+  font-size: var(--font-size-m);
 }
 
 .large {
-  & > .header {
-    font-size: var(--font-size-l);
-  }
-
-  & > .paragraph {
-    font-size: var(--font-size-l);
-  }
+  font-size: var(--font-size-l);
 }
