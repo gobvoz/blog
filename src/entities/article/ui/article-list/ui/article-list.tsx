@@ -6,7 +6,6 @@ import cls from './article-list.module.scss';
 import { Article } from '../../../model/types/article';
 import { ListType } from 'features/list-type-switcher';
 import { ArticleListElement, ArticleListElementSkeleton } from '../../article-list-element';
-import { Virtuoso } from 'react-virtuoso';
 
 interface Props {
   className?: string;
