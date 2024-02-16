@@ -4,7 +4,6 @@ import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/libs/class-names';
 
 import cls from './dropdown-menu.module.scss';
-import { Hr } from 'shared/ui/hr';
 
 interface DropDownItem {
   content?: React.ReactNode;
@@ -27,7 +26,7 @@ const DropdownMenu: FC<Props> = memo((props: Props) => {
 
   const { trigger, itemList } = options;
   return (
-    <div className={classNames(cls.dropdownMenu, className)}>
+    <div className={classNames(cls.wrapper, className)}>
       <Menu>
         <Menu.Button className={cls.button}>{trigger}</Menu.Button>
         <Menu.Items className={cls.itemList}>

@@ -18,6 +18,7 @@ import { useAppDispatch, useAppTranslation } from 'shared/libs/hooks';
 
 import cls from './navbar.module.scss';
 import { DropdownMenu } from 'shared/ui/dropdown-menu';
+import { Avatar } from 'shared/ui/avatar';
 
 interface Props {
   className?: string;
@@ -63,7 +64,7 @@ const Navbar: FC<Props> = memo((props: Props) => {
 
           <DropdownMenu
             options={{
-              trigger: userAuthData.avatar,
+              trigger: <Avatar small src={userAuthData.avatar} />,
               itemList: [
                 {
                   content: t('menu-contacts'),
@@ -80,11 +81,6 @@ const Navbar: FC<Props> = memo((props: Props) => {
               ],
             }}
           />
-          {/* <AppLink to={AppRoutes.CONTACTS}>{t('menu-contacts')}</AppLink>
-            <AppLink to={AppRoutes.PROFILE}>{t('menu-profile')}</AppLink>
-            <Button appLink onClick={handleLogout}>
-              {t('menu-logout')}
-            </Button> */}
         </div>
       </nav>
     );
