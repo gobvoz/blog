@@ -9,17 +9,17 @@ import { ArticleCommentListSchema } from 'features/comment-list';
 import { NewCommentFormSchema } from 'features/new-comment-form';
 import { ArticleListSchema } from 'pages/article-page';
 import { RestoreScrollSchema } from 'features/restore-scroll';
-import { ArticleRecommendationListSchema } from 'features/article-recommendation-list/model/slice/article-recommendation-list-schema';
+import { rtkApi } from 'shared/api/rtk-api';
 
 export interface StateSchema {
   user: UserSchema;
   restoreScroll: RestoreScrollSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // async reducers
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   article?: ArticleSchema;
-  articleRecommendationList?: ArticleRecommendationListSchema;
   commentList?: ArticleCommentListSchema;
   newCommentForm?: NewCommentFormSchema;
   articleList?: ArticleListSchema;

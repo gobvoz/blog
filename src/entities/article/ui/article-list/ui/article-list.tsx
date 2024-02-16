@@ -9,7 +9,7 @@ import { ArticleListElement, ArticleListElementSkeleton } from '../../article-li
 
 interface Props {
   className?: string;
-  articleList: Article[];
+  articleList?: Article[];
   isLoading: boolean;
   listType: ListType;
   target?: HTMLAttributeAnchorTarget;
@@ -29,14 +29,15 @@ const ArticleList = memo((props: Props) => {
   console.log(articleList);
   return (
     <div className={classNames(cls.articleList, cls[listType], className)}>
-      {articleList.map(article => (
-        <ArticleListElement
-          key={article.id}
-          article={article}
-          listType={listType}
-          target={target}
-        />
-      ))}
+      {articleList &&
+        articleList.map(article => (
+          <ArticleListElement
+            key={article.id}
+            article={article}
+            listType={listType}
+            target={target}
+          />
+        ))}
       {isLoading && generateSkeletonsArray(listType)}
     </div>
   );

@@ -4,6 +4,7 @@ import { NavigateOptions, To } from 'react-router-dom';
 import { userReducer } from 'entities/user';
 
 import { api } from 'shared/api/api';
+import { rtkApi } from 'shared/api/rtk-api';
 
 import { StateSchema, ThunkExtraArgument } from './state-schema';
 import { createReducerManager } from './reducer-manager';
@@ -18,6 +19,7 @@ export const createReduxStore = (
     ...asyncReducers,
     user: userReducer,
     restoreScroll: restoreScrollReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   };
 
   const reducerManager = createReducerManager(rootReducer);
@@ -36,7 +38,7 @@ export const createReduxStore = (
         thunk: {
           extraArgument: extraArgument,
         },
-      }),
+      }).concat(rtkApi.middleware),
   });
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
