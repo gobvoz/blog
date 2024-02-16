@@ -1,4 +1,6 @@
 .theme-toggler {
+  display: grid;
+  place-items: center;
   width: 30px;
   height: 30px;
   padding: 0;
@@ -6,4 +8,9 @@
   bottom: 20px;
   right: 20px;
   border-radius: 50%;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }

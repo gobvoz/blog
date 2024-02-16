@@ -6,6 +6,9 @@ import { Button } from 'shared/ui/button';
 import { classNames } from 'shared/libs/class-names';
 import { Theme } from 'shared/constants/theme';
 
+import SunIcon from 'shared/assets/icons/sun.svg';
+import MoonIcon from 'shared/assets/icons/moon.svg';
+
 import cls from './theme-toggler.module.scss';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,12 +20,8 @@ const ThemeToggler: FC<Props> = memo((props: Props) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <Button
-      type="button"
-      primary
-      className={classNames(cls.themeToggler, className)}
-      onClick={toggleTheme}>
-      {theme === Theme.DARK ? 'D' : 'L'}
+    <Button type="button" className={classNames(cls.themeToggler, className)} onClick={toggleTheme}>
+      {theme === Theme.DARK ? <SunIcon className={cls.icon} /> : <MoonIcon className={cls.icon} />}
     </Button>
   );
 });

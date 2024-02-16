@@ -34,6 +34,7 @@ const DropdownMenu: FC<Props> = memo((props: Props) => {
             <Menu.Item as={Fragment} key={index}>
               {({ active }) => (
                 <button
+                  type="button"
                   className={classNames(cls.item, { [cls.active]: active })}
                   onClick={item.onClick}>
                   {item.content}

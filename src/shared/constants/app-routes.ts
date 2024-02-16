@@ -8,5 +8,6 @@ export enum AppRoutes {
   CONTACTS = '/contacts',
   PROFILE_WITH_ID = '/profile/:id',
   PROFILE = '/profile',
+  SETTINGS = '/settings',
   ERROR = '*',
 }

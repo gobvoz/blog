@@ -11,6 +11,7 @@ import AboutIcon from 'shared/assets/icons/about.svg';
 import ArticlesIcon from 'shared/assets/icons/articles.svg';
 import ContactsIcon from 'shared/assets/icons/contacts.svg';
 import ProfileIcon from 'shared/assets/icons/profile.svg';
+import SettingsIcon from 'shared/assets/icons/settings.svg';
 import { SidebarItemType } from '../types/sidebar';
 
 const selectSidebarItemList = createSelector(selectUserAuthData, userAuthData => {
@@ -25,6 +26,7 @@ const selectSidebarItemList = createSelector(selectUserAuthData, userAuthData =>
       Icon: ProfileIcon,
       authOnly: true,
     },
+    { path: AppRoutes.SETTINGS, name: 'menu-settings', Icon: SettingsIcon, authOnly: true },
   ];
 
   return sidebarItemList;

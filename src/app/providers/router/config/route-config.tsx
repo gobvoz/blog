@@ -7,6 +7,7 @@ import { ArticleEditPage } from 'pages/article-edit-page';
 import { ArticleDetailPage } from 'pages/article-detail-page';
 import { ContactsPage } from 'pages/contacts-page';
 import { ProfilePage } from 'pages/profile-page';
+import { SettingsPage } from 'pages/settings-page';
 import { NotFoundPage } from 'pages/not-found-page';
 
 import { AppRoutes } from 'shared/constants/app-routes';
@@ -26,6 +27,7 @@ const routerConfig: AppRouteProps[] = [
   { path: AppRoutes.CONTACTS, element: <ContactsPage /> },
   { path: AppRoutes.PROFILE, element: <ProfilePage />, authOnly: true },
   { path: AppRoutes.PROFILE_WITH_ID, element: <ProfilePage />, authOnly: true },
+  { path: AppRoutes.SETTINGS, element: <SettingsPage />, authOnly: true },
   { path: AppRoutes.ERROR, element: <NotFoundPage /> },
 ];
 
