@@ -76,7 +76,8 @@ export const LightSkeleton = Template.bind({});
 LightSkeleton.decorators = [
   StoreDecorator({
     articleList: {
-      ...mockedStore.articleList,
+      ids: [],
+      entities: {},
       isLoading: true,
     },
   }),
@@ -87,9 +88,11 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(mockedStore)];
 
 export const DarkSkeleton = Template.bind({});
 DarkSkeleton.decorators = [
+  ThemeDecorator(Theme.DARK),
   StoreDecorator({
     articleList: {
-      ...mockedStore.articleList,
+      ids: [],
+      entities: {},
       isLoading: true,
     },
   }),
