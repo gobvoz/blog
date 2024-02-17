@@ -35,6 +35,7 @@ const ArticlePage: FC = memo(() => {
     dispatch(fetchNextArticleList());
   }, [dispatch]);
 
+  //TODO ArticleInfinitiveList feature
   return (
     <PageWrapper onScrollEnd={handleScrollToBottom}>
       <DynamicModuleLoader reducerList={reducerList} leaveAfterUnmount>

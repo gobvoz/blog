@@ -100,7 +100,7 @@ const ProfilePage: FC = memo(() => {
     },
     [dispatch],
   );
-
+  // TODO Profile feature with controllers and selectors and validators
   return (
     <PageWrapper>
       <h1>{t('profile-info', { ns: 'profile-page' })}</h1>
