@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useCollapse } from 'app/providers/collapse-provider';
 
 import { selectUserAuthData } from 'entities/user/model/selectors/select-user-auth-data';
-import { userActions } from 'entities/user';
+import { isUserAdmin, isUserModerator, userActions } from 'entities/user';
 
 import { LoginModal } from 'features/auth-by-user-name';
 
@@ -30,6 +30,18 @@ const Navbar: FC<Props> = memo((props: Props) => {
   const navigate = useNavigate();
 
   const userAuthData = useSelector(selectUserAuthData);
+  const isAdmin = useSelector(isUserAdmin);
+  const isModerator = useSelector(isUserModerator);
+
+  const isAdminPanelAvailable = isAdmin || isModerator;
+  const adminPanelItem = isAdminPanelAvailable
+    ? [
+        {
+          content: t('menu-admin-panel'),
+          onClick: () => navigate(AppRoutes.ADMIN_PANEL),
+        },
+      ]
+    : [];
 
   const { collapsed } = useCollapse();
   const { className } = props;
@@ -66,9 +78,10 @@ const Navbar: FC<Props> = memo((props: Props) => {
             options={{
               trigger: <Avatar small src={userAuthData.avatar} />,
               itemList: [
+                ...adminPanelItem,
                 {
-                  content: t('menu-contacts'),
-                  onClick: () => navigate(AppRoutes.CONTACTS),
+                  content: t('menu-settings'),
+                  onClick: () => navigate(AppRoutes.SETTINGS),
                 },
                 {
                   content: t('menu-profile'),

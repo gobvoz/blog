@@ -11,9 +11,12 @@ import { SettingsPage } from 'pages/settings-page';
 import { NotFoundPage } from 'pages/not-found-page';
 
 import { AppRoutes } from 'shared/constants/app-routes';
+import { AdminPanelPage } from 'pages/admin-panel-page';
+import { UserRole } from 'entities/user/model/types/user-schema';
 
 type AppRouteProps = RouteProps & {
   authOnly?: boolean;
+  roles?: UserRole[];
   element: JSX.Element;
 };
 
@@ -28,6 +31,12 @@ const routerConfig: AppRouteProps[] = [
   { path: AppRoutes.PROFILE, element: <ProfilePage />, authOnly: true },
   { path: AppRoutes.PROFILE_WITH_ID, element: <ProfilePage />, authOnly: true },
   { path: AppRoutes.SETTINGS, element: <SettingsPage />, authOnly: true },
+  {
+    path: AppRoutes.ADMIN_PANEL,
+    element: <AdminPanelPage />,
+    authOnly: true,
+    roles: [UserRole.ADMIN, UserRole.MODERATOR],
+  },
   { path: AppRoutes.ERROR, element: <NotFoundPage /> },
 ];
 

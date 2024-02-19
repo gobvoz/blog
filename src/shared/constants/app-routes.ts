@@ -9,5 +9,6 @@ export enum AppRoutes {
   PROFILE_WITH_ID = '/profile/:id',
   PROFILE = '/profile',
   SETTINGS = '/settings',
+  ADMIN_PANEL = '/admin-panel',
   ERROR = '*',
 }

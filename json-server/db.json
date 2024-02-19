@@ -5,28 +5,40 @@
       "username": "admin",
       "password": "123456789",
       "avatar": "https://i.pravatar.cc/300?img=4",
-      "about": "admin of this blog"
+      "about": "admin of this blog",
+      "roles": ["ADMIN", "MODERATOR","USER"]
     },
     {
       "id": "2",
       "username": "user",
       "password": "123456789",
       "avatar": "https://i.pravatar.cc/300?img=5",
-      "about": "user of this blog"
+      "about": "user of this blog",
+      "roles": ["USER"]
     },
     {
       "id": "3",
       "username": "john.doe",
       "password": "123456789",
       "avatar": "https://i.pravatar.cc/300?img=3",
-      "about": "I am a designer currently living in South Florida. I am a fan of technology and design."
+      "about": "I am a designer currently living in South Florida. I am a fan of technology and design.",
+      "roles": ["USER"]
     },
     {
       "id": "4",
       "username": "jane.doe",
       "password": "123456789",
       "avatar": "https://i.pravatar.cc/300?img=1",
-      "about": "I am a web developer currently living in South Florida. I am a fan of design, and programming. Also interested in writing, education, and entrepreneurship."
+      "about": "I am a web developer currently living in South Florida. I am a fan of design, and programming. Also interested in writing, education, and entrepreneurship.",
+      "roles": ["USER"]
+    },
+    {
+      "id": "4",
+      "username": "michael",
+      "password": "123456789",
+      "avatar": "https://i.pravatar.cc/300?img=6",
+      "about": "Just a moderator here",
+      "roles": ["MODERATOR"]
     }
   ],
   "articles": [
