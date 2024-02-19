@@ -7,10 +7,10 @@ import {
   selectProfileReadonly,
   updateProfileData,
 } from 'entities/profile';
+import { selectUserAuthData } from 'entities/user/model/selectors/select-user-auth-data';
 
 import { useAppDispatch, useAppTranslation } from 'shared/libs/hooks';
 import { Button } from 'shared/ui/button';
-import { selectUserAuthData } from 'entities/user/model/selectors/select-user-auth-data';
 
 interface Props {
   className?: string;
@@ -43,11 +43,17 @@ const ProfileButtons: FC<Props> = ({ className }) => {
   return (
     <div className={className}>
       {readOnly ? (
-        isEditable && <Button onClick={handleEditClick}>{t('edit')}</Button>
+        isEditable && (
+          <Button onClick={handleEditClick} data-testid="edit-button">
+            {t('edit')}
+          </Button>
+        )
       ) : (
         <>
-          <Button onClick={handleUpdateClick}>{t('update')}</Button>
-          <Button onClick={handleCancelClick} outlineRed>
+          <Button onClick={handleUpdateClick} data-testid="update-button">
+            {t('update')}
+          </Button>
+          <Button onClick={handleCancelClick} outlineRed data-testid="cancel-button">
             {t('cancel')}
           </Button>
         </>
