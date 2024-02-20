@@ -8,6 +8,7 @@
   "login": "login",
   "login-password-error": "Login or Password error",
   "menu-about": "About",
+  "menu-admin-panel": "Admin panel",
   "menu-articles": "Articles",
   "menu-contacts": "Contacts",
   "menu-login": "Login",
@@ -15,7 +16,6 @@
   "menu-main": "Main",
   "menu-profile": "Profile",
   "menu-settings": "Settings",
-  "menu-admin-panel": "Admin panel",
   "password": "password",
   "throw-error-button": "throw an Error",
   "update": "Update"

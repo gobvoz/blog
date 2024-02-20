@@ -9,7 +9,7 @@ jest.mock('axios');
 describe('loginByUserName', () => {
   it('should to be a successful login', async () => {
     const userData = { username: 'username', password: 'password' };
-    const returnedData: User = { username: 'username', id: '123', avatar: 'http://' };
+    const returnedData: User = { username: 'username', id: '123', avatar: 'http://', roles: [] };
 
     const thunk = new TestAsyncThunk(loginByUsername);
     thunk.api.post.mockReturnValue(Promise.resolve({ data: returnedData }));
