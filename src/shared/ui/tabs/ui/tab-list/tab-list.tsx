@@ -47,4 +47,4 @@ const TabList = memo((props: Props) => {
   );
 });
 
-export { TabList, TabItem };
+export { TabList, type TabItem };

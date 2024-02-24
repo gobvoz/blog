@@ -1,6 +1,7 @@
 import { fetchArticleData } from '../../services/fetch-article-data';
 import { ArticleSchema } from '../../types/article-schema';
-import { Article, ArticleBlockType } from '../../types/article';
+import { Article } from '../../types/article';
+import { ArticleBlockType } from '../../const/const';
 import { articleReducer } from '../article-slice';
 
 describe('articleSlice test', () => {

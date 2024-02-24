@@ -6,7 +6,7 @@ import { Theme } from 'shared/constants/theme';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 import { ListType } from 'features/list-type-switcher';
 import { ArticleType } from 'entities/article';
-import { ArticleBlockType } from 'entities/article/model/types/article';
+import { ArticleBlockType } from 'entities/article/';
 
 export default {
   title: 'page/article-page',

@@ -4,7 +4,8 @@ import { ArticleSeparatorBlock } from './article-separator-block';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 
-import { ArticleBlockSeparator, ArticleBlockType } from '../../../model/types/article';
+import { ArticleBlockSeparator } from '../../../model/types/article';
+import { ArticleBlockType } from '../../../model/const/const';
 
 export default {
   title: 'entities/article/blocks/article-separator-block',

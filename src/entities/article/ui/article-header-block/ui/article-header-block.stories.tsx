@@ -1,9 +1,12 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ArticleHeaderBlock } from './article-header-block';
-import { ArticleBlockHeader, ArticleBlockType } from '../../../model/types/article';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
+
+import { ArticleBlockHeader } from '../../../model/types/article';
+import { ArticleBlockType } from '../../../model/const/const';
+
+import { ArticleHeaderBlock } from './article-header-block';
 
 export default {
   title: 'entities/article/blocks/article-header-block',

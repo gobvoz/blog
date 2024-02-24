@@ -4,7 +4,7 @@ import { ListTypeSwitcher } from './list-type-switcher';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
-import { ListType } from '../types/list-type';
+import { ListType } from '../model/const/list-type';
 
 export default {
   title: 'features/list-type-switcher',

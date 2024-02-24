@@ -4,7 +4,8 @@ import { ArticleParagraphBlock } from './article-paragraph-block';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 
-import { ArticleBlockParagraph, ArticleBlockType } from '../../../model/types/article';
+import { ArticleBlockParagraph } from '../../../model/types/article';
+import { ArticleBlockType } from '../../../model/const/const';
 
 export default {
   title: 'entities/article/blocks/article-paragraph-block',

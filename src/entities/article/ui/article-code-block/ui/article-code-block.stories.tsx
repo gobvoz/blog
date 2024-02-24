@@ -1,7 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ArticleCodeBlock } from './article-code-block';
-import { ArticleBlockCode, ArticleBlockType } from '../../../model/types/article';
+import { ArticleBlockCode } from '../../../model/types/article';
+import { ArticleBlockType } from '../../../model/const/const';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 

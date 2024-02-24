@@ -1,7 +1,8 @@
 import { TestAsyncThunk } from 'shared/libs/tests/test-async-thunk';
 
 import { fetchArticleData } from '../fetch-article-data';
-import { Article, ArticleBlockType } from '../../types/article';
+import { Article } from '../../types/article';
+import { ArticleBlockType } from '../../const/const';
 
 jest.mock('axios');
 

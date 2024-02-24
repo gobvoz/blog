@@ -12,7 +12,7 @@ import { NotFoundPage } from 'pages/not-found-page';
 
 import { AppRoutes } from 'shared/constants/app-routes';
 import { AdminPanelPage } from 'pages/admin-panel-page';
-import { UserRole } from 'entities/user/model/types/user-schema';
+import { UserRole } from 'entities/user';
 
 type AppRouteProps = RouteProps & {
   authOnly?: boolean;
@@ -40,4 +40,4 @@ const routerConfig: AppRouteProps[] = [
   { path: AppRoutes.ERROR, element: <NotFoundPage /> },
 ];
 
-export { routerConfig, AppRouteProps };
+export { routerConfig, type AppRouteProps };

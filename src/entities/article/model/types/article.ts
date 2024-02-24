@@ -1,14 +1,5 @@
 import { Profile } from 'entities/profile';
-
-export enum ArticleBlockType {
-  PARAGRAPH = 'PARAGRAPH',
-  HEADER = 'HEADER',
-  CODE = 'CODE',
-  SEPARATOR = 'SEPARATOR',
-  HINT = 'HINT',
-  SPOILER = 'SPOILER',
-  IMAGE = 'IMAGE',
-}
+import { ArticleBlockType } from '../const/const';
 
 interface ArticleBaseBlock {
   id: string;
@@ -59,10 +50,4 @@ export interface Article {
   views: number;
   topics: string[];
   body: ArticleBlock[];
-}
-
-export enum ArticleSortField {
-  CREATED_AT = 'createdAt',
-  VIEWS = 'views',
-  TITLE = 'title',
 }

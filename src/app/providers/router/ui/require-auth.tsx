@@ -5,8 +5,8 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { selectUserAuthData } from 'entities/user/model/selectors/select-user-auth-data';
 
 import { AppRoutes } from 'shared/constants/app-routes';
-import { UserRole } from 'entities/user/model/types/user-schema';
 import { selectUserRoles } from 'entities/user/model/selectors/select-user-roles';
+import { UserRole } from 'entities/user';
 
 interface Props {
   children: JSX.Element;

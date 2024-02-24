@@ -4,7 +4,8 @@ import { ArticleHintBlock } from './article-hint-block';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { Theme } from 'shared/constants/theme';
 
-import { ArticleBlockHint, ArticleBlockType } from '../../../model/types/article';
+import { ArticleBlockHint } from '../../../model/types/article';
+import { ArticleBlockType } from '../../../model/const/const';
 
 export default {
   title: 'entities/article/blocks/article-hint-block',

@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ArticleEditPage } from './article-edit-page';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator';
-import { ArticleBlockType } from 'entities/article/model/types/article';
+import { ArticleBlockType } from 'entities/article/';
 import { ArticleType } from 'entities/article';
 
 const article: ArticleType = {

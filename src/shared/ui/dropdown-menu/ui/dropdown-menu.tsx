@@ -48,4 +48,4 @@ const DropdownMenu: FC<Props> = memo((props: Props) => {
   );
 });
 
-export { DropdownMenu, DropDownProps, DropDownItem };
+export { DropdownMenu, type DropDownProps, type DropDownItem };

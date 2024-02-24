@@ -3,7 +3,7 @@ import { SelectHTMLAttributes, memo, useCallback } from 'react';
 import { Select } from 'shared/ui/select';
 import { useAppTranslation } from 'shared/libs/hooks';
 
-import { Currency } from '../../model/types/currency';
+import { Currency } from '../../model/const/currency';
 
 type SelectHTMLProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'value' | 'onChange'>;
 

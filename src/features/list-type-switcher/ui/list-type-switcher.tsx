@@ -8,7 +8,7 @@ import cls from './list-type-switcher.module.scss';
 
 import { Icon } from 'shared/ui/icon';
 import { Button } from 'shared/ui/button';
-import { ListType } from '../types/list-type';
+import { ListType } from '../model/const/list-type';
 
 interface Props {
   className?: string;

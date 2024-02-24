@@ -1,8 +1,5 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 
-import cls from './article-list-element.module.scss';
-
-import { Article, ArticleBlockParagraph, ArticleBlockType } from '../../../model/types/article';
 import { ListType } from 'features/list-type-switcher';
 
 import EyeIcon from 'shared/assets/icons/eye.svg';
@@ -16,6 +13,11 @@ import { classNames } from 'shared/libs/class-names';
 import { ArticleParagraphBlock } from '../../article-paragraph-block';
 import { AppRoutes } from 'shared/constants/app-routes';
 import { AppLink } from 'shared/ui/app-link';
+
+import { Article, ArticleBlockParagraph } from '../../../model/types/article';
+import { ArticleBlockType } from '../../../model/const/const';
+
+import cls from './article-list-element.module.scss';
 
 interface Props {
   className?: string;
