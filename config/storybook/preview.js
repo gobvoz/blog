@@ -21,4 +21,3 @@ addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
 addDecorator(TranslationDecorator);
-addDecorator(SuspenseDecorator);

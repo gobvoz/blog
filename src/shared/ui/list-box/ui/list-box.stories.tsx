@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ListBox } from './list-box';
 
 export default {
-  title: '---/list-box',
+  title: 'shared/list-box',
   component: ListBox,
 } as ComponentMeta<typeof ListBox>;
 

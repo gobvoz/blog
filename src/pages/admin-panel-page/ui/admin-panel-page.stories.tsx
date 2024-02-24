@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { AdminPanelPage } from './admin-panel-page';
 
 export default {
-  title: 'pages/admin-panel-page',
+  title: 'page/admin-panel-page',
   component: AdminPanelPage,
 } as ComponentMeta<typeof AdminPanelPage>;
 
