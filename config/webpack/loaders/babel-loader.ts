@@ -1,3 +1,5 @@
+import babelRemovePropsPlugin from '../../babel/babel-remove-props-plugin';
+
 interface BabelLoaderProps {
   isDevelopment: boolean;
   isTsx: boolean;
@@ -28,6 +30,7 @@ export const webpackBabelLoader = ({ isDevelopment, isTsx }: BabelLoaderProps) =
             },
           ],
           '@babel/plugin-transform-runtime',
+          isTsx && [babelRemovePropsPlugin, { props: ['data-testid'] }],
           isDevelopment && require.resolve('react-refresh/babel'),
         ].filter(Boolean),
       },
