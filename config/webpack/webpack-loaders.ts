@@ -18,13 +18,8 @@ export const webpackLoaders = (options: BuildOptions): webpack.RuleSetRule[] => 
 
   const cssLoader = webpackCssLoader(isDevelopment);
 
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: '/node_modules/',
-  };
+  const babelLoaderTS = webpackBabelLoader({ isDevelopment, isTsx: false });
+  const babelLoaderTSX = webpackBabelLoader({ isDevelopment, isTsx: true });
 
-  const babelLoader = webpackBabelLoader(isDevelopment);
-
-  return [babelLoader, fileLoader, svgLoader, typescriptLoader, cssLoader];
+  return [babelLoaderTS, babelLoaderTSX, fileLoader, svgLoader, cssLoader];
 };
