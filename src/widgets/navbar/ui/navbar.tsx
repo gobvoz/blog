@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useEffect, useState } from 'react';
+import { FC, memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -15,10 +15,12 @@ import { AppLink } from 'shared/ui/app-link';
 import { AppRoutes } from 'shared/constants/app-routes';
 import { Button } from 'shared/ui/button';
 import { useAppDispatch, useAppTranslation } from 'shared/libs/hooks';
+import { Avatar } from 'shared/ui/avatar';
+import { DropdownMenu, Popover } from 'shared/ui/popups';
+import NotificationIcon from 'shared/assets/icons/notifications.svg';
 
 import cls from './navbar.module.scss';
-import { DropdownMenu } from 'shared/ui/dropdown-menu';
-import { Avatar } from 'shared/ui/avatar';
+import { NotificationList } from 'entities/notification';
 
 interface Props {
   className?: string;
@@ -32,16 +34,6 @@ const Navbar: FC<Props> = memo((props: Props) => {
   const userAuthData = useSelector(selectUserAuthData);
   const isAdmin = useSelector(isUserAdmin);
   const isModerator = useSelector(isUserModerator);
-
-  const isAdminPanelAvailable = isAdmin || isModerator;
-  const adminPanelItem = isAdminPanelAvailable
-    ? [
-        {
-          content: t('menu-admin-panel'),
-          onClick: () => navigate(AppRoutes.ADMIN_PANEL),
-        },
-      ]
-    : [];
 
   const { collapsed } = useCollapse();
   const { className } = props;
@@ -61,6 +53,27 @@ const Navbar: FC<Props> = memo((props: Props) => {
     navigate(AppRoutes.MAIN);
   }, []);
 
+  const isAdminPanelAvailable = isAdmin || isModerator;
+  const adminPanelItem = isAdminPanelAvailable
+    ? [
+        {
+          content: t('menu-admin-panel'),
+          onClick: () => navigate(AppRoutes.ADMIN_PANEL),
+        },
+      ]
+    : [];
+  const menuOptions = useMemo(() => {
+    return {
+      trigger: <Avatar small src={userAuthData?.avatar} />,
+      itemList: [
+        ...adminPanelItem,
+        { content: t('menu-settings'), onClick: () => navigate(AppRoutes.SETTINGS) },
+        { content: t('menu-profile'), onClick: () => navigate(AppRoutes.PROFILE) },
+        { content: t('menu-logout'), onClick: handleLogout },
+      ],
+    };
+  }, [isAdminPanelAvailable, userAuthData, handleLogout, t, navigate]);
+
   const mods = {
     [cls.collapsed]: collapsed,
   };
@@ -73,27 +86,12 @@ const Navbar: FC<Props> = memo((props: Props) => {
             <AppLink to={AppRoutes.MAIN}>{t('menu-main')}</AppLink>
             <AppLink to={AppRoutes.ABOUT}>{t('menu-about')}</AppLink>
           </Menu>
-
-          <DropdownMenu
-            options={{
-              trigger: <Avatar small src={userAuthData.avatar} />,
-              itemList: [
-                ...adminPanelItem,
-                {
-                  content: t('menu-settings'),
-                  onClick: () => navigate(AppRoutes.SETTINGS),
-                },
-                {
-                  content: t('menu-profile'),
-                  onClick: () => navigate(AppRoutes.PROFILE),
-                },
-                {
-                  content: t('menu-logout'),
-                  onClick: handleLogout,
-                },
-              ],
-            }}
-          />
+          <div className={cls.buttons}>
+            <Popover trigger={<NotificationIcon />}>
+              <NotificationList />
+            </Popover>
+            <DropdownMenu options={menuOptions} />
+          </div>
         </div>
       </nav>
     );

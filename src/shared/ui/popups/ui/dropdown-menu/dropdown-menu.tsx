@@ -27,7 +27,7 @@ const DropdownMenu: FC<Props> = memo((props: Props) => {
   const { trigger, itemList } = options;
   return (
     <div className={classNames(cls.wrapper, className)}>
-      <Menu>
+      <Menu as={Fragment}>
         <Menu.Button className={cls.button}>{trigger}</Menu.Button>
         <Menu.Items className={cls.itemList}>
           {itemList.map((item, index) => (

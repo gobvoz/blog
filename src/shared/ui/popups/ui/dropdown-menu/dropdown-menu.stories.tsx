@@ -4,7 +4,7 @@ import { DropdownMenu } from './dropdown-menu';
 import { Avatar } from 'shared/ui/avatar';
 
 export default {
-  title: 'shared/dropdown-menu',
+  title: 'shared/popup/dropdown-menu',
   component: DropdownMenu,
 } as ComponentMeta<typeof DropdownMenu>;
 
