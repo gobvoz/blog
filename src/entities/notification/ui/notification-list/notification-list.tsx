@@ -7,6 +7,7 @@ import { classNames } from 'shared/libs/class-names';
 
 import { useNotificationList } from '../../api/notification-api';
 import { NotificationItem } from '../notification-item/notification-item';
+import { NOTIFICATION_REFETCH_INTERVAL } from 'shared/constants/notification';
 
 import cls from './notification-list.module.scss';
 
@@ -21,7 +22,7 @@ const NotificationList = memo((props: Props) => {
   const userAuthData = useSelector(selectUserAuthData);
   const { data } = useNotificationList(userAuthData?.id || '0', {
     refetchOnMountOrArgChange: true,
-    pollingInterval: 1000,
+    pollingInterval: NOTIFICATION_REFETCH_INTERVAL,
   });
 
   if (data) {
