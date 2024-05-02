@@ -3,9 +3,9 @@ import { FC, memo, useCallback, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/libs/class-names/class-names';
 import { Key, MODAL_ANIMATION_DURATION } from 'shared/constants/ui';
 import { Button } from 'shared/ui/button';
+import { Overlay } from 'shared/ui/overlay';
 
 import cls from './modal.module.scss';
-import { CenterFlex } from 'shared/ui/flex';
 
 interface Props {
   className?: string;
@@ -79,13 +79,11 @@ const Modal: FC<Props> = props => {
   }, [keepOpen, closeModal]);
 
   return (
-    <CenterFlex
-      className={classNames(cls.overlay, {
-        [cls.overlayAnimationIn]: isInAnimation,
-        [cls.overlayAnimationOut]: isOutAnimation,
-        [cls.overlayNoAnimation]: isNoAnimation,
-      })}
-      onClick={handleOverlayClick}>
+    <Overlay
+      onClick={handleOverlayClick}
+      inAnimation={isInAnimation}
+      outAnimation={isOutAnimation}
+      noAnimation={isNoAnimation}>
       <div
         className={classNames(cls.modal, className, {
           [cls.modalAnimationIn]: isInAnimation,
@@ -103,7 +101,7 @@ const Modal: FC<Props> = props => {
         </div>
         {children}
       </div>
-    </CenterFlex>
+    </Overlay>
   );
 };
 
