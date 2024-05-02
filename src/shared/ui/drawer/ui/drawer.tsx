@@ -15,6 +15,7 @@ interface Props {
 const Drawer = memo((props: Props) => {
   const { className, children, isOpen, onClose } = props;
 
+  // TODO add uswModal hook
   const mods = {
     open: isOpen,
   };
