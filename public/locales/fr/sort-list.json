@@ -1,9 +1,9 @@
 {
-  "asc": "",
-  "desc": "",
-  "order": "",
-  "sort-by": "",
-  "sort-created-at": "",
-  "sort-title": "",
-  "sort-views": ""
+  "asc": "asc",
+  "desc": "desc",
+  "order": "Ordre",
+  "sort-by": "Trier par...",
+  "sort-created-at": "créé le",
+  "sort-title": "titre",
+  "sort-views": "vues"
 }

@@ -23,13 +23,13 @@ type AppRouteProps = RouteProps & {
 const routerConfig: AppRouteProps[] = [
   { path: AppRoutes.MAIN, element: <MainPage /> },
   { path: AppRoutes.ABOUT, element: <AboutPage /> },
-  { path: AppRoutes.ARTICLES, element: <ArticlePage />, authOnly: true },
+  { path: AppRoutes.ARTICLES, element: <ArticlePage /> },
   { path: AppRoutes.ARTICLE_CREATE, element: <ArticleEditPage />, authOnly: true },
   { path: AppRoutes.ARTICLE_EDIT, element: <ArticleEditPage />, authOnly: true },
-  { path: AppRoutes.ARTICLE_DETAIL, element: <ArticleDetailPage />, authOnly: true },
+  { path: AppRoutes.ARTICLE_DETAIL, element: <ArticleDetailPage /> },
   { path: AppRoutes.CONTACTS, element: <ContactsPage /> },
-  { path: AppRoutes.PROFILE, element: <ProfilePage />, authOnly: true },
-  { path: AppRoutes.PROFILE_WITH_ID, element: <ProfilePage />, authOnly: true },
+  { path: AppRoutes.PROFILE, element: <ProfilePage /> },
+  { path: AppRoutes.PROFILE_WITH_ID, element: <ProfilePage /> },
   { path: AppRoutes.SETTINGS, element: <SettingsPage />, authOnly: true },
   {
     path: AppRoutes.ADMIN_PANEL,

@@ -1,9 +1,9 @@
 {
-  "back": "",
-  "comments": "",
-  "edit": "",
-  "error-not-found": "",
-  "error-not-found-long": "",
-  "header": "",
-  "recommendations": ""
+  "back": "Retour ...",
+  "comments": "Commentaires",
+  "edit": "Modifier",
+  "error-not-found": "Article introuvable",
+  "error-not-found-long": "Il est possible que l’article ait été déplacé ou supprimé. Essayez de sélectionner un autre article.",
+  "header": "Page de l’article",
+  "recommendations": "Articles recommandés"
 }
