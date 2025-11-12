@@ -18,7 +18,7 @@ const selectSidebarItemList = createSelector(selectUserAuthData, userAuthData =>
   const sidebarItemList: SidebarItemType[] = [
     { path: AppRoutes.MAIN, name: 'menu-main', Icon: HomeIcon },
     { path: AppRoutes.ABOUT, name: 'menu-about', Icon: AboutIcon },
-    { path: AppRoutes.ARTICLES, name: 'menu-articles', Icon: ArticlesIcon, authOnly: true },
+    { path: AppRoutes.ARTICLES, name: 'menu-articles', Icon: ArticlesIcon },
     { path: AppRoutes.CONTACTS, name: 'menu-contacts', Icon: ContactsIcon },
     {
       path: AppRoutes.PROFILE + '/' + userAuthData?.id,

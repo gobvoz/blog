@@ -40,8 +40,9 @@ const ArticleDetailPage = memo(() => {
     <PageWrapper>
       <ArticleHeader />
       <Article id={id || ''} />
+      {/*
       <TextBlock header={t('recommendations', { ns: 'article-detail-page' })} />
-      {/* <ArticleRecommendationList id={id || ''} /> */}
+      <ArticleRecommendationList id={id || ''} /> */}
       <TextBlock header={t('comments', { ns: 'article-detail-page' })} />
       {userAuthData?.id && <NewCommentForm onSendComment={onSendComment} />}
       <ArticleCommentList id={id || ''} />
