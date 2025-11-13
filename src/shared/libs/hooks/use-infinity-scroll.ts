@@ -18,7 +18,7 @@ export const useInfinityScroll = (params: UseInfinityScrollParams) => {
 
     const options = {
       root: wrapperRef.current,
-      rootMargin: '500px',
+      rootMargin: '100px',
       threshold: 1.0,
     };
 

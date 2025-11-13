@@ -4,7 +4,7 @@ export const enum Key {
   ESCAPE = 'Escape',
 }
 
-export const ITEMS_PER_PAGE_GRID = 9;
+export const ITEMS_PER_PAGE_GRID = 12;
 export const ITEMS_PER_PAGE_LIST = 5;
 
 export enum SortOrder {
