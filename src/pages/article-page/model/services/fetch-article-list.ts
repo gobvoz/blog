@@ -12,11 +12,12 @@ import { ArticleTag } from 'shared/constants/ui';
 
 interface Props {
   replace?: boolean;
+  doNotAddQueryParams?: boolean;
 }
 
 export const fetchArticleList = createAsyncThunk<ArticleType[], Props, ThunkApiConfig<string>>(
   'articleList/fetchArticleList',
-  async (_, thunkApi) => {
+  async (props, thunkApi) => {
     const { extra, rejectWithValue, getState } = thunkApi;
 
     const state = getState();
@@ -26,14 +27,17 @@ export const fetchArticleList = createAsyncThunk<ArticleType[], Props, ThunkApiC
     const sortField = selectArticleListSortField(state);
     const searchString = selectArticleListSearch(state);
     const articleTag = selectArticleListTag(state);
+    const { doNotAddQueryParams } = props || {};
 
     try {
-      addQueryParams({
-        search: searchString,
-        sortField,
-        order,
-        articleTag,
-      });
+      if (!doNotAddQueryParams) {
+        addQueryParams({
+          search: searchString,
+          sortField,
+          order,
+          articleTag,
+        });
+      }
 
       const response = await extra.api.get<ArticleType[]>('/articles', {
         params: {

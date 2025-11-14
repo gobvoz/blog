@@ -6,6 +6,7 @@ export const enum Key {
 
 export const ITEMS_PER_PAGE_GRID = 12;
 export const ITEMS_PER_PAGE_LIST = 5;
+export const ITEMS_PER_PAGE_PRESENTATION = 6;
 
 export enum SortOrder {
   ASC = 'asc',

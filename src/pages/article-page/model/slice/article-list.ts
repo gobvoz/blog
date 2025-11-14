@@ -53,6 +53,9 @@ const articleListSlice = createSlice({
       state.limit = action.payload === ListType.GRID ? ITEMS_PER_PAGE_GRID : ITEMS_PER_PAGE_LIST;
       localStorage.setItem(LOCAL_STORAGE_ARTICLE_LIST_TYPE_KEY, action.payload);
     },
+    setLimit(state, action: PayloadAction<number>) {
+      state.limit = action.payload;
+    },
     setPage(state, action: PayloadAction<number>) {
       state.page = action.payload;
     },

@@ -16,13 +16,13 @@ export const initArticlePage = createAsyncThunk<void, URLSearchParams, ThunkApiC
     const state = getState();
     const stateInitialized = selectArticleListInitialized(state);
 
+    if (stateInitialized) return;
+
     const search = searchParams.get('search') || '';
     const order = (searchParams.get('order') as SortOrder) || SortOrder.DESC;
     const sortField =
       (searchParams.get('sortField') as ArticleSortField) || ArticleSortField.CREATED_AT;
     const articleTag = (searchParams.get('articleTag') as ArticleTag) || ArticleTag.ALL;
-
-    if (stateInitialized) return;
 
     dispatch(articleListActions.setSearch(search));
     dispatch(articleListActions.setOrder(order));

@@ -38,7 +38,7 @@ const ArticlePage: FC = memo(() => {
   //TODO ArticleInfinitiveList feature
   return (
     <PageWrapper onScrollEnd={handleScrollToBottom}>
-      <DynamicModuleLoader reducerList={reducerList} leaveAfterUnmount>
+      <DynamicModuleLoader reducerList={reducerList}>
         <ArticleListFilters />
         <ArticleList articleList={articleList} isLoading={isLoading} listType={listType} />
       </DynamicModuleLoader>
