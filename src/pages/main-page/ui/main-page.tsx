@@ -56,6 +56,22 @@ const MainPage: FC = memo(() => {
       <DynamicModuleLoader reducerList={reducerList}>
         <ArticleList articleList={articleList} isLoading={isLoading} listType={listType} />
       </DynamicModuleLoader>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, tenetur culpa modi
+        laudantium sunt tempore temporibus et magni nihil saepe a adipisci sed aperiam itaque. Ut
+        vitae laudantium soluta atque. Impedit quia dolore dignissimos temporibus culpa qui ipsam
+        id, iusto deserunt ab repellat vel incidunt distinctio facere assumenda cum, laborum
+        expedita. Quo sequi ipsa est nam veniam similique quis animi! Alias debitis sequi soluta ex
+        quasi inventore autem saepe, ipsa doloribus architecto similique odit nobis sapiente. Ipsa
+        sunt, corporis, porro sapiente, placeat dolor quaerat at delectus nesciunt tempora eius
+        animi. Porro labore culpa unde animi corporis blanditiis in. Libero voluptatum minus
+        necessitatibus. Delectus modi aperiam distinctio, ipsam facilis dignissimos ratione eaque
+        necessitatibus, tenetur maiores, aliquid in repellendus repudiandae nam nostrum? Eos officia
+        necessitatibus voluptatem itaque, fugiat excepturi quidem ducimus aliquid corrupti. Autem
+        provident nisi deleniti, fugiat culpa delectus aut. Minus excepturi tempora, reprehenderit
+        qui fugiat molestias esse voluptatem tenetur.
+      </p>
     </PageWrapper>
   );
 });
